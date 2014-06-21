@@ -1,43 +1,28 @@
 /****************************************************************************************************
-*   Stanford Theming File
-*
-*   Contains all the theme color definitions for the Stanford Open Source MOOC Project
+*   Unow Theming File
 *
 ****************************************************************************************************/
 
 //-----------------
-//  Color variables (from Stanford palette unless noted)
+//  Color variables
 //-----------------
 
-//Cardinal Color Variables
-$cardinal-red: #8C1515;
-$dark-red: #820000; //Link Color
-$cardinal-light: #c83737; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
-$cardinal-bg: #e9afaf; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
+// Unow colors
 
-//Beige Color Variables
-$beige: #9d9573;
-$beige-60: lighten($beige, 18.5%); //Main Border/HR Color
-$beige-25: lighten($beige, 25%); 
-
-//Sandstone Color Variables
-$sandstone: #ddcf99;
-$sandstone-50: lighten($sandstone, 9%);
-$sandstone-25: lighten($sandstone, 20%); //Important Heading BG Color 
+$orange: #f89406;
+$dark-green: #1f8a87;
+$light-green: #16a96a;
+$dark-gray: #231f20;
 
 //Gray Color Variables
 $gray: #3f3c30; //Main Text Color
 $gray-75: lighten($gray, 18.25%); //Lighter Text Color
 
-$gray-3: #e9e6df; //Block/Course BG Color
 $gray-2: #f2f1eb;
-$gray-1: #fbfbf9; //Main BG Color
-$white: $gray-1;
+$white: #fbfbf9; //Main BG Color
 
-$black: #2e2d29;
+$black: $dark-gray;
 $black-80: #585754;
-
-
 
 //-----------------
 //  Font Assignment
@@ -50,131 +35,128 @@ $body-font-family: $sans-serif;
 $theme-serif-font: 'Crimson Text';
 $serif: $theme-serif-font, $serif;
 
-
-
-
 //-----------------
 //  Theme Element Assignments
 //-----------------
 
-$body-bg: $gray-1;
-$container-bg: $gray-1;
-$login-register-bg: $gray-1;
-$content-wrapper-bg: $gray-1;
+$body-bg: $white;
+$container-bg: $white;
+$login-register-bg: $white;
+$content-wrapper-bg: $white;
 $header-image: none;
-$header-bg: transparentize(lighten($sandstone, 18.5%), .25);
+$header-bg: $white;
 $courseware-header-image: none;
-$courseware-header-bg: transparentize(lighten($sandstone, 18.5%), .25);
-$footer-bg: $sandstone-25;
-$courseware-footer-border: 1px solid $beige-60;
+$courseware-header-bg: $white;
+$footer-bg: $white;
+$courseware-footer-border: 1px solid $light-green;
 $courseware-footer-shadow: box-shadow(2px 1px 0 rgba(0, 0, 0, .1));
 $courseware-footer-margin: 50px;
 
-$faded-hr-image-1: linear-gradient($beige-60 0%, $beige-60);
-$faded-hr-image-2: linear-gradient($beige-60 0%, $beige-60);
-$faded-hr-image-3: linear-gradient($beige-60 0%, $beige-60);
-$faded-hr-image-4: linear-gradient($beige-60 0%, $beige-60);
-$faded-hr-image-5: linear-gradient($beige-60 0%, $beige-60);
-$faded-hr-image-6: linear-gradient($beige-60 0%, $beige-60);
+$faded-hr-image-1: linear-gradient($white 0%, $white);
+$faded-hr-image-2: linear-gradient($white 0%, $white);
+$faded-hr-image-3: linear-gradient($white 0%, $white);
+$faded-hr-image-4: linear-gradient($white 0%, $white);
+$faded-hr-image-5: linear-gradient($white 0%, $white);
+$faded-hr-image-6: linear-gradient($white 0%, $white);
 
 $base-font-color: $black;
 $lighter-base-font-color: $black-80;
-$very-light-text: $gray-1;
+$very-light-text: $white;
 
-$link-color: $dark-red;
-$link-color-d1: $dark-red;
-$link-hover: $cardinal-light;
-$site-status-color: $cardinal-bg;
+$link-color: $dark-green;
+$link-color-d1: $dark-green;
+$link-hover: $light-green;
+$site-status-color: $orange;
 
-$header-graphic-super-color: $dark-red;
+$header-graphic-super-color: $dark-green;
 $header-graphic-sub-color: $lighter-base-font-color;
 
-$header-link-color: $dark-red;
-$header-link-hover: $cardinal-light;
+$header-link-color: $dark-green;
+$header-link-hover: $light-green;
 
-$button-color: $cardinal-red;
-$button-archive-color: $gray-3;
+$button-color: $orange;
+$button-archive-color: $gray-2;
 
-$shadow-color: $gray;
+$shadow-color: $black;
 
 // actions
 $button-bg-image: none;
-$button-bg-color: $gray-3;
-$button-bg-hover-color: $gray-1;
+$button-bg-color: $gray-2;
+$button-bg-hover-color: $orange;
 
 // actions - primary
-$action-primary-bg: $cardinal-red;
+$action-primary-bg: $dark-green;
 $action-primary-fg: $gray-2;
 $action-primary-shadow: none;
 
 // focused - hover/active pseudo states
-$action-primary-focused-bg: $dark-red;
-$action-primary-focused-fg: $gray-1;
+$action-primary-focused-bg: $orange;
+$action-primary-focused-fg: $white;
 
 // current or active navigation item
-$action-primary-active-bg: $dark-red;
-$action-primary-active-fg: $gray-1;
+$action-primary-active-bg: $orange;
+$action-primary-active-fg: $white;
 $action-primary-active-shadow: none;
 $action-primary-active-focused-fg: $gray-2;
 $action-primary-active-focused-shadow: none;
 
 // disabled
 $action-primary-disabled-bg: $gray-75;
-$action-prmary-disabled-fg: $gray-1;
+$action-prmary-disabled-fg: $white;
 
 
 
 // actions - secondary
-$action-secondary-bg: $sandstone;
+$action-secondary-bg: $dark-green;
 $action-secondary-fg: $gray;
 $action-secondary-shadow: none;
 
 // focused - hover/active pseudo states
-$action-secondary-focused-bg: $sandstone-50;
+$action-secondary-focused-bg: $light-green;
 $action-secondary-focused-fg: $gray;
 
 // current or active navigation item
-$action-secondary-active-bg: $sandstone-50;
+$action-secondary-active-bg: $light-green;
 $action-secondary-active-fg: $gray;
 $action-secondary-active-shadow: none;
 $action-secondary-active-focused-fg: $gray-75;
 $action-secondary-active-focused-shadow: none;
 
 // disabled
-$action-secondary-disabled-bg: $gray-3;
+$action-secondary-disabled-bg: $gray-2;
 $action-secondary-disabled-fg: $gray;
 
 //
 
-$border-color-1: $beige-60;
-$border-color-2: $beige-60;
-$border-color-3: $beige-60;
-$outer-border-color: $beige-60;
+$border-color-1: transparentize($dark-green, .9);
+$border-color-2: transparentize($dark-green, .9);
+$border-color-3: transparentize($dark-green, .9);
+$outer-border-color: transparentize($dark-green, .9);
 
-$sidebar-color: $gray-1;
+$sidebar-color: $white;
 
-$homepage__header--gradient__color--alpha: $sandstone-25;
-$homepage__header--gradient__color--bravo: $sandstone-25;
-$homepage__header--background: $sandstone-25;
+$homepage__header--gradient__color--alpha: $white;
+$homepage__header--gradient__color--bravo: $white;
+$homepage__header--background: $white;
 $dashboard-profile-header-image: none;
-$dashboard-profile-header-color: $sandstone-25;
-$dashboard-profile-color: $gray-3;
-$dot-color: $beige-60;
+$dashboard-profile-header-color: $white;
+$dashboard-profile-color: $gray-2;
+$dot-color: $light-green;
 
-$course-bg-color: $gray-3;
+$course-bg-color: $gray-2;
 $course-bg-image: none;
-$account-content-wrapper-bg: $gray-1;
+$account-content-wrapper-bg: $white;
 
-$course-profile-bg: $gray-1;
-$course-header-bg: transparentize($gray-1, .1);
+$course-profile-bg: $white;
+$course-header-bg: transparentize($white, .1);
 
-$sidebar-chapter-bg-top: transparentize($gray-1, .3);
-$sidebar-chapter-bg-bottom: transparentize($gray-1, .9);
-$sidebar-chapter-bg: $gray-2;
-$sidebar-active-image: $gray-3;
+$sidebar-chapter-bg-top: transparentize($white, .3);
+$sidebar-chapter-bg-bottom: transparentize($white, .9);
+$sidebar-chapter-bg: $orange;
+$sidebar-active-image: $orange;
 
-$form-bg-color: $gray-1;
-$modal-bg-color: $gray-1;
+$form-bg-color: $white;
+$modal-bg-color: $white;
 
 //TOP HEADER IMAGE MARGIN
 $header_image_margin: -77px;
