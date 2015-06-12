@@ -10,18 +10,18 @@
 //-----------------
 
 //Main Color Variables
-$main-color: #f7691f;
-$dark-color: #ea281f; //Link Color
-$light-color: #f4e00c; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
-$bg-color: #f7fe81; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
+$main-color: #a51c30;
+$dark-color: #a51c30; //Link Color
+$light-color: #a51c30; //Selected Header BG Color, ie. calendar        ***Custom, not from palette***
+$bg-color: #a51c30; //Selected Content BG Color, ie. calendar          ***Custom, not from palette***
 
 //Main BG Color Variables
-$main-bg: #822537;
+$main-bg: #ffffff;
 $main-bg-60: lighten($main-bg, 18.5%); //Main Border/HR Color
 $main-bg-25: lighten($main-bg, 25%); 
 
 //Secondary Color Variables
-$secondary: #b5a4b7;
+$secondary: #ffffff;
 $secondary-50: lighten($secondary, 9%);
 $secondary-25: lighten($secondary, 20%); //Important Heading BG Color 
 
@@ -185,12 +185,12 @@ $footer_margin: ($baseline/4) 0;
 //-----------------
 //  CSS BG Images
 //-----------------
-$homepage-bg-image: url('../themes/default/images/sunrise.jpg');
+$homepage-bg-image: url('../themes/hgse/images/pano.jpg');
 
 $login-banner-image: none;
 $register-banner-image: none;
 
-$video-thumb-url: '../themes/default/images/edx.png';
+$video-thumb-url: '../themes/hgse/images/edx.png';
 
 //-----------------
 //  Mixin Styles
@@ -205,4 +205,20 @@ $video-thumb-url: '../themes/default/images/edx.png';
 @mixin footer_references_style {
     margin: 0 !important;
     text-align: right;
+}
+
+body .window-wrap header .left.nav-global {
+    float: right;
+    margin-top: 5px;
+    margin-left: 8px;
+
+    li {
+        font-size: 1em;
+    }
+    .cta {
+        @extend %m-btn-primary !optional;
+
+        text-transform: none;
+        color: $gray-2 !important;
+    }
 }

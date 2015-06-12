@@ -1,26 +1,51 @@
-## mako
-<%! from django.core.urlresolvers import reverse %>
-<%namespace name='static' file='/static_content.html'/>
-<%! from datetime import datetime %>
-<%! from pytz import UTC %>
+<%!
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+  from branding.api import get_footer
+%>
+<% footer = get_footer(is_secure=is_secure) %>
+<%namespace name='static' file='static_content.html'/>
 
-<div class="wrapper-footer">
-  <footer>
+<div class="wrapper wrapper-footer">
+  <footer id="footer-openedx"
+    ## When rendering the footer through the branding API,
+    ## the direction may not be set on the parent element,
+    ## so we set it here.
+    % if bidi:
+      dir=${bidi}
+    % endif
+  >
     <div class="colophon">
-      <nav class="nav-colophon">
-        <ol>
-          <li><a href="${reverse('tos')}">Terms of Service</a></li>
-          <li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
-          <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
-          <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
-          <li><a href="${reverse('about')}#careers">Careers</a></li>
-          <li><a href="${reverse('about')}#contact">Contact</a></li>
-          <li><a href="${marketing_link('FAQ')}">Help</a></li>
-        </ol>
-      </nav>
+      <div class="wrapper-logo">
+        <p>
+          <a href="/">
+            <img src="${static.url('themes/hgse/images/logo.png')}" alt="HGSE logo" height="50px" />
+          </a>
+        </p>
+      </div>
+
+      ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
+      <p class="copyright">${footer['copyright']}</p>
     </div>
-    <div class="references">
-      <span>Built on <a href="http://code.edx.org">OpenEdX</a>.</span>
+
+    % if not hide_openedx_link:
+    <div class="footer-about-openedx">
+      <p>
+        <a href="${footer['openedx_link']['url']}">
+          <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
+        </a>
+      </p>
     </div>
+    % endif
   </footer>
 </div>
+% if include_dependencies:
+  <%static:js group='base_vendor'/>
+  <%static:css group='style-vendor'/>
+  <%include file="widgets/segment-io.html" />
+% endif
+% if footer_css_urls:
+  % for url in footer_css_urls:
+    <link rel="stylesheet" type="text/css" href="${url}"></link>
+  % endfor
+% endif
