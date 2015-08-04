@@ -211,3 +211,17 @@ $video-thumb-url: '../themes/stgallen/images/logo-small.png';
     margin: 0 !important;
     text-align: right;
 }
+
+// ----------------
+// Style Overrides
+//-----------------
+
+.home > header {
+    .outer-wrapper {
+        margin-top: 90px;
+    }
+
+    .title {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
