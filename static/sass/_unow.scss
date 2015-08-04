@@ -19,7 +19,7 @@ $gray: #3f3c30; //Main Text Color
 $gray-75: lighten($gray, 18.25%); //Lighter Text Color
 
 $gray-2: #f2f1eb;
-$white: #fbfbf9; //Main BG Color
+$white: $gray-2; //Main BG Color
 
 $black: $dark-gray;
 $black-80: #585754;
