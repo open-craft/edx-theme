@@ -186,3 +186,13 @@ $register-banner-image: none;
     margin: 0 !important;
     text-align: right;
 }
+
+// ----------------
+// Style Overrides
+//-----------------
+
+.home > header {
+    .outer-wrapper {
+        margin-top: 90px !important;
+    }
+}
