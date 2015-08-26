@@ -28,6 +28,7 @@ $secondary-25: lighten($secondary, 20%); //Important Heading BG Color
 //Gray Color Variables
 $gray: #3f3f3f; //Main Text Color
 $gray-75: lighten($gray, 18.25%); //Lighter Text Color
+$gray-50: lighten($gray, 40%); //Lighter Border Color
 
 $gray-3: #e9e9e9; //Block/Course BG Color
 $gray-2: #f2f2f2;
@@ -220,5 +221,18 @@ body .window-wrap header .left.nav-global {
 
         text-transform: none;
         color: $gray-2 !important;
+    }
+}
+//--------------------
+//  Specific Overrides
+//--------------------
+
+body {
+    // Use a darker gray for the border of controls
+    textarea,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      border: 1px solid $gray-50;
     }
 }
