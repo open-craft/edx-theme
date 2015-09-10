@@ -1,0 +1,27 @@
+<%! 
+from django.utils.translation import ugettext as _ 
+from django.core.urlresolvers import reverse
+%>
+
+<header>
+  <h2 class="sr">${_("Helpful Information")}</h2>
+</header>
+
+% if settings.FEATURES.get('AUTH_USE_OPENID'):
+<!-- <div class="cta cta-login-options-openid">
+  <h3>${_("Login via OpenID")}</h3>
+  <p>${_('You can now start learning with {platform_name} by logging in with your <a rel="external" href="http://openid.net/">OpenID account</a>.').format(platform_name=platform_name)}</p>
+  <a class="action action-login-openid" href="#">${_("Login via OpenID")}</a>
+</div> -->
+% endif
+
+<div class="cta cta-help">
+  <h3>${_("Not Enrolled?")}</h3>
+  <p>Before you <a href="${reverse('register_user')}">register on this platform</a>, you must apply for this program with <a href="https://www.gse.harvard.edu/ppe">HGSE Professional Education</a>.</p>
+
+  ## Disable help unless the FAQ marketing link is enabled
+  % if settings.MKTG_URL_LINK_MAP.get('FAQ'):
+    <h3>${_("Need Help?")}</h3>
+    <p>Looking for help to log into your HGSE Professional Education account? Please email <a href="mailto:ppeIOCE@gse.harvard.edu">ppeIOCE@gse.harvard.edu</a>.</p>
+  % endif
+</div>
