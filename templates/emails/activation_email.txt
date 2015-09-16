@@ -2,11 +2,7 @@
 <%! from django.utils.translation import ugettext as _ %>
 Thank you for registering for Including Ourselves in the Change Equation: Personal Learning for Organizational Performance. An account that will allow you to access course materials has been created for you. Please activate your account by clicking on the link below. If clicking directly does not work, please copy and paste the link directly into your browser.
 
-% if is_secure:
-  https://${ site }/activate/${ key }
-% else:
-  http://${ site }/activate/${ key }
-% endif
+https://openedx.gse.harvard.edu/login
 
 If you are not officially enrolled in this course and would like to explore professional education offerings through the Harvard Graduate School of Education, please visit https://www.gse.harvard.edu/ppe.
 
