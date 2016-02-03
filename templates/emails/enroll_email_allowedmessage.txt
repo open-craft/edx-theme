@@ -1,6 +1,6 @@
 <%! from django.utils.translation import ugettext as _ %>
 
-Thank you for registering for Including Ourselves in the Change Equation: Personal Learning for Organizational Performance. To access course materials, please create an account by clicking on the link below. If clicking directly does not work, please copy and paste the link directly into your browser.
+Thank you for enrolling in ${course.display_name_with_default} at the Harvard Graduate School of Education. You are now invited to register for the program’s online platform. To access course materials, please create an account by clicking on the link below. If clicking directly does not work, please copy and paste the link directly into your browser.
 
 https://openedx.gse.harvard.edu/register
 
