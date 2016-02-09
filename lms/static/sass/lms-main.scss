@@ -63,3 +63,8 @@ footer .references {
     color: $link-color;
   }
 }
+
+// Don't lowercase course about navigation links
+.course-info .container nav a {
+  text-transform: none;
+}
