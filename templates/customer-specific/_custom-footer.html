@@ -1,0 +1,59 @@
+<%page args="theme_folder, footer_links, footer_logo, footer_copyright_text, display_edx_disclaimer, edx_disclaimer, display_poweredby" />
+<%namespace file='../theme-variables.html' import="get_footer_settings" />
+<%! from django.utils.translation import ugettext as _ %>
+
+<footer class="cloudera--footer">
+  <div class="bs-container a--container cloudera--footer__container">
+    <div class="cloudera--footer__left">
+      <ul class="cloudera--footer__menu">
+        % for item in footer_links:
+          <li class="">
+            <a href="${item[1]}" class="${item[2]}" ${item[3]}>${item[0]}</a>
+          </li>
+        % endfor
+        % if get_footer_settings().get('display_app_link', False):
+          <li>
+            <a href="${get_footer_settings().get('app_url')}" target="_blank">
+              <img class="app-store" alt="${_("Apple app on Apple Store")}" src="/static/images/app/app_store_badge_135x40.svg" style="height: 30px; width: auto;">
+            </a>
+          </li>
+        % endif
+      </ul>
+      <div class="cloudera--footer__contact-text">
+        <p>
+          United States: +1 888 789 1488
+        </p>
+        <p>
+          Outside the US: +1 650 362 0488
+        </p>
+      </div>
+      <div class="cloudera--footer__copyright">
+        ${get_footer_settings().get('footer_copyright_text',"")}
+      </div>
+    </div>
+    <div class="cloudera--footer__right">
+      <ul class="cloudera--footer__social-links">
+        <li>
+          <a href="https://www.linkedin.com/company/cloudera" target="_blank"><i class="fa fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/cloudera" target="_blank"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/cloudera" target="_blank"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="http://www.cloudera.com/contact-us.html" target="_blank"><i class="fa fa-envelope"></i></a>
+        </li>
+      </ul>
+      <ul class="cloudera--footer__bottom-right-links">
+        <li>
+          <a href="http://www.cloudera.com/legal/terms-and-conditions.html">Terms & Conditions</a>
+        </li>
+        <li>
+          <a href="http://www.cloudera.com/legal/policies.html">Policies</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

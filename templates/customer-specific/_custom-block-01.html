@@ -1,0 +1,25 @@
+<%page args="template_settings" />
+
+<%
+  extra_css = template_settings.get('extra_css',"")
+  heading = template_settings.get('heading',"")
+  content = template_settings.get('content',"")
+  cta_link = template_settings.get('cta_link',"")
+  cta_text = template_settings.get('cta_text',"")
+  image_url = template_settings.get('image_url',"")
+%>
+
+<section class="cloudera--custom-block-01" style="${extra_css}">
+  <div class="bs-container a--container cloudera--custom-block-01__container">
+    <div class="cloudera--custom-block-01__content">
+      <h2>${heading}</h2>
+      ${content}
+      % if cta_link:
+        <a href="${cta_link}" class="cloudera--cta-button">${cta_text}</a>
+      % endif
+    </div>
+    <div class="cloudera--custom-block-01__graphic">
+      <img src="${image_url}" role="presentation" />
+    </div>
+  </div>
+</section>
