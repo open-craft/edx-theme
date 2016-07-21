@@ -36,15 +36,15 @@ Screenshots
 
 ![Alt text](/theme-index.jpg?raw=true "Index page screenshot")
 
-Index page using the following blocks: hero-section-01, heading-plus-text-plus-cta, line-separator, course-listing-01 with course-tile-01 tile template, headig-plus-text-plus-cta, photo-grid-01
+Index page
 
 ![Alt text](/theme-courses.jpg?raw=true "Course catalogue page screenshot")
 
-Course catalogue page using the following blocks: hero-section-01, course-catalogue-01; with course tile set to course-tile-02, and discovery facet set to facet-01 and search input set to discovery-search-01.
+Course catalogue page
 
 ![Alt text](/theme-course-about.jpg?raw=true "Open edX Default Theme Screenshot")
 
-Single course about page using the following blocks: course-about-01, line separator, heading-plus-text-plus-cta
+Single course about page
 
 ![Alt text](/theme-register.jpg?raw=true "Open edX Default Theme Screenshot")
 
