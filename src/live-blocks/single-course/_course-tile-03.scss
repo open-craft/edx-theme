@@ -51,6 +51,7 @@
     margin: 0 0 1.5rem;
     color: $brand-primary-color;
     display: block;
+    line-height: 120%;
   }
 
   &__separator-line {
@@ -84,5 +85,12 @@
   &__more-info {
     @include primary-font-bold;
     font-size: 1.6rem;
+  }
+}
+
+.a--course-tile-03-parent-element {
+
+  li.courses-listing-item {
+    list-style-type: none;
   }
 }
