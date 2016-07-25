@@ -17,7 +17,7 @@
 
   @media(min-width: $screen-sm-min) {
     @include display(flex);
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
 
     &__image {
       display: block;
