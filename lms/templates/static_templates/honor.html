@@ -1,0 +1,108 @@
+<%page expression_filter="h"/>
+<%!
+from django.utils.translation import ugettext as _
+from openedx.core.djangolib.markup import HTML, Text
+%>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Honor Code")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+  <section class="container about">
+    <h1>${_("Honor Code")}</h1>
+
+    <h2>${_("Student Consent Form")}</h2>
+
+    <h2>${_("Title of Research Project:")}</h2>
+    <p>
+      ${_("Leveraging New Paradigms and Disruptive Technologies to Successfully Orchestrate Pedagogical Change")}
+    </p>
+
+    <h2>${_("Project Funding:")}</h2>
+    <p>
+      ${_("This project is funded by Social Sciences and Humanities Research Council (SSHRC) Community and College Social Innovation Fund (CCSIF) program. SSHRC is a Federal funding agency.")}
+    </p>
+
+    <h2>${_("Research team:")}</h2>
+    <p>
+      ${_("Dr. Elizabeth S. Charles, Dr. Kevin Lenton (Vanier College), Dr. Rob Cassidy (Dawson College), and Dr. Nathaniel Lasry (John Abbott College), Sameer Bhatnagar (Dawson College), Chris Whittaker (Dawson College), Michael Dugdale (John Abbott College) and their research assistants.")}
+    </p>
+
+    <hr>
+
+    <h2>${_("Dear Student:")}</h2>
+    <p>
+      ${_("You are being invited to participate in the research study named above and conducted by the stated researchers because of the pedagogical approaches being used by your instructor. Your instructor is a participant in the research project and has given permission for his/her teaching to be observed, are now asking for your permission to use data from these observations that may include you. The purpose of this informed consent form is to help you make a decision about study participation. This document will explain the conditions, benefits and risks involved in this research.")}
+    </p>
+
+    <h2>${_("Research Purpose:")}</h2>
+    <p>
+      ${Text(_("The purpose of this research project is to investigate how best to design technology solutions to better match the aims of {italics_start}active learning{italics_end}{sup_start}1{sup_end} teaching approaches. Additionally, it hopes to examine how students work with these technologies (together and individually) and what supports might be required to improve this work.")).format(italics_start=HTML('<i>'), italics_end=HTML('</i>'), sup_start=HTML('<sup>'), sup_end=HTML('</sup>'))}
+    </p>
+    <p>
+      ${_("The hope of this research is to increase students' capacity to learn and increase the benefit of active learning pedagogies. This research also hopes to improve and increase the availability of technologies that are relevant and affective at supporting learning.")}
+    </p>
+
+    <p>
+      <sup>1</sup>${_("Active Learning is an approach to teaching that puts the focus on students \"doing\" compared to teacher's \"telling\". Specifically, it means designing classroom activities that ask students to engage with each other and with the course material in such a way that the teacher can observe \"how\" students are understanding the learning tasks and content/concepts and identify where they are having difficulties. In most instances these activities require students to work collaboratively with peers as they practice the skills and apply the knowledge of the discipline.")}
+    <p>
+
+    <h2>${_("Research Method/Procedure:")}</h2>
+    <p>
+      ${_("This study asks to collect the following data: (1) video and audio recordings of in-class observations; (2) copies of relevant assignments, including online homework, if any: (3) results of class tests, quizzes and final exam and 1-2 questionnaires (between 20-30 questions). You may choose to give permission for researchers to access one, two or all three, or any combination, or none of the data (see the choices below).")}
+    </p>
+    <p>
+      ${Text(_("The principal researcher, or a member of the research team, who is {under_start}neither{under_end} your instructor {under_start}nor{under_end} a member of his/her department at your College, will collect these data.")).format(under_start=HTML('<u>'), under_end=HTML('</u>'))}
+    </p>
+    <p>
+      ${_("We will be looking at how you use technology tools and software both in class and as online. We will also look at what your teacher does to help you work with these learning tools. Participants are not required to do anything over and above their normal class activity.")}
+    </p>
+
+
+    <h2>${_("Risks/Benefits of Participation:")}</h2>
+    <p>
+      ${_("By participating in this research you will be helping the research team understand how to improve the design of technology to support active learning teaching approaches. Additionally, you will likely become more aware of your learning, in doing so you may do better in this course.")}
+    </p>
+    <p>
+      ${_("We are not requiring you to do anything beyond what is expected in your course. We do not anticipate any risks associated with your participation in this study. You may feel uncomfortable answering some of the questions of the questionnaire. You will not receive any compensation or payment for taking part in this study.")}
+    </p>
+
+    <h2>${_("Confidentiality:")}</h2>
+    <p>
+      ${Text(_("All information collected for the purpose of this research will be kept strictly confidential. {strong_start}NO NAMES OR ANY OTHER IDENTIFICATION WILL BE USED IN ANY PUBLICATION(S) THAT MAY RESULT OUT OF THIS STUDY.{strong_end} To ensure this, all {under_start}hard copy{under_end} data (questionnaire, course related materials, etc.) will be assigned a specified code. Only the research team (listed above) and their research assistant(s) will have permission to analyze these anonymous data. The analysis of the data will in no way effect your marks in this course and to ensure this, your teacher will not be involved in the analysis of your data. All original {under_start}video/audio{under_end} data will be analyzed only by the research team (those names listed above but {under_start}excluding{under_end} your current teacher) and the project's research assistant(s). Segments of these video data may be presented at conferences and other academic events. All transcriptions of these files will protect your identity by replacing your name with a code that is known only to the researchers. Any references made to other individuals will also be removed or replaced with a code (e.g., any Dawson faculty or personnel).")).format(strong_start=HTML('<strong>'), strong_end=HTML('</strong>'), under_start=HTML('<u>'), under_end=HTML('</u>'))}
+    </p>
+
+    <h2>${_("Use of Data and Findings:")}</h2>
+    <p>
+      ${_("All hard copy data (survey responses, course materials, transcripts, etc.) will be stored in a secure location within locked cabinets. Electronic files (audio/video recordings, digitized materials, etc.) will be password protected and stored on portable hard drives or the cloud.")}
+    </p>
+    <p>
+      ${_("Data collected by this project may be published, used with other data sets, and/or used in a future study, or series of studies, on the research topic. The data will be destroyed on or before ten (10) years from the start of the study, or seven (7) years from the data of publication.")}
+    </p>
+
+    <h2>${_("Participant Rights:")}</h2>
+    <p>
+      ${Text(_("YOUR PARTICIPATION IS VOLUNTARY. You have the right to decline participation in any or all parts of this study {strong_start}(N.B., declining participation in the study does not exclude you from doing the individual and group work, which is a normal part of your course).{strong_end} Also, you have the right to ask questions and to withdraw from the study at any time without penalty. Your decision not to participate or to withdraw will in no way affect your standing in this or any course(s), or in your program(s) at your respective College, or elsewhere. If you withdraw the data you have provided to that point will be removed from the study immediately.")).format(strong_start=HTML('<strong>'), strong_end=HTML('</strong>'))}
+    </p>
+
+    <h2>${_("Support Professional(s) External to project:")}</h2>
+    <p>
+      ${_("Any questions you have with respect to this research or changes to your consent should be addressed to the principal researcher: Dr. Elizabeth Charles echarles@place.dawsoncollege.qc.ca 931-8731, ext. 1547.")}
+    </p>
+    <p>
+      ${_("Participants may contact the following qualified and impartial counseling services if they wish to access such support as a result of their participation in the research project. Name: Susan Wileman, Title: Counselor, Contact information: ext. 1190")}
+    </p>
+    <p>
+      ${_("Participants may contact the following qualified Ombudsperson in the event that they wish to file a complaint arising from their participation in the research project. Name: Michele Pallett, College Ombudsperson. Contact information: at 931-8731, ext. 1191.")}
+    </p>
+
+    <hr>
+
+    <p>
+      ${_("Please retain this document for your records.")}
+    </p>
+
+    <hr>
+
+  </section>
+</main>
