@@ -25,13 +25,8 @@ from microsite_configuration import microsite
           % if homepage_overlay_html:
             ${homepage_overlay_html}
           % else:
-            % if self.stanford_theme_enabled():
-              <h1>${_("Free courses from <strong>{university_name}</strong>").format(university_name="Stanford")}</h1>
-              <h2>${_("For anyone, anywhere, anytime")}</h2>
-            % else:
-              <h1>Harvard Graduate School of Education Online</h1>
-              <h2>Research &bull; Practice &bull; Learning &bull; Leadership</h2>
-            % endif
+            <h1>Harvard Graduate School of Education Online</h1>
+            <h2>Research &bull; Practice &bull; Learning &bull; Leadership</h2>
           % endif
         </hgroup>
         % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
@@ -87,8 +82,6 @@ from microsite_configuration import microsite
   <div class="inner-wrapper">
     <%
       youtube_video_id = homepage_promo_video_youtube_id
-      if self.stanford_theme_enabled():
-        youtube_video_id = "2gmreZObCY4"
     %>
     <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
   </div>

@@ -2,7 +2,7 @@
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 %>
-<%namespace file='main.html' import="login_query, stanford_theme_enabled"/>
+<%namespace file='main.html' import="login_query"/>
 <%namespace name='static' file='static_content.html'/>
 
 
@@ -25,20 +25,14 @@ from django.core.urlresolvers import reverse
 
 ## TODO: Use a %block tag or something to allow themes to
 ##       override in a more generalizable fashion.
-% if not stanford_theme_enabled():
-  <div class="cta cta-welcome">
-    <h3>Welcome to HGSE Professional Education</h3>
-    <p>Registering here will provide access to selected future free courses and add you to our mailing list. You will receive updates as future courses are added. However, it does not register you for any current courses.</p>
-  </div>
-% endif
+<div class="cta cta-welcome">
+  <h3>Welcome to HGSE Professional Education</h3>
+  <p>Registering here will provide access to selected future free courses and add you to our mailing list. You will receive updates as future courses are added. However, it does not register you for any current courses.</p>
+</div>
 
 <div class="cta cta-nextsteps">
   <h3>${_("Next Steps")}</h3>
-  % if stanford_theme_enabled():
-    <p>${_("You will receive an activation email.  You must click on the activation link to complete the process.  Don't see the email?  Check your spam folder and mark emails from class.stanford.edu as 'not spam', since you'll want to be able to receive email from your courses.")}</p>
-  % else:
-    <p>After submitting this form, you will receive an activation email. You must click on the activation link provided in that email to complete the process. Don't see the email? Check your spam folder and mark our emails as 'not spam'.</p>
-  % endif
+  <p>After submitting this form, you will receive an activation email. You must click on the activation link provided in that email to complete the process. Don't see the email? Check your spam folder and mark our emails as 'not spam'.</p>
 </div>
 
 % if settings.MKTG_URL_LINK_MAP.get('FAQ'):
