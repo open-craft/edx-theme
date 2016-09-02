@@ -6,6 +6,14 @@
 // with the rest of the site.
 @import 'lms/static/sass/course/layout/courseware_header';
 
-footer#openedx-footer {
+.wrapper-course-material .course-tabs {
+  padding-bottom: 0;
+}
+
+.header-global.slim .wrapper-header {
+  height: 45px;
+}
+
+footer#footer-openedx {
   max-width: 1200px;
 }
