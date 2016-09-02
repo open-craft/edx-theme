@@ -1,2 +1,14 @@
 @import 'lms/static/sass/lms-main-v1';
 @import 'overrides';
+
+.home > header .title > hgroup {
+  h1 {
+    margin-bottom: 0.25em;
+  }
+  h2 {
+    font-style: italic;
+    text-transform: lowercase;
+    text-align: center;
+    margin: 0;
+  }
+}
