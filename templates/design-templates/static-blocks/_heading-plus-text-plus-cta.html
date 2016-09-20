@@ -1,4 +1,5 @@
 <%page args="template_settings" />
+<%! from django.utils.translation import ugettext as _ %>
 
 <%
   heading = template_settings['heading']
@@ -13,11 +14,11 @@
 
 <section class="a--heading-plus-text-plus-cta ${optional_classes}" style="color: ${text_color}; background-color: ${background_color}; ${extra_css}">
   <div class="bs-container a--container a--heading-plus-text-plus-cta__container">
-      <h2>${heading}</h2>
-      ${text}
+      <h2>${_(heading)}</h2>
+      ${_(text)}
       <div class="a--heading-plus-text-plus-cta__cta-container">
         % if cta_link:
-          <a href="${cta_link}" class="a--cta">${cta_link_text}</a>
+          <a href="${cta_link}" class="a--cta">${_(cta_link_text)}</a>
         % endif
       </div>
   </div>

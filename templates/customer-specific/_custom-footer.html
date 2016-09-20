@@ -1,6 +1,6 @@
 <%page args="theme_folder, footer_links, footer_logo, footer_copyright_text, display_edx_disclaimer, edx_disclaimer, display_poweredby" />
 <%namespace file='../theme-variables.html' import="get_footer_settings" />
-<%! from django.utils.translation import ugettext as _ %>
+<%! from django.utils.translation import ugettext_lazy as _ %>
 
 <footer class="cloudera--footer">
   <div class="bs-container a--container cloudera--footer__container">
@@ -8,7 +8,7 @@
       <ul class="cloudera--footer__menu">
         % for item in footer_links:
           <li class="">
-            <a href="${item[1]}" class="${item[2]}" ${item[3]}>${item[0]}</a>
+            <a href="${item[1]}" class="${item[2]}" ${item[3]}>${_(item[0])}</a>
           </li>
         % endfor
         % if get_footer_settings().get('display_app_link', False):
@@ -21,14 +21,14 @@
       </ul>
       <div class="cloudera--footer__contact-text">
         <p>
-          United States: +1 888 789 1488
+          ${_("United States: +1 888 789 1488")}
         </p>
         <p>
-          Outside the US: +1 650 362 0488
+          ${_("Outside the US: +1 650 362 0488")}
         </p>
       </div>
       <div class="cloudera--footer__copyright">
-        ${get_footer_settings().get('footer_copyright_text',"")}
+        ${_(get_footer_settings().get('footer_copyright_text',""))}
       </div>
     </div>
     <div class="cloudera--footer__right">
@@ -48,10 +48,10 @@
       </ul>
       <ul class="cloudera--footer__bottom-right-links">
         <li>
-          <a href="http://www.cloudera.com/legal/terms-and-conditions.html">Terms & Conditions</a>
+          <a href="http://www.cloudera.com/legal/terms-and-conditions.html">${_("Terms & Conditions")}</a>
         </li>
         <li>
-          <a href="http://www.cloudera.com/legal/policies.html">Policies</a>
+          <a href="http://www.cloudera.com/legal/policies.html">${_("Policies")}</a>
         </li>
       </ul>
     </div>

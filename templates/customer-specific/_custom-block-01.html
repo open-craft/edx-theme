@@ -1,4 +1,5 @@
 <%page args="template_settings" />
+<%! from django.utils.translation import ugettext_lazy as _ %>
 
 <%
   extra_css = template_settings.get('extra_css',"")
@@ -12,10 +13,10 @@
 <section class="cloudera--custom-block-01" style="${extra_css}">
   <div class="bs-container a--container cloudera--custom-block-01__container">
     <div class="cloudera--custom-block-01__content">
-      <h2>${heading}</h2>
-      ${content}
+      <h2>${_(heading)}</h2>
+      ${_(content)}
       % if cta_link:
-        <a href="${cta_link}" class="cloudera--cta-button">${cta_text}</a>
+        <a href="${cta_link}" class="cloudera--cta-button">${_(cta_text)}</a>
       % endif
     </div>
     <div class="cloudera--custom-block-01__graphic">

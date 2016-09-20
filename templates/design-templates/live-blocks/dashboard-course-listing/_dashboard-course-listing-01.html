@@ -25,7 +25,7 @@ from django.core.urlresolvers import reverse
       data-course-key="${enrollment.course_id}" class="a--dashboard-course-listing-01__course-image" style="background-image: url('${course_overview.course_image_url}');" alt="${_('{course_number} {course_name} Home Page').format(course_number=course_overview.number, course_name=course_overview.display_name_with_default) |h}">
       % if is_course_blocked:
         <span class="course-blocked-overlay"></span>
-        <span class="course-blocked-label">Blocked</span>
+        <span class="course-blocked-label">${_("Blocked")}</span>
       % endif
     </a>
     <div class="a--dashboard-course-listing-01__details-wrapper">
@@ -37,11 +37,11 @@ from django.core.urlresolvers import reverse
               href="${course_target}"
             % endif
             class="a--dashboard-course-listing-01__course-name">
-              ${course_overview.display_name_with_default}
+              ${_(course_overview.display_name_with_default)}
             </a>
         % else:
           <h2 class="a--dashboard-course-listing-01__course-name">
-            ${course_overview.display_name_with_default}
+            ${_(course_overview.display_name_with_default)}
           </h2>
         % endif
         <!-- course-organisation -->

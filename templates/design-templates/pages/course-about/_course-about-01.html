@@ -36,10 +36,10 @@ from django.utils.translation import ugettext as _
       <p class="a--course-about-01__header__description">${course_vars['short_description']}</p>
       % if course_vars['course_about_show_social_links']:
         <div class="a--course-about-01__social-share">
-          <span class="a--course-about-01__social-share__helper expand-on-parent-hover">Share this course on:</span>
-          <a href="${course_vars['twitter_href']}" class="a--twitter"><i class="fa fa-twitter"></i></a>
-          <a href="${course_vars['facebook_href']}" class="a--facebook"><i class="fa fa-facebook"></i></a>
-          <a href="${course_vars['email_href']}" class="a--email"><i class="fa fa-envelope"></i></a>
+          <span class="a--course-about-01__social-share__helper expand-on-parent-hover">${_("Share this course on:")}</span>
+          <a href="${course_vars['twitter_href']}" class="a--twitter"><span class="sr-only">${_("Share on Twitter!")}</span><i class="fa fa-twitter"></i></a>
+          <a href="${course_vars['facebook_href']}" class="a--facebook"><span class="sr-only">${_("Share on Facebook!")}</span><i class="fa fa-facebook"></i></a>
+          <a href="${course_vars['email_href']}" class="a--email"><span class="sr-only">${_("Share by email!")}</span><i class="fa fa-envelope"></i></a>
         </div>
       % endif
       <div class="a--course-about-01__courseware-button-wrapper">
@@ -113,15 +113,15 @@ from django.utils.translation import ugettext as _
   <div class="bs-container a--container a--course-about-01__content__container">
     <ul class="a--course-about-01__info">
 
-      <li><i class="fa fa-info-circle"></i><p>${_("Course Number")}</p><span>${course_vars['course_number']}</span></li>
+      <li><i class="fa fa-info-circle"></i><p>${_("Course Number")}</p><span>${_(course_vars['course_number'])}</span></li>
       % if course_vars['course_display_start_date']:
-        <li><i class="fa fa-calendar"></i><p>${_("Classes Start")}</p><span>${course_vars['course_start_date']}</span></li>
+        <li><i class="fa fa-calendar"></i><p>${_("Classes Start")}</p><span>${_(course_vars['course_start_date'])}</span></li>
       % endif
       % if course_vars['course_end_date']:
-        <li><i class="fa fa-calendar"></i><p>${_("Classes End")}</p><span>${course_vars['course_end_date']}</span></li>
+        <li><i class="fa fa-calendar"></i><p>${_("Classes End")}</p><span>${_(course_vars['course_end_date'])}</span></li>
       % endif
       % if course_vars['course_effort']:
-        <li><i class="fa fa-pencil"></i><p>${_("Estimated Effort")}</p><span>${course_vars['course_effort']}/week</span></li>
+        <li><i class="fa fa-pencil"></i><p>${_("Estimated Effort")}</p><span>${_(course_vars['course_effort'])}/week</span></li>
       % endif
       % if course_vars['course_price'] and course_vars['can_add_course_to_cart']:
         <li><i class="fa fa-dollar"></i><p>${_("Price")}</p><span>${course_vars['course_price']}</span></li>

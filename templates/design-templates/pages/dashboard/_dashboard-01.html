@@ -20,12 +20,12 @@ from django.core.urlresolvers import reverse
     <ul class="bs-container a--container a--dashboard-01__notifications__container">
       % if message:
         <li class="a--dashboard-01__notifications__notification">
-          ${message}
+          ${_(message)}
         </li>
       % endif
       % if enrollment_message:
         <li class="a--dashboard-01__notifications__notification">
-          ${enrollment_message}
+          ${_(enrollment_message)}
         </li>
       % endif
     </ul>
@@ -81,7 +81,7 @@ from django.core.urlresolvers import reverse
       <aside class="a--dashboard-01__main__sidebar">
         % if get_dashboard_settings()['promote_course_catalog']:
         <div class="a--dashboard-01__promote-catalog">
-          <p>${get_dashboard_settings()['promote_course_catalog_text']}</p>
+          <p>${_(get_dashboard_settings()['promote_course_catalog_text'])}</p>
           <a class="a--dashboard-01__promote-catalog__cta" href="${marketing_link('COURSES')}">${_("Find courses now!")}</a>
         </div>
         % endif

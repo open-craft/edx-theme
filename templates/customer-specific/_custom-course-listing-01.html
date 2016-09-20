@@ -1,5 +1,7 @@
 <%page args="template_settings, courses" />
 
+<%! from django.utils.translation import ugettext_lazy as _ %>
+
 <%
   max_courses = template_settings['max_courses']
   courses = courses
@@ -18,12 +20,12 @@
       <div class="cloudera--course-listing-01__header">
         % if template_settings['section_heading']:
           <h1 class="cloudera--course-listing-01__section-heading">
-            ${template_settings['section_heading']}
+            ${_(template_settings['section_heading'])}
           </h1>
         % endif
         % if template_settings['section_text']:
           <div class="cloudera--course-listing-01__section-text">
-              ${template_settings['section_text']}
+              ${_(template_settings['section_text'])}
           </div>
         % endif
       </div>

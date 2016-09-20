@@ -39,11 +39,11 @@ $(document).ready(function(){
 
 <section class="a--courseware-wrapper">
   % if user.is_authenticated():
-
+    % if studio_url is not None and masquerade and masquerade.role == 'staff':
     <div class="a--courseware-wrapper__admin-notifications bs-container a--container">
       <a class="a--courseware-wrapper__admin-notifications__cta" href="${studio_url}">${_("View Updates in Studio")}</a>
     </div>
-    
+    % endif
   % endif
 
 

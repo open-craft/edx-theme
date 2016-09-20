@@ -1,4 +1,5 @@
 <%page args="template_settings" />
+<%! from django.utils.translation import ugettext_lazy as _ %>
 
 <%
   text_color = template_settings.get('text_color',"")
@@ -12,14 +13,14 @@
   <div class="bs-container a--container cloudera--hero-section__container">
     <div class="cloudera--hero-section__content-wrapper">
       <div class="cloudera--hero-section__content">
-        <h1>${template_settings['hero_title']}</h1>
-        <h4>${template_settings['hero_subtitle']}</h4>
+        <h1>${_(template_settings['hero_title'])}</h1>
+        <h4>${_(template_settings['hero_subtitle'])}</h4>
         <div class="cloudera--hero-section__cta-container">
           % if template_settings['popup_video_url']:
-            <a href="#" data-toggle="modal" data-target="#${template_settings['popup_video_id']}Modal" class="a--cta">${template_settings['popup_video_text']}</a>
+            <a href="#" data-toggle="modal" data-target="#${template_settings['popup_video_id']}Modal" class="a--cta">${_(template_settings['popup_video_text'])}</a>
           % endif
           % if template_settings['cta_link']:
-            <a href="${template_settings['cta_link']}" class="a--cta">${template_settings['cta_link_text']}</a>
+            <a href="${template_settings['cta_link']}" class="a--cta">${_(template_settings['cta_link_text'])}</a>
           % endif
         </div>
       </div>

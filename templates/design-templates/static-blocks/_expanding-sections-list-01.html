@@ -1,4 +1,5 @@
 <%page args="template_settings" />
+<%! from django.utils.translation import ugettext as _ %>
 
 <%
   content = template_settings['content']
@@ -11,10 +12,10 @@
     % for item in content:
       <li class="a--expanding-sections-list-01__item a--expanding-section">
         <h3 class="a--expanding-sections-list-01__item__title">
-          ${item[0]}
+          ${_(item[0])}
         </h3>
         <div class="a--expanding-sections-list-01__item__content a--expanding-section__target">
-          ${item[1]}
+          ${_(item[1])}
         </div>
       </li>
     % endfor

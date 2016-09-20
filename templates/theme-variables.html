@@ -103,9 +103,9 @@
   <%
     return {
       'footer_logo' : get_brand_logos()['icon_black'], ## leave as is, defined above. Can be changed to something custom if needed.
-      'footer_copyright_text' : '© Copyright 2010-2016 Cloudera. All rights reserved. Not to be reproduced or shared without prior written consent from Cloudera.',  ## leave value empty if you don't want it displayed.
+      'footer_copyright_text' : u'© Copyright 2010-2016 Cloudera. All rights reserved. Not to be reproduced or shared without prior written consent from Cloudera.',  ## leave value empty if you don't want it displayed.
       'display_edx_disclaimer' : True, ## bool value required
-      'edx_disclaimer' : 'edX, Open edX and the edX and Open edX logos are trademarks or registered trademarks of edX Inc.', ## leave value empty if you don't want it displayed.
+      'edx_disclaimer' : u'edX, Open edX and the edX and Open edX logos are trademarks or registered trademarks of edX Inc.', ## leave value empty if you don't want it displayed.
       'display_poweredby' : True, ## bool value required
       'display_app_link' : False,
       'app_url' : 'https://itunes.apple.com/app/id1044418100'
@@ -130,12 +130,12 @@
         [
           'static-block', '../customer-specific/_hero-section-cloudera.html', {
             # template settings
-            'hero_title' : "Cloudera OnDemand", ## leave value empty if you don't want it displayed.
-            'hero_subtitle' : "Bringing Cloudera-related classes directly to you.", ## leave value empty if you don't want it displayed.
+            'hero_title' : u"Cloudera OnDemand", ## leave value empty if you don't want it displayed.
+            'hero_subtitle' : u"Bringing Cloudera-related classes directly to you.", ## leave value empty if you don't want it displayed.
             'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : u"", ## leave value empty if you don't want a CTA button displayed.
             'popup_video_url' : "nLzOtJWWrrw", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
-            'popup_video_text' : "TRAINING INTRO VIDEO", ## leave value empty if you don't want a video button and modal displayed.
+            'popup_video_text' : u"TRAINING INTRO VIDEO", ## leave value empty if you don't want a video button and modal displayed.
             'popup_video_id' : "HeroVideo", ## leave value empty if you don't want a video button and modal displayed.
             'text_color' : "#fff",
             'bg_image_url' : '/static/themes/cloudera-dogwood/images/client-specific/girl-bg.jpg', ## leave empty if you want just a full color background
@@ -146,10 +146,10 @@
         [
           'static-block', '../customer-specific/_custom-block-01.html', {
             # template settings
-            'heading' : "Training to meet your needs", ## leave value empty if you don't want it displayed.
-            'content' : '<p>Cloudera OnDemand provides a video training option where you can learn from senior instructors—who deliver our most popular courses in a virtual classroom setting—without incurring travel costs or time away from the office.</p><p>Cloudera OnDemand training is designed to facilitate individual, or enterprise-wide, training to help accelerate the ROI of Cloudera deployments. Get access to all of Cloudera’s training courses in a single package, or choose the course(s) specific to you needs.</p>', ## leave value empty if you don't want it displayed.
+            'heading' : u"Training to meet your needs", ## leave value empty if you don't want it displayed.
+            'content' : u'<p>Cloudera OnDemand provides a video training option where you can learn from senior instructors—who deliver our most popular courses in a virtual classroom setting—without incurring travel costs or time away from the office.</p><p>Cloudera OnDemand training is designed to facilitate individual, or enterprise-wide, training to help accelerate the ROI of Cloudera deployments. Get access to all of Cloudera’s training courses in a single package, or choose the course(s) specific to you needs.</p>', ## leave value empty if you don't want it displayed.
             'cta_link' : "/login", ## leave value empty if you don't want a CTA button displayed.
-            'cta_text' : "Sign in", ## leave value empty if you don't want a CTA button displayed.
+            'cta_text' : u"Sign in", ## leave value empty if you don't want a CTA button displayed.
             'image_url' : "/static/themes/cloudera-dogwood/images/client-specific/Cloudera_Data_Art_Color_12_medium.png", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
@@ -160,8 +160,8 @@
             'max_courses' : 3, ## required, sets max number of courses to be displayed in the block
             'course_template_class' : 'cloudera--course-tile-01', ## required, defined as "a--{template-name}"
             'course_template' : 'customer-specific/_custom-course-tile-01.html', ## required
-            'section_heading' : "Features and new courses", ## leave value empty if you don't want it displayed.
-            'section_text' : "Cloudera is consistently updating our OnDemand program with new features and new courses throughout the year. We are currently highlighting the following classes:", ## leave value empty if you don't want it displayed.
+            'section_heading' : u"Features and new courses", ## leave value empty if you don't want it displayed.
+            'section_text' : u"Cloudera is consistently updating our OnDemand program with new features and new courses throughout the year. We are currently highlighting the following classes:", ## leave value empty if you don't want it displayed.
             'optional_classes' : "centered", ## can be "centered" to have all text centered
             'extra_css' : "background-color: #F1F0F1;" ## add custom css to be added inline to the wrapper element
           }
@@ -169,8 +169,8 @@
         [
           'static-block', '../customer-specific/_custom-block-02.html', {
             # template settings
-            'heading' : "About Cloudera", ## leave value empty if you don't want it displayed.
-            'content' : "<p>No one knows Apache Hadoop like Cloudera!</p><p>We provide the world’s fastest, easiest, and most secure data platform built on Hadoop. We help solve your most demanding business challenges with data.</p>", ## leave value empty if you don't want it displayed.
+            'heading' : u"About Cloudera", ## leave value empty if you don't want it displayed.
+            'content' : u"<p>No one knows Apache Hadoop like Cloudera!</p><p>We provide the world’s fastest, easiest, and most secure data platform built on Hadoop. We help solve your most demanding business challenges with data.</p>", ## leave value empty if you don't want it displayed.
             'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
             'cta_text' : "", ## leave value empty if you don't want a CTA button displayed.
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
@@ -204,17 +204,6 @@
           'courses-list', 'static-blocks/_line-separator.html', {
             # template settings
             'optional_classes' : "", ## if none line will have height of 0.1rem (1px by default), can be set to "2px", "5px" or "8px"
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
-            # template settings
-            'heading' : "Optional content title", ## leave value empty if you don't want it displayed.
-            'text' : "<p>You can add some additional content here. You can add a CTA under this section as well.</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>", ## leave value empty if you don't want it displayed.
-            'cta_link' : "#", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "CTA button", ## leave value empty if you don't want a CTA button displayed.
-            'optional_classes' : "centered", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ]
@@ -254,7 +243,7 @@
       [
         'static-block', '../customer-specific/_hero-section-cloudera.html', {
           # template settings
-          'hero_title' : "Browse our courses", ## leave value empty if you don't want it displayed.
+          'hero_title' : u"Browse our courses", ## leave value empty if you don't want it displayed.
           'hero_subtitle' : '<p style="font-size: 2rem; font-weight: bolder;">Explore courses from Cloudera OnDemand.</p>', ## leave value empty if you don't want it displayed.
           'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
           'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
