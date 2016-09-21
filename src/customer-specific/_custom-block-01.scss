@@ -1,0 +1,68 @@
+.cloudera--custom-block-01 {
+  padding: 8rem 0;
+  line-height: 150%;
+  background-color: #fff;
+
+  &__container {
+    @include display(flex);
+    @include align-items(center);
+
+    @media (max-width: $screen-sm-max) {
+      @include flex-wrap(wrap);
+    }
+  }
+
+  &__content {
+    @include flex-shrink(0);
+    width: 60%;
+    margin-right: 3rem;
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    h2 {
+      @include big-headings-font;
+      font-size: 3.6rem;
+      margin: 0 0 3rem;
+      color: $brand-primary-color;
+      text-transform: none;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+  }
+
+  a.cloudera--cta-button {
+    background-color: transparent;
+    border: 0.1rem solid $brand-accent-color;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    margin: 3rem 0 0 0;
+    font-size: 1.6rem;
+    @include primary-font;
+    color: $brand-accent-color;
+    @include button_radius;
+    @include button_splash($buttons-border-radius);
+
+    &:hover, &:focus {
+      color: #fff;
+      background-color: $brand-accent-color;
+    }
+  }
+
+  &__graphic {
+    width: 100%;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+      max-width: 36rem;
+    }
+  }
+}
