@@ -6,7 +6,7 @@
       <p class="a--course-tile-03__title"><%= content.display_name %></p>
       <span class="a--course-tile-03__separator-line"></span>
       <% if (typeof(advertised_start) == "undefined") { %>
-        <p class="a--course-tile-03__start-date"><span>Starts on:</span>
+        <p class="a--course-tile-03__start-date"><span>Starts on: </span>
           <%= interpolate(
             gettext("%(start_date)s"),
             { start_date: start }, true

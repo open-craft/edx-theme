@@ -11,11 +11,7 @@
 <%
   course_info = get_course_info(course)
   course_image = course_info['course_image']
-  if course_overview.start_datetime_text("SHORT_DATE"):
-    course_start_text = course_overview.start_datetime_text("SHORT_DATE")
-  else:
-    course_start_text = "TBA"
-  endif
+  course_start_text = course_overview.get(start_datetime_text("SHORT_DATE"),"")
 %>
 
 <article id="course_info['id']" class="a--course-tile-03" aria-label="${course_info['course_title']}">
@@ -26,7 +22,7 @@
       <p class="a--course-tile-03__title">${_(course_info['course_title'])}</p>
       <span class="a--course-tile-03__separator-line" role="presentation"></span>
       % if bool(re.match('.*elf.*aced.*', course_start_text)):
-        <p class="a--course-tile-03__start-date">blabla ${_(course_start_text)}</p>
+        <p class="a--course-tile-03__start-date">${_(course_start_text)}</p>
       % else:
         <p class="a--course-tile-03__start-date">${_(course_info['course_start_date'])}</p>
       % endif
