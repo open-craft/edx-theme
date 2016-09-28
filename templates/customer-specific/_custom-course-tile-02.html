@@ -1,6 +1,6 @@
 <%page args="course" />
 <%!
-  from django.utils.translation import ugettext as _
+  from django.utils.translation import ugettext_lazy as _
   import re
 %>
 <%
@@ -25,7 +25,7 @@
       % else:
         <p class="a--course-tile-03__start-date">${_("Starts on:")} ${_(course_info['course_start_date'])}</p>
       % endif
-      <p class="a--course-tile-03__description">${_(course_info['course_short_description'])}</p>
+      <p class="a--course-tile-03__description">${course_info['course_short_description']}</p>
       <a class="a--course-tile-03__more-info" href="${course_info['course_url']}">Learn more...</a>
     </div>
   </div>
