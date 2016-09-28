@@ -1,6 +1,6 @@
 <%page args="course" />
-<%! 
-  from django.utils.translation import ugettext as _ 
+<%!
+  from django.utils.translation import ugettext as _
   import re
 %>
 <%
@@ -11,6 +11,11 @@
 <%
   course_info = get_course_info(course)
   course_image = course_info['course_image']
+  if course_overview.start_datetime_text("SHORT_DATE"):
+    course_start_text = course_overview.start_datetime_text("SHORT_DATE")
+  else:
+    course_start_text = "TBA"
+  endif
 %>
 
 <article id="course_info['id']" class="a--course-tile-03" aria-label="${course_info['course_title']}">
@@ -20,8 +25,8 @@
       <p class="a--course-tile-03__code">${_(course_info['course_code'])}</p>
       <p class="a--course-tile-03__title">${_(course_info['course_title'])}</p>
       <span class="a--course-tile-03__separator-line" role="presentation"></span>
-      % if bool(re.match('.*elf.*aced.*', course_overview.start_datetime_text("SHORT_DATE"))):
-        <p class="a--course-tile-03__start-date">${_(course.start_datetime_text("SHORT_DATE"))}</p>
+      % if bool(re.match('.*elf.*aced.*', course_start_text)):
+        <p class="a--course-tile-03__start-date">blabla ${_(course_start_text)}</p>
       % else:
         <p class="a--course-tile-03__start-date">${_(course_info['course_start_date'])}</p>
       % endif
