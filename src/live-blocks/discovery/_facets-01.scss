@@ -38,16 +38,14 @@
     }
   }
 
-  &__facet-container {
-    @include display(flex);
-    @include align-items(center);
-  }
-
   &__facet-option {
     @include edx_style_killer;
     @include no_damn_focus_glow;
     list-style-type: none;
     padding: $single-facet-padding;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
     width: 100%;
 
     &.selected {
@@ -66,7 +64,6 @@
         @include display(flex);
         @include flex-shrink(0);
         @include primary-font-bold;
-        margin-left: auto;
         background-color: $facet-results-count-bg-color;
         padding: $facet-results-count-padding;
         border-radius: $facet-results-count-border-radius;

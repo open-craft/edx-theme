@@ -128,8 +128,8 @@ import json
            <h3>${course_dir | h}</h3>
                <ul>
              % for (msg, err) in errors:
-                 <li>${_(msg)}
-                   <ul><li><pre>${_(err)}</pre></li></ul>
+                 <li>${msg}
+                   <ul><li><pre>${err}</pre></li></ul>
                  </li>
              % endfor
                </ul>
@@ -166,7 +166,7 @@ import json
       </div>
     % endif
 
-    <section class="profile-sidebar" id="profile-sidebar" role="region" aria-label="${_("Account Status Info")}">
+    <section class="profile-sidebar" id="profile-sidebar" role="region" aria-label="Account Status Info">
       <header class="profile">
         <h2 class="account-status-title sr">${_("Account Status Info")}: </h2>
       </header>
@@ -177,7 +177,7 @@ import json
           <li class="order-history">
             <span class="title">${_("Order History")}</span>
             % for order_history_item in order_history_list:
-              <span><a href="${order_history_item['receipt_url']}" target="_blank" class="edit-name">${_(order_history_item['order_date'])}</a></span>
+              <span><a href="${order_history_item['receipt_url']}" target="_blank" class="edit-name">${order_history_item['order_date']}</a></span>
             % endfor
           </li>
           % endif

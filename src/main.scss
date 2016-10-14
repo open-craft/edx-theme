@@ -37,6 +37,8 @@
 // Import common elements
 @import "common-elements/staff-graded-assignments";
 @import "common-elements/activation";
+@import "common-elements/discussions";
+@import "common-elements/problem";
 
 // Import site shared layout
 @import "shared/footer";
@@ -72,6 +74,7 @@
 @import "courseware/course-progress-01";
 @import "courseware/discussion-in-course";
 @import "courseware/courseware-textbook";
+@import "courseware/course-static-page";
 
 
 // Import page specific templates sass

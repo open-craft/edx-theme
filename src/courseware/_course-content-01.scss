@@ -216,6 +216,8 @@
 
   &__main-content {
     width: 100%;
+    min-width: 0;
+    word-wrap: break-word;
     @include flex-shrink(1);
 
     label {
@@ -229,7 +231,6 @@
     .xmodule_display.xmodule_HtmlModule p {
       @include primary-font;
       font-size: $courseware-content-font-size;
-      line-height: $courseware-content-line-height !important;
     }
 
     .course-content {
@@ -356,14 +357,17 @@
                 }
 
                 p {
-                  white-space: inherit;
-                  width: 24rem;
-                  padding: 2rem;
+                  white-space: pre;
+                  font-size: 1.4rem;
+                  width: 42rem;
+                  padding: 1rem;
                   z-index: 1000;
-                  background-color: $brand-primary-color;
+
+                  @media (max-width: $screen-sm-max) {
+                    display: none;
+                  }
 
                   &:after {
-                    background-color: $brand-primary-color;
                   }
                 }
               }
@@ -404,14 +408,32 @@
             font-size: 1.6rem;
           }
 
-          &:hover, &:focus {
-            color: $base-text-color;
-            top: -0.5rem;
+          @if $courseware-link-hover == "expanding-underline" {
+              @include underline_expanding_hover($brand-primary-color, 1rem);
+          } @else if $courseware-link-hover == "hover-pop" {
+              @include hover_pop(-0.5rem, 0);
+          } @else if $courseware-link-hover == "hover-custom-color" {
+              &:hover, &:focus {
+                color: $brand-primary-color;
+              }
+          } @else if $courseware-link-hover == "opacity" {
+              opacity: 1;
+              &:hover, &:focus {
+                opacity: 0.5;
+              }
           }
         }
       }
 
       // overall course content default stylings
+
+      h1 {
+        text-transform: none;
+        @include primary-font;
+        font-size: 2.4 * $courseware-content-font-size;
+        color: $brand-primary-color;
+        letter-spacing: 0;
+      }
 
       h2 {
         text-transform: none;
@@ -433,6 +455,10 @@
         @include small-headings-font;
         color: rgba($base-text-color, 0.75);
         letter-spacing: 0;
+      }
+
+      ul li, ol li, .xmodule_display.xmodule_CapaModule div.problem p {
+        font-size: $courseware-content-font-size;
       }
     }
   }
