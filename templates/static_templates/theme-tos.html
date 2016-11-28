@@ -5,9 +5,6 @@
 
 <%block name="pagetitle">${_("Terms of Service")}</%block>
 
-<main id="main" aria-label="Content" tabindex="-1">
-    <section class="container about">
-        <h1>${_("Terms and Conditions.")}</h1>
-        <p>${_("Click the following link to read our full Terms and conditions page: ")}<a href="http://www.cloudera.com/legal/terms-and-conditions.html">Cloudera's Terms and Conditions</a></p>
-    </section>
-</main>
+% for section in get_tos_content():
+  <%include file = '../design-templates/${section[1]}' args = 'template_settings = section[2]' />
+% endfor
