@@ -188,10 +188,14 @@
     outline: none;
     width: $nav-toggle-bar-width;
     height: $nav-toggle-bar-width !important;
-    padding: 0;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 3.5rem;
+    padding-bottom: 3rem;
     position: relative;
     bottom: 0.2rem;
     margin-left: $nav-toggle-bar-margin;
+    z-index: 1002;
 
     // IE fix hack
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

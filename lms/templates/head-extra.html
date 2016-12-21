@@ -7,9 +7,9 @@
 % if style_overrides_file:
   <link rel="stylesheet" type="text/css" href="${static.url(style_overrides_file)}" />
 % else:
-  <link rel="stylesheet" type="text/css" href="${static.url('themes/' + settings.THEME_NAME + '/css/main.css')}">
+  <link rel="stylesheet" type="text/css" href="${static.url('css/main.css')}">
 % endif
-<link rel="stylesheet" type="text/css" href="${static.url('themes/' + settings.THEME_NAME + '/css/font-awesome/css/font-awesome.min.css')}">
+<link rel="stylesheet" type="text/css" href="${static.url('css/font-awesome/css/font-awesome.min.css')}">
 <link href="${get_global_settings()['google_fonts_to_import']}" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 % if apple_app_id:
