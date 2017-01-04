@@ -38,11 +38,19 @@
       border-bottom: 0.1rem solid #ddd;
     }
 
+    .wrapper-course-modes  {
+      border: none;
+
+      // hide bookmarks button, at least until we get a proper design for it.
+      &> .courseware-bookmarks-button {
+        display: none;
+      }
+    }
+
     .courseware-search-bar {
+      width: 100%;
       box-shadow: none;
       margin-bottom: 2rem;
-      padding: 0.9rem 0 ($sequence-nav-bottom-padding + 0.1rem);
-      border-bottom: 0.2rem solid #ddd;
 
       .search-field-wrapper {
         @include display(flex);
@@ -98,7 +106,7 @@
           @include transition(all 0.3s ease-in-out);
 
           @if $courseware-link-hover == "expanding-underline" {
-              @include underline_expanding_hover($brand-primary-color, 0.2rem);
+              @include underline_expanding_hover($brand-primary-color, 0rem);
           } @else if $courseware-link-hover == "hover-pop" {
               @include hover_pop(0, -0.5rem);
           } @else if $courseware-link-hover == "hover-custom-color" {
@@ -246,15 +254,16 @@
         @include align-items(center);
         @include justify-content(space-between);
 
-        .sequence-nav-button {
+        button.sequence-nav-button {
           border: none;
           background: none;
           cursor: pointer;
           @include transition(all 0.3s ease-in-out);
           @include flex-shrink(0);
+          top: 6px;
 
           @if $courseware-link-hover == "expanding-underline" {
-              @include underline_expanding_hover($brand-primary-color, 0.2rem);
+              @include underline_expanding_hover($brand-primary-color, $sequence-nav-bottom-padding + 0.6rem);
           } @else if $courseware-link-hover == "hover-pop" {
               @include hover_pop(-0.5rem, 0);
           } @else if $courseware-link-hover == "hover-custom-color" {
@@ -270,6 +279,9 @@
 
           &:hover, &:focus {
             color: $base-text-color;
+            border: none;
+            background: none;
+            padding: 1rem 0;
           }
         }
 
@@ -308,7 +320,7 @@
                 border-right: none;
               }
 
-              a {
+              button {
                 position: relative;
                 border: none;
                 @include transition(all 0.3s ease-in-out);
@@ -318,7 +330,7 @@
                 }
 
                 @if $courseware-link-hover == "expanding-underline" {
-                    @include underline_expanding_hover($brand-primary-color, 0.2rem);
+                    @include underline_expanding_hover($brand-primary-color, $sequence-nav-bottom-padding + 0.9rem);
                 } @else if $courseware-link-hover == "hover-pop" {
                     .icon {
                       @include hover_pop(-0.5rem, 0);
@@ -352,22 +364,29 @@
                     content: "";
                     position: absolute;
                     left: 0;
-                    bottom: -$sequence-nav-bottom-padding - 0.4rem;
+                    bottom: -$sequence-nav-bottom-padding - 0.9rem;
+                  }
+
+                  &:hover, &:focus {
+                    background-color: #efefef;
                   }
                 }
 
-                p {
+                .sequence-tooltip {
                   white-space: pre;
                   font-size: 1.4rem;
-                  width: 42rem;
                   padding: 1rem;
                   z-index: 1000;
+                  background-color: $brand-primary-color;
+                  text-shadow: none;
+                  font-weight: $primary-font-weight-regular;
 
                   @media (max-width: $screen-sm-max) {
                     display: none;
                   }
 
                   &:after {
+                    background-color: $brand-primary-color;
                   }
                 }
               }
@@ -395,7 +414,7 @@
           width: $courseware-content-bottom-nav-width*2;
         }
 
-        .sequence-nav-button {
+        .sequence-nav-button:not(:disabled) {
           border: none;
           background: none;
           cursor: pointer;
@@ -422,7 +441,21 @@
                 opacity: 0.5;
               }
           }
+
+          // Have to specify :not:(:disabled) above to win against
+          // _edx-overrides.scss
+          &:hover, &:focus {
+            color: $base-text-color;
+            border: none;
+            background: none;
+            padding: 1rem 0;
+          }
         }
+      }
+
+      // hide bookmark button, at least until we get a proper design for it
+      .bookmark-button-wrapper {
+        display: none;
       }
 
       // overall course content default stylings

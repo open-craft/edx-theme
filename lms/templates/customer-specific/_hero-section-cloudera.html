@@ -1,4 +1,5 @@
 <%page args="template_settings" />
+<%namespace name='static' file='/static_content.html'/>
 <%! from django.utils.translation import ugettext_lazy as _ %>
 
 <%
@@ -9,7 +10,7 @@
   extra_css = template_settings.get('extra_css',"")
 %>
 
-<section class="cloudera--hero-section ${optional_classes}" style="background-image: url('${bg_image_url}'); color: ${text_color}; background-color: ${background_color}; ${extra_css}">
+<section class="cloudera--hero-section ${optional_classes}" style="background-image: url('${static.url("images/client-specific/girl-bg.jpg")}');">
   <div class="bs-container a--container cloudera--hero-section__container">
     <div class="cloudera--hero-section__content-wrapper">
       <div class="cloudera--hero-section__content">

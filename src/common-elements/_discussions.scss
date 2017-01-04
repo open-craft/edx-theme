@@ -1,22 +1,23 @@
-.a--courseware-top-nav__list {
-
-  li.right {
-    margin-left: auto;
-  }
+body.discussion .content-wrapper {
+  padding-top: 0;
 }
+.a--courseware-top-nav__list {
+  list-style-type: none;
+}
+.a--container {
+  a.discussion-submit-post,
+  button.new-post-btn {
+    border-radius: $buttons-border-radius;
+    border: 0.1rem solid $brand-primary-color;
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+    @include transition(all 0.3s ease-in-out);
+    opacity: 1;
 
-a.new-post-btn {
-  border-radius: $buttons-border-radius;
-  border: 0.1rem solid $brand-primary-color;
-  padding: 1rem 1.5rem;
-  @include transition(all 0.3s ease-in-out);
-  opacity: 1;
-
-  span {
-    margin-right: 0.5rem;
-  }
-
-  &:hover, &:focus {
-    opacity: 0.6;
+    &:hover, &:focus {
+      opacity: 0.6;
+      background-color: $brand-primary-color;
+      border: 0.1rem solid $brand-primary-color;
+    }
   }
 }

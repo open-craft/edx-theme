@@ -266,7 +266,7 @@ html {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  line-height: 1.428571429;
+  line-height: 1.42857;
   color: #333333;
   background-color: #fff; }
 
@@ -303,7 +303,7 @@ img {
 
 .img-thumbnail {
   padding: 4px;
-  line-height: 1.428571429;
+  line-height: 1.42857;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -380,37 +380,37 @@ hr {
   float: left; }
 
 .col-xs-1 {
-  width: 8.3333333333%; }
+  width: 8.33333%; }
 
 .col-xs-2 {
-  width: 16.6666666667%; }
+  width: 16.66667%; }
 
 .col-xs-3 {
   width: 25%; }
 
 .col-xs-4 {
-  width: 33.3333333333%; }
+  width: 33.33333%; }
 
 .col-xs-5 {
-  width: 41.6666666667%; }
+  width: 41.66667%; }
 
 .col-xs-6 {
   width: 50%; }
 
 .col-xs-7 {
-  width: 58.3333333333%; }
+  width: 58.33333%; }
 
 .col-xs-8 {
-  width: 66.6666666667%; }
+  width: 66.66667%; }
 
 .col-xs-9 {
   width: 75%; }
 
 .col-xs-10 {
-  width: 83.3333333333%; }
+  width: 83.33333%; }
 
 .col-xs-11 {
-  width: 91.6666666667%; }
+  width: 91.66667%; }
 
 .col-xs-12 {
   width: 100%; }
@@ -419,37 +419,37 @@ hr {
   right: 0%; }
 
 .col-xs-pull-1 {
-  right: 8.3333333333%; }
+  right: 8.33333%; }
 
 .col-xs-pull-2 {
-  right: 16.6666666667%; }
+  right: 16.66667%; }
 
 .col-xs-pull-3 {
   right: 25%; }
 
 .col-xs-pull-4 {
-  right: 33.3333333333%; }
+  right: 33.33333%; }
 
 .col-xs-pull-5 {
-  right: 41.6666666667%; }
+  right: 41.66667%; }
 
 .col-xs-pull-6 {
   right: 50%; }
 
 .col-xs-pull-7 {
-  right: 58.3333333333%; }
+  right: 58.33333%; }
 
 .col-xs-pull-8 {
-  right: 66.6666666667%; }
+  right: 66.66667%; }
 
 .col-xs-pull-9 {
   right: 75%; }
 
 .col-xs-pull-10 {
-  right: 83.3333333333%; }
+  right: 83.33333%; }
 
 .col-xs-pull-11 {
-  right: 91.6666666667%; }
+  right: 91.66667%; }
 
 .col-xs-pull-12 {
   right: 100%; }
@@ -458,37 +458,37 @@ hr {
   left: 0%; }
 
 .col-xs-push-1 {
-  left: 8.3333333333%; }
+  left: 8.33333%; }
 
 .col-xs-push-2 {
-  left: 16.6666666667%; }
+  left: 16.66667%; }
 
 .col-xs-push-3 {
   left: 25%; }
 
 .col-xs-push-4 {
-  left: 33.3333333333%; }
+  left: 33.33333%; }
 
 .col-xs-push-5 {
-  left: 41.6666666667%; }
+  left: 41.66667%; }
 
 .col-xs-push-6 {
   left: 50%; }
 
 .col-xs-push-7 {
-  left: 58.3333333333%; }
+  left: 58.33333%; }
 
 .col-xs-push-8 {
-  left: 66.6666666667%; }
+  left: 66.66667%; }
 
 .col-xs-push-9 {
   left: 75%; }
 
 .col-xs-push-10 {
-  left: 83.3333333333%; }
+  left: 83.33333%; }
 
 .col-xs-push-11 {
-  left: 91.6666666667%; }
+  left: 91.66667%; }
 
 .col-xs-push-12 {
   left: 100%; }
@@ -497,37 +497,37 @@ hr {
   margin-left: 0%; }
 
 .col-xs-offset-1 {
-  margin-left: 8.3333333333%; }
+  margin-left: 8.33333%; }
 
 .col-xs-offset-2 {
-  margin-left: 16.6666666667%; }
+  margin-left: 16.66667%; }
 
 .col-xs-offset-3 {
   margin-left: 25%; }
 
 .col-xs-offset-4 {
-  margin-left: 33.3333333333%; }
+  margin-left: 33.33333%; }
 
 .col-xs-offset-5 {
-  margin-left: 41.6666666667%; }
+  margin-left: 41.66667%; }
 
 .col-xs-offset-6 {
   margin-left: 50%; }
 
 .col-xs-offset-7 {
-  margin-left: 58.3333333333%; }
+  margin-left: 58.33333%; }
 
 .col-xs-offset-8 {
-  margin-left: 66.6666666667%; }
+  margin-left: 66.66667%; }
 
 .col-xs-offset-9 {
   margin-left: 75%; }
 
 .col-xs-offset-10 {
-  margin-left: 83.3333333333%; }
+  margin-left: 83.33333%; }
 
 .col-xs-offset-11 {
-  margin-left: 91.6666666667%; }
+  margin-left: 91.66667%; }
 
 .col-xs-offset-12 {
   margin-left: 100%; }
@@ -537,37 +537,37 @@ hr {
     float: left; }
 
   .col-sm-1 {
-    width: 8.3333333333%; }
+    width: 8.33333%; }
 
   .col-sm-2 {
-    width: 16.6666666667%; }
+    width: 16.66667%; }
 
   .col-sm-3 {
     width: 25%; }
 
   .col-sm-4 {
-    width: 33.3333333333%; }
+    width: 33.33333%; }
 
   .col-sm-5 {
-    width: 41.6666666667%; }
+    width: 41.66667%; }
 
   .col-sm-6 {
     width: 50%; }
 
   .col-sm-7 {
-    width: 58.3333333333%; }
+    width: 58.33333%; }
 
   .col-sm-8 {
-    width: 66.6666666667%; }
+    width: 66.66667%; }
 
   .col-sm-9 {
     width: 75%; }
 
   .col-sm-10 {
-    width: 83.3333333333%; }
+    width: 83.33333%; }
 
   .col-sm-11 {
-    width: 91.6666666667%; }
+    width: 91.66667%; }
 
   .col-sm-12 {
     width: 100%; }
@@ -576,37 +576,37 @@ hr {
     right: 0%; }
 
   .col-sm-pull-1 {
-    right: 8.3333333333%; }
+    right: 8.33333%; }
 
   .col-sm-pull-2 {
-    right: 16.6666666667%; }
+    right: 16.66667%; }
 
   .col-sm-pull-3 {
     right: 25%; }
 
   .col-sm-pull-4 {
-    right: 33.3333333333%; }
+    right: 33.33333%; }
 
   .col-sm-pull-5 {
-    right: 41.6666666667%; }
+    right: 41.66667%; }
 
   .col-sm-pull-6 {
     right: 50%; }
 
   .col-sm-pull-7 {
-    right: 58.3333333333%; }
+    right: 58.33333%; }
 
   .col-sm-pull-8 {
-    right: 66.6666666667%; }
+    right: 66.66667%; }
 
   .col-sm-pull-9 {
     right: 75%; }
 
   .col-sm-pull-10 {
-    right: 83.3333333333%; }
+    right: 83.33333%; }
 
   .col-sm-pull-11 {
-    right: 91.6666666667%; }
+    right: 91.66667%; }
 
   .col-sm-pull-12 {
     right: 100%; }
@@ -615,37 +615,37 @@ hr {
     left: 0%; }
 
   .col-sm-push-1 {
-    left: 8.3333333333%; }
+    left: 8.33333%; }
 
   .col-sm-push-2 {
-    left: 16.6666666667%; }
+    left: 16.66667%; }
 
   .col-sm-push-3 {
     left: 25%; }
 
   .col-sm-push-4 {
-    left: 33.3333333333%; }
+    left: 33.33333%; }
 
   .col-sm-push-5 {
-    left: 41.6666666667%; }
+    left: 41.66667%; }
 
   .col-sm-push-6 {
     left: 50%; }
 
   .col-sm-push-7 {
-    left: 58.3333333333%; }
+    left: 58.33333%; }
 
   .col-sm-push-8 {
-    left: 66.6666666667%; }
+    left: 66.66667%; }
 
   .col-sm-push-9 {
     left: 75%; }
 
   .col-sm-push-10 {
-    left: 83.3333333333%; }
+    left: 83.33333%; }
 
   .col-sm-push-11 {
-    left: 91.6666666667%; }
+    left: 91.66667%; }
 
   .col-sm-push-12 {
     left: 100%; }
@@ -654,37 +654,37 @@ hr {
     margin-left: 0%; }
 
   .col-sm-offset-1 {
-    margin-left: 8.3333333333%; }
+    margin-left: 8.33333%; }
 
   .col-sm-offset-2 {
-    margin-left: 16.6666666667%; }
+    margin-left: 16.66667%; }
 
   .col-sm-offset-3 {
     margin-left: 25%; }
 
   .col-sm-offset-4 {
-    margin-left: 33.3333333333%; }
+    margin-left: 33.33333%; }
 
   .col-sm-offset-5 {
-    margin-left: 41.6666666667%; }
+    margin-left: 41.66667%; }
 
   .col-sm-offset-6 {
     margin-left: 50%; }
 
   .col-sm-offset-7 {
-    margin-left: 58.3333333333%; }
+    margin-left: 58.33333%; }
 
   .col-sm-offset-8 {
-    margin-left: 66.6666666667%; }
+    margin-left: 66.66667%; }
 
   .col-sm-offset-9 {
     margin-left: 75%; }
 
   .col-sm-offset-10 {
-    margin-left: 83.3333333333%; }
+    margin-left: 83.33333%; }
 
   .col-sm-offset-11 {
-    margin-left: 91.6666666667%; }
+    margin-left: 91.66667%; }
 
   .col-sm-offset-12 {
     margin-left: 100%; } }
@@ -693,37 +693,37 @@ hr {
     float: left; }
 
   .col-md-1 {
-    width: 8.3333333333%; }
+    width: 8.33333%; }
 
   .col-md-2 {
-    width: 16.6666666667%; }
+    width: 16.66667%; }
 
   .col-md-3 {
     width: 25%; }
 
   .col-md-4 {
-    width: 33.3333333333%; }
+    width: 33.33333%; }
 
   .col-md-5 {
-    width: 41.6666666667%; }
+    width: 41.66667%; }
 
   .col-md-6 {
     width: 50%; }
 
   .col-md-7 {
-    width: 58.3333333333%; }
+    width: 58.33333%; }
 
   .col-md-8 {
-    width: 66.6666666667%; }
+    width: 66.66667%; }
 
   .col-md-9 {
     width: 75%; }
 
   .col-md-10 {
-    width: 83.3333333333%; }
+    width: 83.33333%; }
 
   .col-md-11 {
-    width: 91.6666666667%; }
+    width: 91.66667%; }
 
   .col-md-12 {
     width: 100%; }
@@ -732,37 +732,37 @@ hr {
     right: 0%; }
 
   .col-md-pull-1 {
-    right: 8.3333333333%; }
+    right: 8.33333%; }
 
   .col-md-pull-2 {
-    right: 16.6666666667%; }
+    right: 16.66667%; }
 
   .col-md-pull-3 {
     right: 25%; }
 
   .col-md-pull-4 {
-    right: 33.3333333333%; }
+    right: 33.33333%; }
 
   .col-md-pull-5 {
-    right: 41.6666666667%; }
+    right: 41.66667%; }
 
   .col-md-pull-6 {
     right: 50%; }
 
   .col-md-pull-7 {
-    right: 58.3333333333%; }
+    right: 58.33333%; }
 
   .col-md-pull-8 {
-    right: 66.6666666667%; }
+    right: 66.66667%; }
 
   .col-md-pull-9 {
     right: 75%; }
 
   .col-md-pull-10 {
-    right: 83.3333333333%; }
+    right: 83.33333%; }
 
   .col-md-pull-11 {
-    right: 91.6666666667%; }
+    right: 91.66667%; }
 
   .col-md-pull-12 {
     right: 100%; }
@@ -771,37 +771,37 @@ hr {
     left: 0%; }
 
   .col-md-push-1 {
-    left: 8.3333333333%; }
+    left: 8.33333%; }
 
   .col-md-push-2 {
-    left: 16.6666666667%; }
+    left: 16.66667%; }
 
   .col-md-push-3 {
     left: 25%; }
 
   .col-md-push-4 {
-    left: 33.3333333333%; }
+    left: 33.33333%; }
 
   .col-md-push-5 {
-    left: 41.6666666667%; }
+    left: 41.66667%; }
 
   .col-md-push-6 {
     left: 50%; }
 
   .col-md-push-7 {
-    left: 58.3333333333%; }
+    left: 58.33333%; }
 
   .col-md-push-8 {
-    left: 66.6666666667%; }
+    left: 66.66667%; }
 
   .col-md-push-9 {
     left: 75%; }
 
   .col-md-push-10 {
-    left: 83.3333333333%; }
+    left: 83.33333%; }
 
   .col-md-push-11 {
-    left: 91.6666666667%; }
+    left: 91.66667%; }
 
   .col-md-push-12 {
     left: 100%; }
@@ -810,37 +810,37 @@ hr {
     margin-left: 0%; }
 
   .col-md-offset-1 {
-    margin-left: 8.3333333333%; }
+    margin-left: 8.33333%; }
 
   .col-md-offset-2 {
-    margin-left: 16.6666666667%; }
+    margin-left: 16.66667%; }
 
   .col-md-offset-3 {
     margin-left: 25%; }
 
   .col-md-offset-4 {
-    margin-left: 33.3333333333%; }
+    margin-left: 33.33333%; }
 
   .col-md-offset-5 {
-    margin-left: 41.6666666667%; }
+    margin-left: 41.66667%; }
 
   .col-md-offset-6 {
     margin-left: 50%; }
 
   .col-md-offset-7 {
-    margin-left: 58.3333333333%; }
+    margin-left: 58.33333%; }
 
   .col-md-offset-8 {
-    margin-left: 66.6666666667%; }
+    margin-left: 66.66667%; }
 
   .col-md-offset-9 {
     margin-left: 75%; }
 
   .col-md-offset-10 {
-    margin-left: 83.3333333333%; }
+    margin-left: 83.33333%; }
 
   .col-md-offset-11 {
-    margin-left: 91.6666666667%; }
+    margin-left: 91.66667%; }
 
   .col-md-offset-12 {
     margin-left: 100%; } }
@@ -849,37 +849,37 @@ hr {
     float: left; }
 
   .col-lg-1 {
-    width: 8.3333333333%; }
+    width: 8.33333%; }
 
   .col-lg-2 {
-    width: 16.6666666667%; }
+    width: 16.66667%; }
 
   .col-lg-3 {
     width: 25%; }
 
   .col-lg-4 {
-    width: 33.3333333333%; }
+    width: 33.33333%; }
 
   .col-lg-5 {
-    width: 41.6666666667%; }
+    width: 41.66667%; }
 
   .col-lg-6 {
     width: 50%; }
 
   .col-lg-7 {
-    width: 58.3333333333%; }
+    width: 58.33333%; }
 
   .col-lg-8 {
-    width: 66.6666666667%; }
+    width: 66.66667%; }
 
   .col-lg-9 {
     width: 75%; }
 
   .col-lg-10 {
-    width: 83.3333333333%; }
+    width: 83.33333%; }
 
   .col-lg-11 {
-    width: 91.6666666667%; }
+    width: 91.66667%; }
 
   .col-lg-12 {
     width: 100%; }
@@ -888,37 +888,37 @@ hr {
     right: 0%; }
 
   .col-lg-pull-1 {
-    right: 8.3333333333%; }
+    right: 8.33333%; }
 
   .col-lg-pull-2 {
-    right: 16.6666666667%; }
+    right: 16.66667%; }
 
   .col-lg-pull-3 {
     right: 25%; }
 
   .col-lg-pull-4 {
-    right: 33.3333333333%; }
+    right: 33.33333%; }
 
   .col-lg-pull-5 {
-    right: 41.6666666667%; }
+    right: 41.66667%; }
 
   .col-lg-pull-6 {
     right: 50%; }
 
   .col-lg-pull-7 {
-    right: 58.3333333333%; }
+    right: 58.33333%; }
 
   .col-lg-pull-8 {
-    right: 66.6666666667%; }
+    right: 66.66667%; }
 
   .col-lg-pull-9 {
     right: 75%; }
 
   .col-lg-pull-10 {
-    right: 83.3333333333%; }
+    right: 83.33333%; }
 
   .col-lg-pull-11 {
-    right: 91.6666666667%; }
+    right: 91.66667%; }
 
   .col-lg-pull-12 {
     right: 100%; }
@@ -927,37 +927,37 @@ hr {
     left: 0%; }
 
   .col-lg-push-1 {
-    left: 8.3333333333%; }
+    left: 8.33333%; }
 
   .col-lg-push-2 {
-    left: 16.6666666667%; }
+    left: 16.66667%; }
 
   .col-lg-push-3 {
     left: 25%; }
 
   .col-lg-push-4 {
-    left: 33.3333333333%; }
+    left: 33.33333%; }
 
   .col-lg-push-5 {
-    left: 41.6666666667%; }
+    left: 41.66667%; }
 
   .col-lg-push-6 {
     left: 50%; }
 
   .col-lg-push-7 {
-    left: 58.3333333333%; }
+    left: 58.33333%; }
 
   .col-lg-push-8 {
-    left: 66.6666666667%; }
+    left: 66.66667%; }
 
   .col-lg-push-9 {
     left: 75%; }
 
   .col-lg-push-10 {
-    left: 83.3333333333%; }
+    left: 83.33333%; }
 
   .col-lg-push-11 {
-    left: 91.6666666667%; }
+    left: 91.66667%; }
 
   .col-lg-push-12 {
     left: 100%; }
@@ -966,37 +966,37 @@ hr {
     margin-left: 0%; }
 
   .col-lg-offset-1 {
-    margin-left: 8.3333333333%; }
+    margin-left: 8.33333%; }
 
   .col-lg-offset-2 {
-    margin-left: 16.6666666667%; }
+    margin-left: 16.66667%; }
 
   .col-lg-offset-3 {
     margin-left: 25%; }
 
   .col-lg-offset-4 {
-    margin-left: 33.3333333333%; }
+    margin-left: 33.33333%; }
 
   .col-lg-offset-5 {
-    margin-left: 41.6666666667%; }
+    margin-left: 41.66667%; }
 
   .col-lg-offset-6 {
     margin-left: 50%; }
 
   .col-lg-offset-7 {
-    margin-left: 58.3333333333%; }
+    margin-left: 58.33333%; }
 
   .col-lg-offset-8 {
-    margin-left: 66.6666666667%; }
+    margin-left: 66.66667%; }
 
   .col-lg-offset-9 {
     margin-left: 75%; }
 
   .col-lg-offset-10 {
-    margin-left: 83.3333333333%; }
+    margin-left: 83.33333%; }
 
   .col-lg-offset-11 {
-    margin-left: 91.6666666667%; }
+    margin-left: 91.66667%; }
 
   .col-lg-offset-12 {
     margin-left: 100%; } }
@@ -1067,7 +1067,7 @@ hr {
     padding: 3px 20px;
     clear: both;
     font-weight: normal;
-    line-height: 1.428571429;
+    line-height: 1.42857;
     color: #333333;
     white-space: nowrap; }
 
@@ -1109,7 +1109,7 @@ hr {
   display: block;
   padding: 3px 20px;
   font-size: 12px;
-  line-height: 1.428571429;
+  line-height: 1.42857;
   color: #999999; }
 
 .dropdown-backdrop {
@@ -1204,14 +1204,14 @@ hr {
 .modal-header {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
-  min-height: 16.428571429px; }
+  min-height: 16.42857px; }
 
 .modal-header .close {
   margin-top: -2px; }
 
 .modal-title {
   margin: 0;
-  line-height: 1.428571429; }
+  line-height: 1.42857; }
 
 .modal-body {
   position: relative;
@@ -1577,11 +1577,11 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
     transform: skewX(-0.78125deg) skewY(-0.78125deg); }
   77.7% {
-    -webkit-transform: skewX(0.390625deg) skewY(0.390625deg);
-    transform: skewX(0.390625deg) skewY(0.390625deg); }
+    -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
+    transform: skewX(0.39063deg) skewY(0.39063deg); }
   88.8% {
-    -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
-    transform: skewX(-0.1953125deg) skewY(-0.1953125deg); } }
+    -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg);
+    transform: skewX(-0.19531deg) skewY(-0.19531deg); } }
 @keyframes jello {
   from, 11.1%, to {
     -webkit-transform: none;
@@ -1602,11 +1602,11 @@ Copyright (c) 2015 Daniel Eden
     -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
     transform: skewX(-0.78125deg) skewY(-0.78125deg); }
   77.7% {
-    -webkit-transform: skewX(0.390625deg) skewY(0.390625deg);
-    transform: skewX(0.390625deg) skewY(0.390625deg); }
+    -webkit-transform: skewX(0.39063deg) skewY(0.39063deg);
+    transform: skewX(0.39063deg) skewY(0.39063deg); }
   88.8% {
-    -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
-    transform: skewX(-0.1953125deg) skewY(-0.1953125deg); } }
+    -webkit-transform: skewX(-0.19531deg) skewY(-0.19531deg);
+    transform: skewX(-0.19531deg) skewY(-0.19531deg); } }
 .jello {
   -webkit-animation-name: jello;
   animation-name: jello;
@@ -3448,6 +3448,9 @@ h2 {
 .window-wrap {
   min-width: 10rem !important; }
 
+.fa.is-hidden {
+  display: none; }
+
 html {
   font-size: 10px; }
 
@@ -3779,20 +3782,30 @@ span.a--underlined {
   max-width: 56rem;
   text-align: center; }
 
-.a--courseware-top-nav__list li.right {
-  margin-left: auto; }
+body.discussion .content-wrapper {
+  padding-top: 0; }
 
-a.new-post-btn {
+.a--courseware-top-nav__list {
+  list-style-type: none; }
+
+.a--container a.discussion-submit-post, div.book-wrapper a.discussion-submit-post,
+.a--container button.new-post-btn,
+div.book-wrapper button.new-post-btn {
   border-radius: 0.5rem;
   border: 0.1rem solid #52B9E9;
   padding: 1rem 1.5rem;
+  font-size: 1.4rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   opacity: 1; }
-  a.new-post-btn span {
-    margin-right: 0.5rem; }
-  a.new-post-btn:hover, a.new-post-btn:focus {
-    opacity: 0.6; }
+  .a--container a.discussion-submit-post:hover, div.book-wrapper a.discussion-submit-post:hover, .a--container a.discussion-submit-post:focus, div.book-wrapper a.discussion-submit-post:focus,
+  .a--container button.new-post-btn:hover,
+  div.book-wrapper button.new-post-btn:hover,
+  .a--container button.new-post-btn:focus,
+  div.book-wrapper button.new-post-btn:focus {
+    opacity: 0.6;
+    background-color: #52B9E9;
+    border: 0.1rem solid #52B9E9; }
 
 .xmodule_display.xmodule_CapaModule div.problem .action .save, .xmodule_display.xmodule_CapaModule div.problem .action .check, .xmodule_display.xmodule_CapaModule div.problem .action .show, .xmodule_display.xmodule_CapaModule div.problem .action .reset, .xmodule_display.xmodule_CapaModule div.problem .action .hint-button, .course-content .xmodule_display button {
   -webkit-transition: all 0.3s ease-in-out;
@@ -3803,8 +3816,10 @@ a.new-post-btn {
   margin: 0 1rem 1rem 0;
   text-shadow: none;
   box-shadow: none;
-  border: 0.1rem solid #d9d1d1; }
+  border: 0.1rem solid #d9d1d1;
+  line-height: 20px; }
   .xmodule_display.xmodule_CapaModule div.problem .action .save:hover, .xmodule_display.xmodule_CapaModule div.problem .action .save:focus, .xmodule_display.xmodule_CapaModule div.problem .action .check:hover, .xmodule_display.xmodule_CapaModule div.problem .action .check:focus, .xmodule_display.xmodule_CapaModule div.problem .action .show:hover, .xmodule_display.xmodule_CapaModule div.problem .action .show:focus, .xmodule_display.xmodule_CapaModule div.problem .action .reset:hover, .xmodule_display.xmodule_CapaModule div.problem .action .reset:focus, .xmodule_display.xmodule_CapaModule div.problem .action .hint-button:hover, .xmodule_display.xmodule_CapaModule div.problem .action .hint-button:focus, .course-content .xmodule_display button:hover, .course-content .xmodule_display button:focus {
+    color: black;
     background-color: #d9d1d1;
     border: 0.1rem solid #ab9999; }
   .xmodule_display.xmodule_CapaModule div.problem .action .save.save, .xmodule_display.xmodule_CapaModule div.problem .action .check.save, .xmodule_display.xmodule_CapaModule div.problem .action .show.save, .xmodule_display.xmodule_CapaModule div.problem .action .reset.save, .xmodule_display.xmodule_CapaModule div.problem .action .hint-button.save, .course-content .xmodule_display button.save {
@@ -3812,7 +3827,7 @@ a.new-post-btn {
     .xmodule_display.xmodule_CapaModule div.problem .action .save.save:hover, .xmodule_display.xmodule_CapaModule div.problem .action .save.save:focus, .xmodule_display.xmodule_CapaModule div.problem .action .check.save:hover, .xmodule_display.xmodule_CapaModule div.problem .action .check.save:focus, .xmodule_display.xmodule_CapaModule div.problem .action .show.save:hover, .xmodule_display.xmodule_CapaModule div.problem .action .show.save:focus, .xmodule_display.xmodule_CapaModule div.problem .action .reset.save:hover, .xmodule_display.xmodule_CapaModule div.problem .action .reset.save:focus, .xmodule_display.xmodule_CapaModule div.problem .action .hint-button.save:hover, .xmodule_display.xmodule_CapaModule div.problem .action .hint-button.save:focus, .course-content .xmodule_display button.save:hover, .course-content .xmodule_display button.save:focus {
       background-color: #25a7e3; }
 
-.course-content .light-button:hover:not(:disabled), .course-content div.history-controls input[type="submit"]:hover:not(:disabled), .course-content a.light-button:hover:not(:disabled), .course-content div.info-wrapper section.handouts ol li div.hitarea:hover + h4.light-button:not(:disabled), .course-content div.info-wrapper section.handouts ol li div.hitarea:focus + h4.light-button:not(:disabled), .course-content .gray-button:hover:not(:disabled), .course-content input[type="reset"]:hover:not(:disabled), .course-content input[type="submit"]:hover:not(:disabled), .course-content input[type="button"]:hover:not(:disabled), .course-content button:hover:not(:disabled), .course-content .button:hover:not(:disabled), .course-content .xmodule_display.xmodule_LTIModule div.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled) {
+.course-content .seq_content .light-button:hover:not(:disabled), .course-content .seq_content div.history-controls input[type="submit"]:hover:not(:disabled), .course-content .seq_content a.light-button:hover:not(:disabled), .course-content .seq_content div.info-wrapper section.handouts ol li div.hitarea:hover + h4.light-button:not(:disabled), .course-content .seq_content div.info-wrapper section.handouts ol li div.hitarea:focus + h4.light-button:not(:disabled), .course-content .seq_content .gray-button:hover:not(:disabled), .course-content .seq_content input[type="reset"]:hover:not(:disabled), .course-content .seq_content input[type="submit"]:hover:not(:disabled), .course-content .seq_content input[type="button"]:hover:not(:disabled), .course-content .seq_content button:hover:not(:disabled), .course-content .seq_content .button:hover:not(:disabled), .course-content .seq_content .xmodule_display.xmodule_LTIModule div.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled) {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   border-radius: 0.5rem;
@@ -3822,7 +3837,7 @@ a.new-post-btn {
   text-shadow: none;
   box-shadow: none;
   border: 0.1rem solid #d9d1d1; }
-  .course-content .light-button:hover:not(:disabled):hover, .course-content .light-button:hover:not(:disabled):focus, .course-content div.history-controls input[type="submit"]:hover:not(:disabled):hover, .course-content div.history-controls input[type="submit"]:hover:not(:disabled):focus, .course-content a.light-button:hover:not(:disabled):hover, .course-content a.light-button:hover:not(:disabled):focus, .course-content div.info-wrapper section.handouts ol li div.hitarea:hover + h4.light-button:not(:disabled):hover, .course-content div.info-wrapper section.handouts ol li div.hitarea:hover + h4.light-button:not(:disabled):focus, .course-content div.info-wrapper section.handouts ol li div.hitarea:focus + h4.light-button:not(:disabled):hover, .course-content div.info-wrapper section.handouts ol li div.hitarea:focus + h4.light-button:not(:disabled):focus, .course-content .gray-button:hover:not(:disabled):hover, .course-content .gray-button:hover:not(:disabled):focus, .course-content input[type="reset"]:hover:not(:disabled):hover, .course-content input[type="reset"]:hover:not(:disabled):focus, .course-content input[type="submit"]:hover:not(:disabled):hover, .course-content input[type="submit"]:hover:not(:disabled):focus, .course-content input[type="button"]:hover:not(:disabled):hover, .course-content input[type="button"]:hover:not(:disabled):focus, .course-content button:hover:not(:disabled):hover, .course-content button:hover:not(:disabled):focus, .course-content .button:hover:not(:disabled):hover, .course-content .button:hover:not(:disabled):focus, .course-content .xmodule_display.xmodule_LTIModule div.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled):hover, .course-content .xmodule_display.xmodule_LTIModule div.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled):focus {
+  .course-content .seq_content .light-button:hover:not(:disabled):hover, .course-content .seq_content .light-button:hover:not(:disabled):focus, .course-content .seq_content div.history-controls input[type="submit"]:hover:not(:disabled):hover, .course-content .seq_content div.history-controls input[type="submit"]:hover:not(:disabled):focus, .course-content .seq_content a.light-button:hover:not(:disabled):hover, .course-content .seq_content a.light-button:hover:not(:disabled):focus, .course-content .seq_content div.info-wrapper section.handouts ol li div.hitarea:hover + h4.light-button:not(:disabled):hover, .course-content .seq_content div.info-wrapper section.handouts ol li div.hitarea:hover + h4.light-button:not(:disabled):focus, .course-content .seq_content div.info-wrapper section.handouts ol li div.hitarea:focus + h4.light-button:not(:disabled):hover, .course-content .seq_content div.info-wrapper section.handouts ol li div.hitarea:focus + h4.light-button:not(:disabled):focus, .course-content .seq_content .gray-button:hover:not(:disabled):hover, .course-content .seq_content .gray-button:hover:not(:disabled):focus, .course-content .seq_content input[type="reset"]:hover:not(:disabled):hover, .course-content .seq_content input[type="reset"]:hover:not(:disabled):focus, .course-content .seq_content input[type="submit"]:hover:not(:disabled):hover, .course-content .seq_content input[type="submit"]:hover:not(:disabled):focus, .course-content .seq_content input[type="button"]:hover:not(:disabled):hover, .course-content .seq_content input[type="button"]:hover:not(:disabled):focus, .course-content .seq_content button:hover:not(:disabled):hover, .course-content .seq_content button:hover:not(:disabled):focus, .course-content .seq_content .button:hover:not(:disabled):hover, .course-content .seq_content .button:hover:not(:disabled):focus, .course-content .seq_content .xmodule_display.xmodule_LTIModule div.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled):hover, .course-content .seq_content .xmodule_display.xmodule_LTIModule div.lti .wrapper-lti-link .lti-link .link_lti_new_window:hover:not(:disabled):focus {
     background-color: #d9d1d1;
     border: 0.1rem solid #ab9999; }
 
@@ -4204,10 +4219,14 @@ a.new-post-btn {
   outline: none;
   width: 3.6rem;
   height: 3.6rem !important;
-  padding: 0;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 3.5rem;
+  padding-bottom: 3rem;
   position: relative;
   bottom: 0.2rem;
-  margin-left: 2rem; }
+  margin-left: 2rem;
+  z-index: 1002; }
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .a--header-design-01 button.a--site-nav__mobile-toggle {
       top: 1.8rem; } }
@@ -5402,7 +5421,7 @@ a.new-post-btn {
       width: 260px;
       height: 260px;
       bottom: -52px;
-      right: -37.1428571429px; } }
+      right: -37.14286px; } }
   @media (max-width: 767px) {
     .a--course-tile-02__image {
       width: 140px;
@@ -5586,7 +5605,7 @@ a.new-post-btn {
             width: 260px;
             height: 260px;
             bottom: -52px;
-            right: -37.1428571429px; } }
+            right: -37.14286px; } }
         @media (max-width: 767px) {
           .a--course-tile-02-parent-element li.courses-listing-item .a--course-tile-02__wrapper .a--course-tile-02__image {
             width: 140px;
@@ -6555,11 +6574,14 @@ a.new-post-btn {
       padding-right: 0;
       border-right: none;
       border-bottom: 0.1rem solid #ddd; } }
+  .a--course-content__nav .wrapper-course-modes {
+    border: none; }
+    .a--course-content__nav .wrapper-course-modes > .courseware-bookmarks-button {
+      display: none; }
   .a--course-content__nav .courseware-search-bar {
+    width: 100%;
     box-shadow: none;
-    margin-bottom: 2rem;
-    padding: 0.9rem 0 1.7rem;
-    border-bottom: 0.2rem solid #ddd; }
+    margin-bottom: 2rem; }
     .a--course-content__nav .courseware-search-bar .search-field-wrapper {
       display: -webkit-box;
       display: -moz-box;
@@ -6618,7 +6640,7 @@ a.new-post-btn {
     position: relative; }
     .a--course-content__nav .accordion .course-navigation .button-chapter:after {
       position: absolute;
-      bottom: -0.2rem;
+      bottom: 0rem;
       left: 0;
       width: 0;
       height: 0.2rem;
@@ -6761,7 +6783,7 @@ a.new-post-btn {
       -o-justify-content: space-between;
       justify-content: space-between;
       -ms-flex-pack: justify; }
-      .a--course-content__main-content .course-content .sequence-nav .sequence-nav-button {
+      .a--course-content__main-content .course-content .sequence-nav button.sequence-nav-button {
         border: none;
         background: none;
         cursor: pointer;
@@ -6771,10 +6793,11 @@ a.new-post-btn {
         -moz-flex-shrink: 0;
         flex-shrink: 0;
         -ms-flex-negative: 0;
+        top: 6px;
         position: relative; }
-        .a--course-content__main-content .course-content .sequence-nav .sequence-nav-button:after {
+        .a--course-content__main-content .course-content .sequence-nav button.sequence-nav-button:after {
           position: absolute;
-          bottom: -0.2rem;
+          bottom: -2.2rem;
           left: 0;
           width: 0;
           height: 0.2rem;
@@ -6783,10 +6806,13 @@ a.new-post-btn {
           content: "";
           -webkit-transition: 0.2s all ease-in-out;
           transition: 0.2s all ease-in-out; }
-        .a--course-content__main-content .course-content .sequence-nav .sequence-nav-button:hover:after, .a--course-content__main-content .course-content .sequence-nav .sequence-nav-button:focus:after {
+        .a--course-content__main-content .course-content .sequence-nav button.sequence-nav-button:hover:after, .a--course-content__main-content .course-content .sequence-nav button.sequence-nav-button:focus:after {
           width: 100%; }
-        .a--course-content__main-content .course-content .sequence-nav .sequence-nav-button:hover, .a--course-content__main-content .course-content .sequence-nav .sequence-nav-button:focus {
-          color: #666; }
+        .a--course-content__main-content .course-content .sequence-nav button.sequence-nav-button:hover, .a--course-content__main-content .course-content .sequence-nav button.sequence-nav-button:focus {
+          color: #666;
+          border: none;
+          background: none;
+          padding: 1rem 0; }
       .a--course-content__main-content .course-content .sequence-nav .sequence-list-wrapper {
         background: none;
         box-shadow: none;
@@ -6832,17 +6858,17 @@ a.new-post-btn {
           border-right: 0.1rem solid #ddd; }
           .a--course-content__main-content .course-content .sequence-nav ol li:last-child {
             border-right: none; }
-          .a--course-content__main-content .course-content .sequence-nav ol li a {
+          .a--course-content__main-content .course-content .sequence-nav ol li button {
             position: relative;
             border: none;
             -webkit-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
             position: relative; }
-            .a--course-content__main-content .course-content .sequence-nav ol li a:hover, .a--course-content__main-content .course-content .sequence-nav ol li a:focus {
+            .a--course-content__main-content .course-content .sequence-nav ol li button:hover, .a--course-content__main-content .course-content .sequence-nav ol li button:focus {
               background-color: #efefef; }
-            .a--course-content__main-content .course-content .sequence-nav ol li a:after {
+            .a--course-content__main-content .course-content .sequence-nav ol li button:after {
               position: absolute;
-              bottom: -0.2rem;
+              bottom: -2.5rem;
               left: 0;
               width: 0;
               height: 0.2rem;
@@ -6851,31 +6877,37 @@ a.new-post-btn {
               content: "";
               -webkit-transition: 0.2s all ease-in-out;
               transition: 0.2s all ease-in-out; }
-            .a--course-content__main-content .course-content .sequence-nav ol li a:hover:after, .a--course-content__main-content .course-content .sequence-nav ol li a:focus:after {
+            .a--course-content__main-content .course-content .sequence-nav ol li button:hover:after, .a--course-content__main-content .course-content .sequence-nav ol li button:focus:after {
               width: 100%; }
-            .a--course-content__main-content .course-content .sequence-nav ol li a.active {
+            .a--course-content__main-content .course-content .sequence-nav ol li button.active {
               background-color: #efefef; }
-              .a--course-content__main-content .course-content .sequence-nav ol li a.active .icon {
+              .a--course-content__main-content .course-content .sequence-nav ol li button.active .icon {
                 color: #52B9E9; }
-              .a--course-content__main-content .course-content .sequence-nav ol li a.active:hover, .a--course-content__main-content .course-content .sequence-nav ol li a.active:focus {
+              .a--course-content__main-content .course-content .sequence-nav ol li button.active:hover, .a--course-content__main-content .course-content .sequence-nav ol li button.active:focus {
                 background-color: #efefef; }
-              .a--course-content__main-content .course-content .sequence-nav ol li a.active:after {
+              .a--course-content__main-content .course-content .sequence-nav ol li button.active:after {
                 width: 100%;
                 height: 0.2rem;
                 background-color: #52B9E9;
                 content: "";
                 position: absolute;
                 left: 0;
-                bottom: -2rem; }
-            .a--course-content__main-content .course-content .sequence-nav ol li a p {
+                bottom: -2.5rem; }
+              .a--course-content__main-content .course-content .sequence-nav ol li button.active:hover, .a--course-content__main-content .course-content .sequence-nav ol li button.active:focus {
+                background-color: #efefef; }
+            .a--course-content__main-content .course-content .sequence-nav ol li button .sequence-tooltip {
               white-space: pre;
               font-size: 1.4rem;
-              width: 42rem;
               padding: 1rem;
-              z-index: 1000; }
+              z-index: 1000;
+              background-color: #52B9E9;
+              text-shadow: none;
+              font-weight: 400; }
               @media (max-width: 991px) {
-                .a--course-content__main-content .course-content .sequence-nav ol li a p {
+                .a--course-content__main-content .course-content .sequence-nav ol li button .sequence-tooltip {
                   display: none; } }
+              .a--course-content__main-content .course-content .sequence-nav ol li button .sequence-tooltip:after {
+                background-color: #52B9E9; }
       .a--course-content__main-content .course-content .sequence-nav .left-shadow, .a--course-content__main-content .course-content .sequence-nav .right-shadow {
         display: none; }
     .a--course-content__main-content .course-content nav.sequence-bottom {
@@ -6912,7 +6944,7 @@ a.new-post-btn {
       @media (max-width: 767px) {
         .a--course-content__main-content .course-content nav.sequence-bottom {
           width: 60%; } }
-      .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button {
+      .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button:not(:disabled) {
         border: none;
         background: none;
         cursor: pointer;
@@ -6925,9 +6957,9 @@ a.new-post-btn {
         flex-shrink: 0;
         -ms-flex-negative: 0;
         position: relative; }
-        .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button span {
+        .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button:not(:disabled) span {
           font-size: 1.6rem; }
-        .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button:after {
+        .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button:not(:disabled):after {
           position: absolute;
           bottom: -1rem;
           left: 0;
@@ -6938,8 +6970,15 @@ a.new-post-btn {
           content: "";
           -webkit-transition: 0.2s all ease-in-out;
           transition: 0.2s all ease-in-out; }
-        .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button:hover:after, .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button:focus:after {
+        .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button:not(:disabled):hover:after, .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button:not(:disabled):focus:after {
           width: 100%; }
+        .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button:not(:disabled):hover, .a--course-content__main-content .course-content nav.sequence-bottom .sequence-nav-button:not(:disabled):focus {
+          color: #666;
+          border: none;
+          background: none;
+          padding: 1rem 0; }
+    .a--course-content__main-content .course-content .bookmark-button-wrapper {
+      display: none; }
     .a--course-content__main-content .course-content h1 {
       text-transform: none;
       font-family: "Lato", sans-serif;
@@ -7110,6 +7149,22 @@ a.new-post-btn {
 
 .a--courseware-wrapper__content .discussion-module, div.book-wrapper .discussion-module {
   margin: 4rem 0; }
+  .a--courseware-wrapper__content .discussion-module .discussion-show, div.book-wrapper .discussion-module .discussion-show {
+    line-height: 40px; }
+  .a--courseware-wrapper__content .discussion-module .new-post-btn, div.book-wrapper .discussion-module .new-post-btn {
+    line-height: 20px; }
+  .a--courseware-wrapper__content .discussion-module .discussion-pagination, div.book-wrapper .discussion-module .discussion-pagination {
+    padding-bottom: 3.6rem; }
+  .a--courseware-wrapper__content .discussion-module .responses, div.book-wrapper .discussion-module .responses {
+    padding: 0 0 0 1.6rem; }
+    .a--courseware-wrapper__content .discussion-module .responses .forum-response, div.book-wrapper .discussion-module .responses .forum-response {
+      position: relative; }
+      .a--courseware-wrapper__content .discussion-module .responses .forum-response .discussion-response .response-header-actions, div.book-wrapper .discussion-module .responses .forum-response .discussion-response .response-header-actions {
+        right: 0; }
+      .a--courseware-wrapper__content .discussion-module .responses .forum-response .comments, div.book-wrapper .discussion-module .responses .forum-response .comments {
+        padding: 0 0 0 1.6rem; }
+  .a--courseware-wrapper__content .discussion-module .reply-post-control, div.book-wrapper .discussion-module .reply-post-control {
+    padding-top: 1.6rem; }
 
 div.book-wrapper {
   max-width: none; }
@@ -7740,10 +7795,11 @@ div.book-wrapper {
         text-align: center; }
 
 .wrapper-account-settings {
-  padding: 30px 20px;
+  padding: 0px 20px;
   min-width: 0; }
   .wrapper-account-settings .wrapper-header {
-    width: 100%; }
+    width: 100%;
+    height: 127px; }
     .wrapper-account-settings .wrapper-header .header-title {
       font-size: 2.2rem;
       color: #52B9E9;
@@ -7751,7 +7807,8 @@ div.book-wrapper {
       font-style: normal;
       font-weight: 700;
       letter-spacing: 0;
-      width: 100%; }
+      width: 100%;
+      padding-top: 20px; }
     .wrapper-account-settings .wrapper-header .account-settings-header-subtitle {
       margin: 10px 0 5px;
       font-size: 1.6rem;
@@ -7760,14 +7817,13 @@ div.book-wrapper {
       font-weight: 400;
       color: rgba(102, 102, 102, 0.85);
       width: 100%; }
+    .wrapper-account-settings .wrapper-header .account-nav-link {
+      font-weight: 700; }
 
 .account-settings-sections .section {
   background-color: #fff;
-  border: none;
-  border-top: 0.1rem solid #ccc;
-  box-shadow: none;
-  padding: 20px 0; }
-  .account-settings-sections .section .u-field {
+  box-shadow: none; }
+  .account-settings-sections .section .account-settings-section-body .u-field {
     border-bottom: 1px solid rgba(204, 204, 204, 0.6);
     display: -webkit-box;
     display: -moz-box;
@@ -7792,78 +7848,123 @@ div.book-wrapper {
     -o-align-items: center;
     align-items: center;
     -ms-flex-align: center; }
-    .account-settings-sections .section .u-field:last-of-type {
+    .account-settings-sections .section .account-settings-section-body .u-field:last-of-type {
       border-bottom: none; }
-  .account-settings-sections .section .u-field-title {
-    font-family: "Lato", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: rgba(102, 102, 102, 0.7);
-    width: 27.5%;
-    margin: 5px 0; }
-    @media (max-width: 991px) {
-      .account-settings-sections .section .u-field-title {
-        width: 40%; } }
-    @media (max-width: 767px) {
-      .account-settings-sections .section .u-field-title {
-        width: 100%; } }
-  .account-settings-sections .section .u-field-value {
-    font-family: "Lato", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    color: #666666;
-    width: 27.5%; }
-    @media (max-width: 991px) {
-      .account-settings-sections .section .u-field-value {
-        width: 60%; } }
-    @media (max-width: 767px) {
-      .account-settings-sections .section .u-field-value {
-        width: 100%; } }
-    .account-settings-sections .section .u-field-value input, .account-settings-sections .section .u-field-value select {
-      border-radius: 0;
-      box-shadow: none;
+    .account-settings-sections .section .account-settings-section-body .u-field .field {
+      width: 49%;
+      padding: 0;
+      margin: 0; }
+      @media (max-width: 991px) {
+        .account-settings-sections .section .account-settings-section-body .u-field .field {
+          width: 100%; } }
+      .account-settings-sections .section .account-settings-section-body .u-field .field .field-label {
+        font-family: "Lato", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: rgba(102, 102, 102, 0.7);
+        margin: 0;
+        padding: 0.625rem;
+        display: inline-block;
+        line-height: 20px;
+        width: 49%; }
+        @media (max-width: 991px) {
+          .account-settings-sections .section .account-settings-section-body .u-field .field .field-label {
+            width: 39%; } }
+        @media (max-width: 767px) {
+          .account-settings-sections .section .account-settings-section-body .u-field .field .field-label {
+            width: 100%; } }
+      .account-settings-sections .section .account-settings-section-body .u-field .field .field-input {
+        border-top: none;
+        border-left: none;
+        border-right: none; }
+      .account-settings-sections .section .account-settings-section-body .u-field .field #u-field-value-username {
+        padding-top: 0; }
+      .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link {
+        margin-top: 10px; }
+      .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value {
+        font-family: "Lato", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #666666;
+        margin: 0;
+        padding: 0;
+        display: inline-block; }
+        @media (max-width: 767px) {
+          .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value {
+            width: 100%; } }
+        .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value b, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value strong {
+          font-weight: 400; }
+        .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value input {
+          border-radius: 0;
+          border: none; }
+        .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value input, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value select {
+          box-shadow: none;
+          font-family: "Lato", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          width: 49%;
+          height: auto;
+          padding: 10px 5px;
+          font-size: 16px;
+          height: auto;
+          -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+          position: relative;
+          top: 0; }
+          .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value input:focus, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value select:focus {
+            outline: none;
+            border-bottom: 2px solid #52B9E9;
+            margin-bottom: 13px; }
+          .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value input:hover, .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value select:hover {
+            opacity: 0.5; }
+        .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-value input:read-only {
+          border: none;
+          opacity: 0.8;
+          margin-bottom: 0; }
+      .account-settings-sections .section .account-settings-section-body .u-field .field #u-field-value-username,
+      .account-settings-sections .section .account-settings-section-body .u-field .field .field-input,
+      .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link,
+      .account-settings-sections .section .account-settings-section-body .u-field .field select {
+        width: 50%; }
+        @media (max-width: 991px) {
+          .account-settings-sections .section .account-settings-section-body .u-field .field #u-field-value-username,
+          .account-settings-sections .section .account-settings-section-body .u-field .field .field-input,
+          .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link,
+          .account-settings-sections .section .account-settings-section-body .u-field .field select {
+            width: 60%; } }
+        @media (max-width: 767px) {
+          .account-settings-sections .section .account-settings-section-body .u-field .field #u-field-value-username,
+          .account-settings-sections .section .account-settings-section-body .u-field .field .field-input,
+          .account-settings-sections .section .account-settings-section-body .u-field .field .u-field-link,
+          .account-settings-sections .section .account-settings-section-body .u-field .field select {
+            width: 100%; } }
+    .account-settings-sections .section .account-settings-section-body .u-field .u-field-message {
       font-family: "Lato", sans-serif;
       font-style: normal;
       font-weight: 400;
-      width: 100%;
-      height: auto;
-      padding: 10px 5px;
-      font-size: 16px;
-      height: auto;
+      color: #666;
+      width: 40%;
+      padding: 0;
+      margin: 0;
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
-      border: none;
-      border-bottom: 1px solid #ddd;
-      position: relative;
-      top: 0; }
-      .account-settings-sections .section .u-field-value input:focus, .account-settings-sections .section .u-field-value select:focus {
-        outline: none;
-        border-bottom: 2px solid #52B9E9;
-        margin-bottom: 13px; }
-      .account-settings-sections .section .u-field-value input:hover, .account-settings-sections .section .u-field-value select:hover {
-        opacity: 0.5; }
-    .account-settings-sections .section .u-field-value input:read-only {
-      border: none;
-      opacity: 0.8;
-      margin-bottom: 0; }
-  .account-settings-sections .section .u-field-message {
-    font-family: "Lato", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    color: #666;
-    width: 40%;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    opacity: 0.55;
-    margin-left: 5%; }
-    @media (max-width: 991px) {
-      .account-settings-sections .section .u-field-message {
-        display: none; } }
-    .account-settings-sections .section .u-field-message:hover, .account-settings-sections .section .u-field-message:focus {
-      opacity: 0.85; }
-  .account-settings-sections .section .u-field-message-help {
-    color: #666; }
+      opacity: 0.55;
+      margin-left: 5%; }
+      @media (max-width: 991px) {
+        .account-settings-sections .section .account-settings-section-body .u-field .u-field-message {
+          display: none; } }
+      .account-settings-sections .section .account-settings-section-body .u-field .u-field-message:hover, .account-settings-sections .section .account-settings-section-body .u-field .u-field-message:focus {
+        opacity: 0.85; }
+      .account-settings-sections .section .account-settings-section-body .u-field .u-field-message .u-field-message-notification {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0; }
+    .account-settings-sections .section .account-settings-section-body .u-field .u-field-message-help {
+      color: #666; }
 .account-settings-sections .section-header {
   font-family: "Lato", sans-serif;
   font-style: normal;
@@ -8747,7 +8848,7 @@ span#djangopid, span#edxver {
       width: 260px;
       height: 260px;
       bottom: -52px;
-      right: -37.1428571429px; } }
+      right: -37.14286px; } }
   @media (max-width: 767px) {
     .cloudera--course-tile-01__image {
       width: 140px;
@@ -8957,7 +9058,7 @@ span#djangopid, span#edxver {
             width: 260px;
             height: 260px;
             bottom: -52px;
-            right: -37.1428571429px; } }
+            right: -37.14286px; } }
         @media (max-width: 767px) {
           .cloudera--course-tile-01-parent-element li.courses-listing-item .cloudera--course-tile-01__wrapper .cloudera--course-tile-01__image {
             width: 140px;
@@ -9171,3 +9272,5 @@ body {
 
 li.courses-listing-item {
   list-style-type: none; }
+
+/*# sourceMappingURL=main.css.map */
