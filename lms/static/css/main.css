@@ -6541,6 +6541,16 @@ div.book-wrapper button.new-post-btn {
   padding: 0; }
   .a--course-info > ol li {
     list-style-type: none; }
+.a--course-info .updates-article > h2 {
+  display: none; }
+.a--course-info .article-content {
+  margin-bottom: 15px; }
+.a--course-info .article-content.hidden {
+  display: block !important;
+  visibility: visible; }
+.a--course-info button.toggle-visibility-button {
+  display: none;
+  visibility: hidden; }
 
 .a--course-content__nav {
   -webkit-flex-shrink: 0;
