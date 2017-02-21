@@ -14,4 +14,22 @@
       list-style-type: none;
     }
   }
+
+  .updates-article > h2 {
+    display: none;
+  }
+
+  .article-content {
+    margin-bottom: 15px;
+  }
+
+  .article-content.hidden {
+    display: block !important;
+    visibility: visible;
+  }
+
+  button.toggle-visibility-button {
+    display: none;
+    visibility: hidden;
+  }
 }
