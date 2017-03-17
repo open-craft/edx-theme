@@ -7,7 +7,7 @@
 
 
 <%
-  theme_folder = settings.THEME_NAME
+  theme_folder = request.site_theme.theme_dir_name
   footer_logo = '/static/themes/' + theme_folder + get_footer_settings()['footer_logo']
   footer_copyright_text = get_footer_settings()['footer_copyright_text']
   display_edx_disclaimer = get_footer_settings()['display_edx_disclaimer']
