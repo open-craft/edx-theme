@@ -5674,7 +5674,8 @@ div.book-wrapper button.new-post-btn {
         -ms-flex-negative: 0;
         margin-right: 1.5rem; } }
   .a--course-tile-03__image {
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center center; }
   .a--course-tile-03__info-container {
     padding: 3rem 1.5rem;
