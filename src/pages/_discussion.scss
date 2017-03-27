@@ -1,0 +1,21 @@
+.discussion-board {
+    > header.page-header div.page-header-secondary > div.form-actions > button {
+        height: 4.2rem !important;
+    }
+
+    .forum-search {
+        .search-input {
+            width: 14rem;
+            padding: 1rem;
+            font-size: 1.4rem;
+        }
+        .search-btn {
+            padding: 1rem;
+            font-size: 1.4rem;
+        }
+    }
+
+    div.discussion-body {
+        max-width: 110rem;
+    }
+}

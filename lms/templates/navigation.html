@@ -40,7 +40,7 @@ site_status_msg = get_site_status_msg(course_id)
 </%block>
 
 
-  <% theme_folder = settings.THEME_NAME %>
+  <% theme_folder = request.site_theme.theme_dir_name %>
   <% logo_positive = '/static/themes/' + theme_folder + get_brand_logos()['logo_positive'] %>
   <% logo_negative = '/static/themes/' + theme_folder + get_brand_logos()['logo_negative'] %>
   <% logo_url = get_global_settings().get('header_logo_target',marketing_link('ROOT')) %>

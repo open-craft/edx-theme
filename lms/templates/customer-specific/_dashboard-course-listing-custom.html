@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 %>
 
-<%page args="course_overview, enrollment, show_courseware_link, cert_status, can_unenroll, credit_status, show_email_settings, course_mode_info, show_refund_option, is_paid_course, is_course_blocked, verification_status, course_requirements, dashboard_index, user, course_program_info" />
+<%page args="course_overview, enrollment, show_courseware_link, cert_status, can_unenroll, credit_status, show_email_settings, course_mode_info, show_refund_option, is_paid_course, is_course_blocked, verification_status, course_requirements, dashboard_index, user, related_programs" />
 
 
 <%
@@ -52,19 +52,36 @@ from django.core.urlresolvers import reverse
         </h4>
         <!-- course dates -->
         <div class="cloudera--dashboard-course-listing__course-dates">
-          % if bool(re.match('.*elf.*aced.*', course_overview.start_datetime_text("SHORT_DATE"))):
-            <span class="course-started">${_("{start_date}").format(start_date=course_overview.start_datetime_text("SHORT_DATE"))}</span>
+          <%
+            if course_overview.advertised_start:
+                course_start_date_string = course_overview.advertised_start
+            elif course_overview.start is not None:
+                course_start_date_string = 'Starts on: {start_date}'.format(
+                    start_date=course_overview.start.strftime('%b %d, %Y')
+                )
+            else:
+                course_start_date_string = ''
+
+            if course_overview.end is not None:
+                course_end_date_string = 'Ends on: {end_date}'.format(
+                    end_date=course_overview.end.strftime('%b %d, %Y')
+                )
+            else:
+                course_end_date_string = ''
+          %>
+          % if re.match('.*elf.*aced.*', course_start_date_string):
+            <span class="course-started">${course_start_date_string}</span>
           % else:
             % if course_overview.has_ended():
-              <span class="course-ended">${_("Ended - {end_date}").format(end_date=course_overview.end_datetime_text("SHORT_DATE"))}</span>
+              <span class="course-ended">${_("Ended - {end_date}").format(end_date=course_end_date_string)}</span>
             % elif course_overview.has_started():
-              <span class="course-started">${_("Started on {start_date}").format(start_date=course_overview.start_datetime_text("SHORT_DATE"))}</span>
+              <span class="course-started">${_("Started on {start_date}").format(start_date=course_start_date_string)}</span>
             % elif course_overview.start_date_is_still_default: # Course start date TBD
               <span class="course-coming-soon">${_("Coming Soon")}</span>
             % elif course_overview.starts_within(days=5):   # hasn't started yet
-              <span class="course-starts-soon">${_("Starts - {start_date}").format(start_date=course_overview.start_datetime_text("DAY_AND_TIME"))}</span>
+              <span class="course-starts-soon">${_("Starts - {start_date}").format(start_date=course_start_date_string)}</span>
             % else:   # hasn't started yet
-              <span class="course-starts">${_("Starts - {start_date}").format(start_date=course_overview.start_datetime_text("SHORT_DATE"))}</span>
+              <span class="course-starts">${_("Starts - {start_date}").format(start_date=course_start_date_string)}</span>
             % endif
           % endif
         </div>

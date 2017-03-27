@@ -155,6 +155,7 @@ ${HTML(fragment.foot_html())}
     </section>
     <section class="a--courseware-wrapper__content__main-content a--course-content__main-content" id="main" tabindex="-1" aria-label="Content">
       <div class="course-content" id="course-content">
+        <div class="path"></div>
         % if getattr(course, 'entrance_exam_enabled') and \
           getattr(course, 'entrance_exam_minimum_score_pct') and \
           entrance_exam_current_score is not UNDEFINED:
