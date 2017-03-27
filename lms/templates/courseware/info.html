@@ -2,7 +2,7 @@
 <%namespace name='static' file='../static_content.html'/>
 <%!
 from django.utils.translation import ugettext as _
-from courseware.courses import get_course_info_section, get_course_date_summary
+from courseware.courses import get_course_info_section
 
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 %>
@@ -54,10 +54,6 @@ $(document).ready(function(){
         ${get_course_info_section(request, masquerade_user, course, 'updates')}
       </section>
       <section aria-label="${_('Handout Navigation')}" class="a--courseware-wrapper__content__sidebar a--course-handouts">
-        % if False:
-          <h1 class="a--courseware-wrapper__content__sidebar__main-title">${_("Important Course Dates")}</h1>
-          ${get_course_date_summary(course, user)}
-        % endif
 
         <h1 class="a--courseware-wrapper__content__sidebar__main-title">${_(course.info_sidebar_name)}</h1>
         ${get_course_info_section(request, masquerade_user, course, 'handouts')}

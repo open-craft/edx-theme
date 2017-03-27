@@ -82,11 +82,14 @@
         right: 1rem;
         width: auto;
         height: auto;
+        background-color: white;
+        color: #919191;
 
         &:hover, &:focus {
           box-shadow: none;
           outline: none;
           border: none;
+          background-color: white;
           color: $brand-primary-color;
         }
       }
@@ -250,6 +253,7 @@
       .sequence-nav {
         border-bottom: 0.2rem solid #ddd;
         padding-bottom: $sequence-nav-bottom-padding;
+        margin-top: 3rem;
         @include display(flex);
         @include align-items(center);
         @include justify-content(space-between);
@@ -258,6 +262,7 @@
           border: none;
           background: none;
           cursor: pointer;
+          height: initial;
           @include transition(all 0.3s ease-in-out);
           @include flex-shrink(0);
           top: 6px;
@@ -327,10 +332,11 @@
 
                 &:hover, &:focus {
                   background-color: #efefef;
+                  border-bottom: none;
                 }
 
                 @if $courseware-link-hover == "expanding-underline" {
-                    @include underline_expanding_hover($brand-primary-color, $sequence-nav-bottom-padding + 0.9rem);
+                    @include underline_expanding_hover($brand-primary-color, $sequence-nav-bottom-padding - 1.34rem);
                 } @else if $courseware-link-hover == "hover-pop" {
                     .icon {
                       @include hover_pop(-0.5rem, 0);
@@ -348,6 +354,7 @@
 
                 &.active {
                   background-color: #efefef;
+                  border-bottom: none;
 
                   .icon {
                     color: $brand-primary-color;
@@ -364,11 +371,7 @@
                     content: "";
                     position: absolute;
                     left: 0;
-                    bottom: -$sequence-nav-bottom-padding - 0.9rem;
-                  }
-
-                  &:hover, &:focus {
-                    background-color: #efefef;
+                    bottom: -$sequence-nav-bottom-padding + 1.35rem;
                   }
                 }
 
@@ -448,7 +451,6 @@
             color: $base-text-color;
             border: none;
             background: none;
-            padding: 1rem 0;
           }
         }
       }
