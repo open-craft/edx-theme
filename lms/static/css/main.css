@@ -6542,7 +6542,7 @@ div.book-wrapper button.new-post-btn {
   padding: 0; }
   .a--course-info > ol li {
     list-style-type: none; }
-.a--course-info .updates-article > h2 {
+.a--course-info .updates-article .date {
   display: none; }
 .a--course-info .article-content {
   margin-bottom: 15px; }
