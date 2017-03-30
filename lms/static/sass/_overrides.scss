@@ -1,0 +1,17 @@
+.wrapper-footer footer#footer-openedx {
+
+  .colophon .nav-legal li a {
+    color: #fff;
+
+    &:hover,
+    &:visited,
+    &:focus,
+    &:active {
+      color: #fff;
+    }
+  }
+
+  .copyright {
+    color: #d8d8d8;
+  }
+}
