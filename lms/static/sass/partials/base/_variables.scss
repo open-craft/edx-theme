@@ -1,9 +1,34 @@
 @import 'lms/static/sass/partials/base/variables';
 
-$maw-online-main-color: #2d1a3d;
-$maw-online-secondary-color: #3399ff;
+$maw-online-purple: #2d1a3d;
+$maw-online-blue: #3399ff;
 
-$custom-color: $maw-online-main-color;
+$custom-color: $maw-online-blue;
 
-$header-bg: $maw-online-main-color;
-$footer-bg: $maw-online-secondary-color;
+$header-bg: $maw-online-purple;
+$footer-bg: $maw-online-blue;
+
+$custom-color-l1: tint($custom-color,20%);
+$custom-color-d1: shade($custom-color,20%);
+$custom-color-d2: shade($custom-color,40%);
+$custom-color-d3: shade($custom-color,60%);
+$custom-color-d4: shade($custom-color,80%);
+
+$action-primary-bg: $custom-color;
+$action-primary-shadow: $custom-color-d4;
+$action-primary-focused-bg: $custom-color-d1;
+$action-primary-focused-fg: $white;
+$action-primary-active-bg: $custom-color;
+$action-primary-active-fg: $custom-color-d3;
+$action-primary-active-shadow: $custom-color-d2;
+$action-primary-active-focused-fg: $custom-color-d4;
+$action-primary-active-focused-shadow: $custom-color-d3;
+$action-primary-disabled-bg: $m-gray-d3;
+$action-prmary-disabled-fg: $white;
+
+$link-color: $custom-color;
+$link-color-d1: $custom-color;
+$link-hover: $custom-color-l1;
+$button-color: $custom-color;
+
+$header-graphic-super-color: $custom-color-d1;
