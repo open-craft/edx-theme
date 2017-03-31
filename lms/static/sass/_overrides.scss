@@ -36,6 +36,21 @@
     }
 
   }
+
+  .form-toggle {
+
+    border: 1px solid #287acc;
+    color: #287acc;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+      background-color: #3399ff;
+    }
+
+  }
+
 }
 
 .wrapper-footer footer#footer-openedx {
