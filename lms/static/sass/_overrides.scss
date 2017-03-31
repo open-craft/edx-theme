@@ -19,6 +19,17 @@
     background-color: #287acc;
   }
 
+  .doc-link {
+    color: #3399ff;
+
+    &:hover,
+    &:visited,
+    &:focus,
+    &:active {
+      color: #fff;
+    }
+  }
+
 }
 
 .form-wrapper#register-form,
