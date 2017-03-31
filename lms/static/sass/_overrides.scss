@@ -50,6 +50,13 @@
     background: transparent;
   }
 
+  &.slim {
+    h2.course-header {
+      color: #3399ff;
+      text-shadow: none;
+    }
+  }
+
 }
 
 .form-wrapper#register-form,
