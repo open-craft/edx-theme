@@ -30,6 +30,21 @@
     }
   }
 
+  .primary > a {
+
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+    color: #3399ff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: transparent;
+      color: #fff;
+    }
+  }
+
 }
 
 .form-wrapper#register-form,
