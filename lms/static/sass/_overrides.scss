@@ -21,6 +21,23 @@
 
 }
 
+.form-wrapper#register-form,
+.form-wrapper#login-form {
+
+  .action-primary {
+
+    color: #fff;
+    background-color: #3399ff;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #287acc;
+    }
+
+  }
+}
+
 .wrapper-footer footer#footer-openedx {
 
   .colophon .nav-legal li a {
