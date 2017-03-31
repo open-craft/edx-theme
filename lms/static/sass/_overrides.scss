@@ -12,6 +12,13 @@
     }
   }
 
+  .nav-courseware li .btn:hover,
+  .nav-courseware li .btn:focus,
+  .nav-courseware li .btn:active {
+    color: #fff;
+    background-color: #287acc;
+  }
+
 }
 
 .wrapper-footer footer#footer-openedx {
