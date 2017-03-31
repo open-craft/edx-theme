@@ -51,10 +51,16 @@
   }
 
   &.slim {
+
+    h1.logo img {
+      vertical-align: baseline;
+    }
+
     h2.course-header {
       color: #3399ff;
       text-shadow: none;
     }
+
   }
 
 }
