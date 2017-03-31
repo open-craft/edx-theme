@@ -1,2 +1,19 @@
 @import 'lms/static/sass/discussion/lms-discussion-main';
 @import '../overrides';
+
+.dropdown-menu-container .menu-title {
+
+  color: #3399ff;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    color: #fff;
+  }
+
+}
+
+.header-global .wrapper-header .user-menu {
+  color: #fff;
+}
