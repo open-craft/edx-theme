@@ -4,6 +4,14 @@
     height: 46px;
   }
 
+  .nav-global li a {
+    &:hover,
+    &:active,
+    &:focus {
+      color: #fff;
+    }
+  }
+
 }
 
 .wrapper-footer footer#footer-openedx {
