@@ -12,11 +12,16 @@
     }
   }
 
+  .nav-courseware li .btn,
   .nav-courseware li .btn:hover,
   .nav-courseware li .btn:focus,
   .nav-courseware li .btn:active {
+    box-shadow: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
     color: #fff;
-    background-color: #287acc;
+    background: transparent;
+    text-transform: uppercase;
   }
 
   a,
