@@ -73,7 +73,11 @@
 }
 
 .home > header {
-  background-size: contain;
+  background-position: bottom left;
+
+  .outer-wrapper {
+    padding: 90px 60px;
+  }
 }
 
 .form-wrapper#register-form,
