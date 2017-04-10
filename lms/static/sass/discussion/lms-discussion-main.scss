@@ -1,6 +1,15 @@
 @import 'lms/static/sass/discussion/lms-discussion-main';
 @import '../overrides';
 
+// The discussion page uses pattern library v2 while most other pages use v1.
+// These tweaks are needed to make the discussion page look more consistent
+// with the rest of the site.
+@import 'lms/static/sass/course/layout/courseware_header';
+
+.header-global.slim .wrapper-header {
+  height: 45px;
+}
+
 .dropdown-menu-container .menu-title {
 
   color: #3399ff;
