@@ -9,126 +9,61 @@
 <% footer = get_footer(is_secure=is_secure) %>
 <%namespace name='static' file='static_content.html'/>
 
-% if uses_bootstrap:
-  <div class="container-fluid wrapper-footer">
-    <footer>
-      <div class="row">
-        <div class="col-md-9">
-          <nav class="navbar site-nav navbar-toggleable-sm navbar-light" aria-label="${_('About')}">
-            <ul class="navbar-nav">
-              % for item_num, link in enumerate(footer['navigation_links'], start=1):
-                <li class="nav-item">
-                  <a class="nav-link" href="${link['url']}">${link['title']}</a>
-                </li>
-              % endfor
-            </ul>
-          </nav>
-
-          ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-          <p class="copyright">${footer['copyright']} ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</p>
-
-          <nav class="navbar legal-nav navbar-toggleable-sm navbar-light" aria-label="${_('Legal')}">
-            <ul class="navbar-nav">
-              % for item_num, link in enumerate(footer['legal_links'], start=1):
-                <li class="nav-item">
-                  <a class="nav-link" href="${link['url']}">${link['title']}</a>
-                </li>
-              % endfor
-              <li class="nav-item">
-                <a class="nav-link" href="${footer['edx_org_link']['url']}">${footer['edx_org_link']['text']}</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col-md-3">
-          ## Please leave this link and use one of the logos provided
-          ## The OpenEdX link may be hidden when this view is served
-          ## through an API to partner sites (such as marketing sites or blogs),
-          ## which are not technically powered by Open edX.
-          % if not hide_openedx_link:
-            <div class="footer-about-openedx">
-              <p>
-                <a href="${footer['openedx_link']['url']}">
-                  <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
-                </a>
-              </p>
-            </div>
-          % endif
-        </div>
+<div class="wrapper wrapper-footer">
+<footer class="cloudera-footer">
+  <div class="cloudera-footer-container">
+    <div class="cloudera-footer-left">
+      <ul class="cloudera-footer-menu">
+        <li><a href="http://www.cloudera.com/about-cloudera.html">About</a></li>
+        <li><a href="http://www.cloudera.com/resources.html">Resources</a></li>
+        <li><a href="http://www.cloudera.com/contact-us.html">Contact</a></li>
+        <li><a href="http://www.cloudera.com/about-cloudera/careers.html">Careers</a></li>
+        <li><a href="http://www.cloudera.com/about-cloudera/press-center.html">Press</a></li>
+        <li><a href="http://www.cloudera.com/documentation.html">Documentation</a></li>
+        <li><a href="http://www.cloudera.com/blogs.html">Blogs</a></li>
+      </ul>
+      <div class="cloudera-footer-contact-text">
+        <p>United States: +1 888 789 1488</p>
+        <p>Outside the US: +1 650 362 0488</p>
       </div>
-    </footer>
-  </div>
-% else:
-  <div class="wrapper wrapper-footer">
-    <footer id="footer-openedx" class="grid-container"
-      ## When rendering the footer through the branding API,
-      ## the direction may not be set on the parent element,
-      ## so we set it here.
-      % if bidi:
-        dir=${bidi}
-      % endif
-    >
-      <div class="colophon">
-        <nav class="nav-colophon" aria-label="${_('About')}">
-          <ol>
-              % for item_num, link in enumerate(footer['navigation_links'], start=1):
-              <li class="nav-colophon-0${item_num}">
-                <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
-              </li>
-              % endfor
-          </ol>
-        </nav>
-
-        % if context.get('include_language_selector', footer_language_selector_is_enabled()):
-            <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
-        % endif
-
-        <div class="wrapper-logo">
-          <p>
-            <a href="/">
-              ## The default logo is a placeholder.
-              ## You can either replace this link entirely or update
-              ## the FOOTER_ORGANIZATION_IMAGE in Django settings.
-              ## If you customize FOOTER_ORGANIZATION_IMAGE, then the image
-              ## can be included in the footer on other sites
-              ## (e.g. a blog or marketing front-end) to provide a consistent
-              ## user experience.  See the branding app for details.
-              <img alt="organization logo" src="${footer['logo_image']}">
-            </a>
-          </p>
-        </div>
-
-        ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-        <p class="copyright">${footer['copyright']} ${u" | {icp}".format(icp=getattr(settings,'ICP_LICENSE')) if getattr(settings,'ICP_LICENSE',False) else ""}</p>
-
-        <nav class="nav-legal" aria-label="${_('Legal')}">
-          <ul>
-            % for item_num, link in enumerate(footer['legal_links'], start=1):
-              <li class="nav-legal-0${item_num}">
-                <a href="${link['url']}">${link['title']}</a>
-              </li>
-            % endfor
-            <li><a href="${footer['edx_org_link']['url']}">${footer['edx_org_link']['text']}</a></li>
-          </ul>
-        </nav>
+      <div class="cloudera-footer-copyright">
+        © Copyright 2010-2016 Cloudera. All rights reserved. Not to be reproduced or shared without prior written consent from Cloudera.
       </div>
-
-      ## Please leave this link and use one of the logos provided
-      ## The OpenEdX link may be hidden when this view is served
-      ## through an API to partner sites (such as marketing sites or blogs),
-      ## which are not technically powered by OpenEdX.
-      % if not hide_openedx_link:
+    </div>
+    <div class="cloudera-footer-right">
+      <ul class="cloudera-footer-social-links">
+        <li>
+          <a href="https://www.linkedin.com/company/cloudera" target="_blank"><i class="fa fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/cloudera" target="_blank"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/cloudera" target="_blank"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="http://www.cloudera.com/contact-us.html" target="_blank"><i class="fa fa-envelope"></i></a>
+        </li>
+      </ul>
+      <ul class="cloudera-footer-bottom-right-links">
+        <li>
+          <a href="http://www.cloudera.com/legal/terms-and-conditions.html">Terms & Conditions</a>
+        </li>
+        <li>
+          <a href="http://www.cloudera.com/legal/policies.html">Policies</a>
+        </li>
+      </ul>
       <div class="footer-about-openedx">
         <p>
           <a href="${footer['openedx_link']['url']}">
-            <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
+            <img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png" alt="Powered by Open edX" width="140" />
           </a>
         </p>
       </div>
-      % endif
-    </footer>
+    </div>
   </div>
-% endif
+</footer>
+</div>
 % if include_dependencies:
   <%static:js group='base_vendor'/>
   <%static:css group='style-vendor'/>
