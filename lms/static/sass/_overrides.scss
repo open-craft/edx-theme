@@ -156,7 +156,8 @@
     line-height: 150%;
     background-color: #fff;
 
-    &.cloudera-custom-about {
+    &.cloudera-custom-about,
+    &.cloudera-custom-help, {
       padding: 20px 0 80px 0;
       text-align: center;
 
