@@ -1,0 +1,55 @@
+@import 'lms/static/sass/discussion/lms-discussion-main';
+@import 'lms/static/sass/base/extends';
+@import 'lms/static/sass/course/layout/courseware_header';
+@import '../base/variables';
+@import '../overrides';
+
+.wrapper-user-menu {
+  .menu-title {
+    font-family: Lato, sans-serif !important;
+    padding: 0 !important;
+    position: relative !important;
+    text-transform: none !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    letter-spacing: 0 !important;
+  }
+
+  .dropdown-menu {
+    background: $white !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0, 0.3) !important;
+    border: 1px solid $gray-l3 !important;
+    margin-top: 0 !important;
+    position: absolute !important;
+    @include right(0px);
+    top: 37px !important;
+    min-width: 120px !important;
+    z-index: 3 !important;
+
+    li {
+      &.item {
+        border-bottom: 1px dotted #c8c8c8 !important;
+      }
+
+      > a {
+        border: 1px solid transparent !important;
+        border-radius: 3px !important;
+        @include box-sizing(border-box);
+        color: $link-color !important;
+        cursor: pointer !important;
+        display: block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        @include transition(padding 0.15s linear 0s);
+        white-space: nowrap !important;
+        width: 100% !important;
+
+        &:hover, &:focus {
+          color: $base-font-color !important;
+          text-decoration: none !important;
+        }
+      }
+    }
+  }
+}

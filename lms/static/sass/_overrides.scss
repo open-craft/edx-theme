@@ -1,0 +1,350 @@
+.header-global {
+  height: 112px !important;
+  border-bottom: none !important;
+
+  &.slim {
+    h1.logo::before {
+      height: 100% !important;
+    }
+
+    .course-header {
+      width: auto !important;
+      margin-top: 13px !important;
+    }
+  }
+
+  .wrapper-header {
+    padding: 32px 15px !important;
+    height: auto !important;
+  }
+
+  .logo {
+    img.ec-logo-size {
+      width: 166px !important;
+      height: 32px !important;
+    }
+  }
+
+  .nav-courseware {
+    margin-top: 10px !important;
+    margin-left: 64px !important;
+
+    // Sign in button
+    li .btn {
+      box-shadow: none;
+      background: none;
+      color: $link-color;
+
+      &:hover, &:focus, &:active {
+        background: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .nav-global {
+    float: right !important;
+    font-size: 1.1em !important;
+
+    &.authenticated {
+      margin-top: 13px !important;
+    }
+
+    // Register button
+    .nav-global-04 .btn-neutral {
+      @extend %m-btn-primary;
+      padding: 10px 20px !important;
+      box-shadow: none !important;
+    }
+
+    li {
+      text-transform: none !important;
+      font-weight: 300 !important;
+
+      a {
+        padding: 0 32px !important;
+      }
+    }
+  }
+}
+
+.home {
+  >header {
+    position: relative;
+    border-bottom: 12px solid $brilliant-blue;
+    background-position: center center;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background-color: transparent;
+      background-image: linear-gradient(to top,transparent, #000);
+      opacity: 0.12;
+      z-index: 3;
+      content: "";
+    }
+
+    .outer-wrapper {
+      padding: 0;
+      animation: none;
+      margin: 0 auto;
+      line-height: 150%;
+      width: 100%;
+
+      .title {
+        float: none;
+        margin-left: 0;
+        transition: none;
+        box-shadow: none;
+        background: none;
+        position: relative;
+        max-width: 720px;
+        padding: 80px 0 115px 10px;
+
+        .heading-group {
+          padding-bottom: 0;
+          display: block;
+          z-index: 2;
+          position: relative;
+
+          h1 {
+            font-weight: 300;
+            font-size: 60px;
+            line-height: 140%;
+            margin: 0 0 20px;
+            color: $brilliant-blue;
+            text-shadow: none;
+            letter-spacing: 1px;
+          }
+
+          p {
+            font-weight: 300;
+            font-size: 16px;
+            font-style: normal;
+            margin: 0;
+            color: #666;
+            opacity: 0.75;
+          }
+        }
+
+        &::after {
+          position: absolute;
+          display: block;
+          left: -250px;
+          right: -200px;
+          top: 0;
+          bottom: 0;
+          z-index: 1;
+          background-color: rgba(255, 255, 255, 0);
+          background-image: linear-gradient(to right,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 20%, white 50%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+          content: "";
+        }
+      }
+    }
+  }
+
+  .courses-container .courses {
+    width: calc(100% - 30px);
+    padding: 0 15px;
+  }
+
+  .cloudera-custom {
+    padding: 80px 0 0 0;
+    line-height: 150%;
+    background-color: #fff;
+
+    &.cloudera-custom-about,
+    &.cloudera-custom-help, {
+      padding: 20px 0 80px 0;
+      text-align: center;
+
+      .cloudera-custom-container {
+        .cloudera-custom-content {
+          max-width: 720px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .cloudera-custom-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+
+      .cloudera-custom-content {
+        width: 60%;
+        margin-right: 30px;
+        padding-left: 15px;
+        flex-shrink: 0;
+        box-sizing: border-box;
+
+        @media (max-width: 1199px) {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        h2 {
+          font-weight: 300;
+          font-size: 36px;
+          margin: 16px 0 30px;
+          color: $brilliant-blue;
+          text-transform: none;
+        }
+
+        p {
+          margin: 10px 0;
+          font-weight: 300;
+        }
+
+        .cloudera-custom-button {
+          background-color: transparent;
+          border: 1px solid $midnight-blue;
+          text-transform: uppercase;
+          display: inline-block;
+          padding: 15px 25px;
+          margin: 30px 0 0 0;
+          font-size: 16px;
+          font-weight: 400;
+          color: $midnight-blue;
+          border-radius: 5px;
+          position: relative;
+        }
+      }
+
+      .cloudera-custom-graphic {
+        display: none;
+        width: 100%;
+
+        @media (min-width: 1200px) {
+          display: block;
+        }
+
+        img {
+          display: block;
+          margin: 0 auto;
+          width: 100%;
+          height: auto;
+          max-width: 360px;
+        }
+      }
+    }
+  }
+}
+
+.content-wrapper {
+  padding-bottom: 48px;
+}
+
+.cloudera-footer {
+  padding: 50px 0;
+  background-color: $footer-bg;
+  color: rgba(255, 255, 255, 0.5);
+
+  a {
+    color: #fff;
+    font-style: normal;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .cloudera-footer-container {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 95%;
+    max-width: 1200px;
+
+    .cloudera-footer-left {
+      flex-shrink: 1;
+      width: 100%;
+
+      .cloudera-footer-menu {
+        padding: 0;
+        margin: 20px 0;
+
+        li {
+          list-style-type: none;
+          display: inline-block;
+          margin-right: 20px;
+          padding: 5px 0;
+          border-bottom: 2px solid transparent;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      .cloudera-footer-contact-text p {
+        margin: 5px 0;
+        font-weight: 300;
+      }
+
+      .cloudera-footer-copyright {
+        margin: 20px 0;
+        font-size: 13px;
+        font-weight: 300;
+        max-width: 800px;
+      }
+    }
+
+    .cloudera-footer-right {
+      flex-shrink: 0;
+      text-align: right;
+
+      .cloudera-footer-social-links {
+        padding: 0;
+        margin: 20px 0;
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+          display: flex;
+          align-items: center;
+          list-style-type: none;
+          margin-left: 20px;
+          width: 32px;
+          height: 32px;
+          background-color: transparent;
+          border: 2px solid #fff;
+          border-radius: 100%;
+          transition: all 0.3s ease-in-out;
+
+          a {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .cloudera-footer-bottom-right-links {
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin: 5px 0;
+          padding: 0 10px;
+          display: inline-block;
+          border-right: 1px solid rgba(255, 255, 255, 0.5);
+
+          &:last-of-type {
+            border-right: none;
+            padding-right: 0;
+          }
+
+          a {
+            font-style: normal;
+            font-weight: 300;
+          }
+        }
+      }
+
+      .footer-about-openedx p {
+        margin-top: 12px !important;
+        text-align: right !important;
+      }
+    }
+  }
+}

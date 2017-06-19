@@ -1,4 +1,1 @@
-prepros.cfg
-.DS_Store
-.sass-cache
-*.swp
+lms/static/css

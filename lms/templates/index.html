@@ -1,23 +1,79 @@
+<%page expression_filter="h"/>
 <%inherit file="main.html" />
 <%namespace name='static' file='static_content.html'/>
 <%!
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
-from microsite_configuration import microsite
+
+from openedx.core.djangolib.markup import HTML, Text
 %>
 
-<%namespace file='theme-variables.html' import="get_index_content" />
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="home">
+      <header>
+        <div class="outer-wrapper">
+          <div class="title">
+            <div class="heading-group">
+              <h1>Cloudera OnDemand</h1>
+              <p>Bringing Cloudera-related classes directly to you.</p>
+            </div>
+          </div>
 
+          % if show_homepage_promo_video:
+            <a href="#video-modal" class="media" rel="leanModal">
+              <div class="hero">
+                <div class="play-intro"></div>
+              </div>
+            </a>
+          % endif
+        </div>
 
-% for section in get_index_content():
-  % if 'courses-list' in section[0]:
-    <%include file = 'design-templates/${section[1]}' args = "template_settings = section[2], courses = courses" />
-  % else:
-    <%include file = 'design-templates/${section[1]}' args = 'template_settings = section[2]' />
-  % endif
-% endfor
+      </header>
 
+      <section class="cloudera-custom cloudera-custom-top">
+        <div class="cloudera-custom-container">
+          <div class="cloudera-custom-content">
+            <h2>Training to meet your needs</h2>
+            <p>Cloudera OnDemand provides a video training option where you can learn from senior instructors—who deliver our most popular courses in a virtual classroom setting—without incurring travel costs or time away from the office.</p>
+            <p>Cloudera OnDemand training is designed to facilitate individual, or enterprise-wide, training to help accelerate the ROI of Cloudera deployments. Get access to all of Cloudera’s training courses in a single package, or choose the course(s) specific to you needs.</p>
+            <a href="/login" class="cloudera-custom-button">Sign in</a>
+          </div>
+          <div class="cloudera-custom-graphic">
+            <img src="${static.url('images/art-1.png')}" role="presentation" />
+          </div>
+        </div>
+      </section>
 
+      <%include file="${courses_list}" />
+
+      <section class="cloudera-custom cloudera-custom-about">
+        <div class="cloudera-custom-container">
+          <div class="cloudera-custom-content">
+            <h2>About Cloudera</h2>
+            <p>No one knows Apache Hadoop like Cloudera!</p>
+            <p>We provide the world’s fastest, easiest, and most secure data platform built on Hadoop. We help solve your most demanding business challenges with data.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cloudera-custom cloudera-custom-help">
+        <div class="cloudera-custom-container">
+          <div class="cloudera-custom-content">
+            <h2>Having trouble?</h2>
+            <p>If you're having difficulty logging in or using the mobile app, please email <a href="mailto:ondemand-feedback@cloudera.com">ondemand-feedback@cloudera.com</a>.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+</main>
+
+% if show_homepage_promo_video:
+  <section id="video-modal" class="modal home-page-video-modal video-modal">
+    <div class="inner-wrapper">
+      <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${homepage_promo_video_youtube_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+% endif
 
 <%block name="js_extra">
    <script type="text/javascript">
