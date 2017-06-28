@@ -7027,6 +7027,9 @@ div.book-wrapper button.new-post-btn {
     .a--course-content__main-content .course-content ul li, .a--course-content__main-content .course-content ol li, .a--course-content__main-content .course-content .xmodule_display.xmodule_CapaModule div.problem p {
       font-size: 16px; }
 
+.auto-cert-message {
+  display: none; }
+
 .a--course-progress {
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;
