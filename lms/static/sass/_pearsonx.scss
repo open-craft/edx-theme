@@ -1,0 +1,132 @@
+@import 'lms/static/sass/multicourse/home';
+
+.home {
+  
+  margin-left: ($baseline);
+  margin-right: ($baseline);
+
+  > header {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background: $white;
+  
+    .hero-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .hero-image {
+      background-image: $homepage-bg-image;
+      background-position: left 0px bottom 33%;
+      background-size: cover;
+      flex-basis: 45%;
+      @media screen and (max-width: 760px) {
+        display: none;
+      }
+      min-height: 200px;
+    }
+
+    .hero-text {
+      padding: ($baseline) ($baseline*1.5);
+      flex-basis: 45%;
+      @media screen and (max-width: 760px) {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+.pearson-banner {
+  background-image: $pearson-banner-image;
+  background-size: cover;
+  background-position: left 0px bottom 60%;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 150px;
+  margin-bottom: 25px;
+
+  .pearson-banner-gradient {
+    background: linear-gradient(to right, $white, rgba(255,255,255,0));
+    min-height: 150px;
+    width: 25%;
+    min-width: 150px;
+  }
+
+  .pearson-banner-text {
+    padding: ($baseline) ($baseline*1.5);
+    width: 100%;
+  }
+}
+
+.programs-container {
+  margin-top: ($baseline*1.5);
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .program-container {
+    flex: 1 1 200px;
+    @media screen and (max-width: 760px) {
+      flex-basis: 100%;
+    }
+    width: 300px;
+    padding: ($baseline);
+    .program-image {
+      width: 100%;
+      max-width: 300px;
+      min-width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .program-name {
+      margin-top: ($baseline);
+      text-align: center;
+    }
+  }
+}
+
+.offered-by-box {
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+}
+
+.wrapper-logo {
+  display: inline-block;
+}
+
+.wrapper-footer footer#footer-openedx .colophon {
+  width: 100%;
+  div {
+    a {
+      color: $pearsonx-main-color;
+    }
+    display: inline-block;
+    margin: ($baseline/2) ($baseline/2)
+  }
+}
+
+.wrapper-footer footer#footer-openedx .footer-about-openedx {
+  float: right;
+  width: auto;
+}
+
+.copyright {
+  margin: -2px 0 8px 0;
+  font-size: 0.6875em;
+  color: #767676;
+  text-align: left;
+}
+
+.top-footer {
+  width: 100%;
+}

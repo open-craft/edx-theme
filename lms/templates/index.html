@@ -1,0 +1,80 @@
+<%page expression_filter="h"/>
+<%inherit file="main.html" />
+<%namespace name='static' file='static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+
+from openedx.core.djangolib.markup import HTML, Text
+%>
+<main id="main" aria-label="Content" tabindex="-1">
+  <section class="home">
+    <%include file="pearson_banner.html" />
+    <header>
+      <div class='hero-container'>
+        <div class='hero-image'></div>
+        <div class='hero-text'>
+          <h2>Why PearsonX?</h2>
+          <p>PearsonX partners with top institutions to provide students with globally recognized, industry relevant, programs of study.</p>
+          <p>Our blended model provides flexible online courses with in-person support and interaction to help program completion and career progression.</p>
+          <p><a href="/about">Learn More</a></p>
+        </div>
+      </div>
+    </header>
+    <div class="programs-container">
+      <div class="program-container">
+        <a href="/courses">
+          <div class="program-image">
+            <img src="/static/pearsonx/images/data-analytics-image.jpg">
+          </div>
+          <div class="program-name">
+            <h2>Data Analytics for Business</h2>
+          </div>
+        </a>
+      </div>
+      <div class="program-container">
+        <a href="/courses">
+          <div class="program-image">
+            <img src="/static/pearsonx/images/cyber-security-image.jpg">
+          </div>
+          <div class="program-name">
+            <h2>RIT Cyber Security</h2>
+          </div>
+        </a>
+      </div>
+      <div class="program-container">
+        <a href="/courses">
+          <div class="program-image">
+            <img src="/static/pearsonx/images/supply-chain-image.jpg">
+          </div>
+          <div class="program-name">
+            <h2>MIT Supply Chain</h2>
+          </div>
+        </a>
+      </div>
+    </div>
+  <div class="offered-by-box">
+    <h2>
+      Offered by Pearson and edX in conjunction with Massachusetts Institute of Technology, Rochester Institute of Technology, and TU Delft
+    </h2>
+  </div>
+  </section>
+</main>
+
+<%block name="js_extra">
+   <script type="text/javascript">
+      $(window).load(function() {
+         if(getParameterByName('next')) {
+              $('#login').trigger("click");
+         }
+      })
+   </script>
+</%block>
+
+% if show_signup_immediately is not UNDEFINED:
+  ## NOTE: This won't work in production, because anonymous views are cached, so it will
+  ## show either with or without this extra js for 3 minutes at a time.
+<script type="text/javascript">
+  $(window).load(function() {$('#signup_action').trigger("click");});
+</script>
+% endif
