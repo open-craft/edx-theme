@@ -34,9 +34,12 @@
           </a>
         </p>
       </div>
-      % for item_num, link in enumerate(chain(footer['navigation_links'],footer['legal_links']), start=1):
+      <div class="nav-colophon-01">
+        <a id="courses" href="/courses">Programs</a>
+      </div>
+      % for item_num, link in enumerate(chain(footer['navigation_links'],footer['legal_links']), start=2):
       <div class="nav-colophon-0${item_num}">
-        <a id="${link['name']}" href="${link['url']}">${link['title']}</a>
+        <a id="${link['name']}" href="${link['url']}" target="_blank" rel="noopener noreferrer">${link['title']}</a>
       </div>
       % endfor
 

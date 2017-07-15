@@ -130,3 +130,82 @@
 .top-footer {
   width: 100%;
 }
+
+.container.about {
+  background-color: $white;
+  line-height: 140%;
+
+  .mission-statement-container{
+    display: flex;
+    .about-image-video-container{
+      padding: $baseline;
+      flex-basis: 45%;
+      .about-hero-image {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .mission-statement {
+      flex-basis: 45%;
+      padding: $baseline;
+    }
+
+  }
+
+}
+
+.container.contact {
+  label.hidden-label{
+    clip-path: inset(100%);
+    clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; /* added line */
+    width: 1px;
+  }
+  select,
+  input {
+    display: block;
+    height: 32px;
+    width: 100%;
+    margin: 0 0 5px;
+    padding: 0 10px
+  }
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 $baseline;
+    display: flex;
+    .contact-picture-container {
+      flex-basis: 60%;
+      .contact-picture {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .contact-form-container {
+      flex-basis: 40%;
+      margin-left: $baseline;
+      .hidden-form-fields {
+        display: none;
+      }
+    }
+  }
+}
+
+.login-register-content {
+  .registration-sidebar-column{
+    display: inline-flex;
+    width: 40%;
+    min-width: 320px;
+    margin: 0px ($baseline/2);
+    .registration-sidebar-image {
+      margin: auto 0px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
