@@ -4,7 +4,6 @@
   from django.core.urlresolvers import reverse
   from django.utils.translation import ugettext as _
   from branding.api import get_footer
-  from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
   from itertools import chain
 %>
 <% footer = get_footer(is_secure=is_secure) %>
@@ -42,10 +41,6 @@
         <a id="${link['name']}" href="${link['url']}" target="_blank" rel="noopener noreferrer">${link['title']}</a>
       </div>
       % endfor
-
-      % if context.get('include_language_selector', footer_language_selector_is_enabled()):
-          <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
-      % endif
 
       ## Please leave this link and use one of the logos provided
       ## The OpenEdX link may be hidden when this view is served
