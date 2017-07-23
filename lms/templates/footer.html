@@ -34,13 +34,14 @@
         </p>
       </div>
       <div class="nav-colophon-01">
+        <a id="courses" href="/about" target="_blank" rel="noopener noreferrer">About PearsonX</a>
+      </div>
+      <div class="nav-colophon-01">
         <a id="courses" href="/courses">Programs</a>
       </div>
-      % for item_num, link in enumerate(chain(footer['navigation_links'],footer['legal_links']), start=2):
-      <div class="nav-colophon-0${item_num}">
-        <a id="${link['name']}" href="${link['url']}" target="_blank" rel="noopener noreferrer">${link['title']}</a>
+      <div class="nav-colophon-01">
+        <a id="courses" href="/honor" target="_blank" rel="noopener noreferrer">Terms of Service, Honor Code, and Privacy Policy</a>
       </div>
-      % endfor
 
       ## Please leave this link and use one of the logos provided
       ## The OpenEdX link may be hidden when this view is served
