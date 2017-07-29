@@ -195,9 +195,9 @@ from xmodule.contentstore.content import StaticContent
           %>
           <div class="inquire-wrapper">
             <a href="${reg_href}" class="${href_class}">
-              ${_("Enroll Now").format(course_name=course.display_number_with_default) | h}
+              Enroll Now
             </a>
-            <a href="/contact#00N61000002EYUJ=${course.display_number_with_default}" class="inquire">
+            <a href="/contact#00N61000002EYUJ=${course.display_name_with_default_escaped}" class="inquire">
               Inquire Now
             </a>
           </div>
