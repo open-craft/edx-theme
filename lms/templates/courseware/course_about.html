@@ -141,7 +141,9 @@ from openedx.core.lib.courses import course_image_url
             ${_("Course is full")}
           </span>
         % elif invitation_only and not can_enroll:
-          <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
+          <a href="https://www.cloudera.com/more/training/ondemand-training.html" class="register">
+            Purchase a course or library subscription
+          </a>
         ## Shib courses need the enrollment button to be displayed even when can_enroll is False,
         ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
         ## so that they can register and become a real user that can enroll.
@@ -177,7 +179,7 @@ from openedx.core.lib.courses import course_image_url
               href_class = "register"
           %>
           <a href="${reg_href}" class="${href_class}">
-            ${_("Enroll in {course_name}").format(course_name=course.display_number_with_default) | h}
+            ${_("Enroll in {course_name}").format(course_name=course.display_name_with_default_escaped) | h}
           </a>
           <div id="register_error"></div>
         %endif
