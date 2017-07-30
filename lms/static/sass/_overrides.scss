@@ -146,9 +146,17 @@
     }
   }
 
-  .courses-container .courses {
-    width: calc(100% - 30px);
-    padding: 0 15px;
+  .courses-container {
+    .courses {
+      width: calc(100% - 30px);
+      padding: 45px 15px 0;
+      .course-date {
+        display: none;
+      }
+    }
+    .courses-more .courses-more-cta {
+      font-size: 1.5em;
+    }
   }
 
   .cloudera-custom {
