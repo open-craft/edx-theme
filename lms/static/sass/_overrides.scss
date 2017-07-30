@@ -364,3 +364,16 @@
     }
   }
 }
+
+.course-info {
+  header.course-profile {
+    .heading-group {
+      button {
+        display: none;
+      }
+    }
+  }
+  .important-dates {
+    display: none;
+  }
+}
