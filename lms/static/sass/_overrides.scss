@@ -16,6 +16,10 @@
   .wrapper-header {
     padding: 32px 15px !important;
     height: auto !important;
+
+    .user {
+      .doc-link, .user-link {
+        color: $link-color;
   }
 
   .logo {
@@ -55,6 +59,7 @@
       @extend %m-btn-primary;
       padding: 10px 20px !important;
       box-shadow: none !important;
+      color: white !important;
     }
 
     li {
@@ -375,5 +380,36 @@
   }
   .important-dates {
     display: none;
+  }
+}
+
+.view-register {
+  .introduction {
+    header .title .title-sub {
+      text-transform: none;
+    }
+  }
+  .register {
+    aside .btn-login {
+      h3, a {
+        color: white;
+      }
+    }
+  }
+}
+
+.view-dashboard {
+  #my-courses {
+    .details .course-info .info-date-block {
+      display: none;
+    }
+  }
+}
+
+.view-course-info {
+  .updates-article {
+    .date {
+      display: none;
+    }
   }
 }
