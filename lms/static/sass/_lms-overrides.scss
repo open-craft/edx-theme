@@ -1,0 +1,57 @@
+/* header */
+.header-global {
+    border-bottom: 2px solid $green;
+	.logo {
+		img {
+			height: 74px;
+            margin-top: -14px;
+		}
+	}
+    .primary > a {
+        &:hover, &:focus, &:active {
+            background: transparent;
+        }
+    }
+}
+.header-global.slim {
+    border-bottom: 2px solid $green;
+    .wrapper-header {
+        margin-left: 57px;
+        .logo {
+            &:after,
+            &:before {
+                content: none;
+            }
+            img {
+                height: 60px;
+                margin-top: -10px;
+            }
+        }
+    }
+}
+
+/* footer */
+.wrapper-footer {
+    border-top: 2px solid $green;
+}
+
+/* Home page banner */
+.home .outer-wrapper {
+	opacity: 0.9;
+}
+
+/* static pages */
+.container.about {
+  h2, h3 {
+    margin-top: 1em;
+  }
+  h4 {
+    margin-top: 0.5em;
+  }
+  p {
+    h4 {
+      display: inline-block;
+      margin-right: 0.5em;
+    } 
+  }
+}

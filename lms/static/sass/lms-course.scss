@@ -1,0 +1,18 @@
+@import 'lms/static/sass/lms-course';
+@import 'lms-overrides';
+
+.wrapper-course-material {
+  .course-tabs {
+    li {
+      a,
+      a:visited {
+        &:hover,
+        &:focus,
+        &.active {
+          color: $green;
+          border-bottom-color: $green;
+        }
+      }
+    }
+  }
+} 

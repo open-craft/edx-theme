@@ -1,0 +1,48 @@
+@import 'lms/static/sass/discussion/lms-discussion-main';
+@import '../lms-overrides';
+
+.header-global.slim {
+    .wrapper-header {
+        .logo {
+            margin-top: 0;
+            margin-left: 16px;
+        }
+    }
+}
+
+.tabs .tab a {
+    &, &:visited {
+        color: $action-secondary-bg;
+        border-bottom-color: transparent;
+
+        &:hover, &:focus, &:active, &.active {
+            color: $action-secondary-bg;
+            border-bottom-color: $action-secondary-bg;
+        }
+    }
+}
+.btn-link, a, .link {
+    &, &:visited, &:hover, &:focus, &:active, &.active {
+        color: $action-secondary-bg;
+    }
+}
+
+.btn {
+    &, &:visited {
+        color: $action-secondary-bg;
+        border-color: $action-secondary-bg;
+    }
+    &:hover, &:focus, &:active {
+        color: $white;
+        background-color: $action-secondary-bg;
+    }
+}
+
+.wrapper-footer footer#footer-openedx {
+    ul, ol {
+        margin: 0;
+    }
+    a, a:visited {
+        color: $action-secondary-bg;
+    }
+}
