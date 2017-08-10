@@ -1,86 +1,121 @@
 @import 'lms/static/sass/partials/base/variables';
 
-/* TISSx green */
-$tiss-green: #055e37;
-$green: $tiss-green;
-$green-l1: tint($green,20%);
-$green-l2: tint($green,40%);
-$green-l3: tint($green,60%);
-$green-l4: tint($green,80%);
-$green-l5: tint($green,90%);
-$green-d1: shade($green,20%);
-$green-d2: shade($green,40%);
-$green-d3: shade($green,60%);
-$green-d4: shade($green,80%);
-$green-s1: saturate($green,15%);
-$green-s2: saturate($green,30%);
-$green-s3: saturate($green,45%);
-$green-u1: desaturate($green,15%);
-$green-u2: desaturate($green,30%);
-$green-u3: desaturate($green,45%);
+/*
+Primary Colors
+#a51c30 - Crimson
+#4e84c4 - Blue
+#c4961a - Gold
 
-/* TISSx orange */
-$tiss-orange: #db6b1f;
-$orange: $tiss-orange;
-$orange-l1: tint($orange,20%);
-$orange-l2: tint($orange,40%);
-$orange-l3: tint($orange,60%);
-$orange-l4: tint($orange,80%);
-$orange-l5: tint($orange,90%);
-$orange-d1: shade($orange,20%);
-$orange-d2: shade($orange,40%);
-$orange-d3: shade($orange,60%);
-$orange-d4: shade($orange,80%);
-$orange-s1: saturate($orange,15%);
-$orange-s2: saturate($orange,30%);
-$orange-s3: saturate($orange,45%);
-$orange-u1: desaturate($orange,15%);
-$orange-u2: desaturate($orange,30%);
-$orange-u3: desaturate($orange,45%);
+Secondary Colors
+#1e1e1e - Off Black
+#657888 - Blue Grey
+#a9a9a9 - Grey
+#e5e6e7 - Light Grey
+*/
+
+/* Harvard crimson */
+$harvard-crimson: #a51c30;
+$crimson: $harvard-crimson;
+$crimson-l1: tint($crimson,20%);
+$crimson-l2: tint($crimson,40%);
+$crimson-l3: tint($crimson,60%);
+$crimson-l4: tint($crimson,80%);
+$crimson-l5: tint($crimson,90%);
+$crimson-d1: shade($crimson,20%);
+$crimson-d2: shade($crimson,40%);
+$crimson-d3: shade($crimson,60%);
+$crimson-d4: shade($crimson,80%);
+$crimson-s1: saturate($crimson,15%);
+$crimson-s2: saturate($crimson,30%);
+$crimson-s3: saturate($crimson,45%);
+$crimson-u1: desaturate($crimson,15%);
+$crimson-u2: desaturate($crimson,30%);
+$crimson-u3: desaturate($crimson,45%);
+
+/* Harvard gold */
+$harvard-gold: #c4961a;
+$gold: $harvard-gold;
+$gold-l1: tint($gold,20%);
+$gold-l2: tint($gold,40%);
+$gold-l3: tint($gold,60%);
+$gold-l4: tint($gold,80%);
+$gold-l5: tint($gold,90%);
+$gold-d1: shade($gold,20%);
+$gold-d2: shade($gold,40%);
+$gold-d3: shade($gold,60%);
+$gold-d4: shade($gold,80%);
+$gold-s1: saturate($gold,15%);
+$gold-s2: saturate($gold,30%);
+$gold-s3: saturate($gold,45%);
+$gold-u1: desaturate($gold,15%);
+$gold-u2: desaturate($gold,30%);
+$gold-u3: desaturate($gold,45%);
+
+/* Harvard blue */
+$harvard-blue: #4e84c4;
+$blue: $harvard-blue;
+$blue-l1: tint($blue,20%);
+$blue-l2: tint($blue,40%);
+$blue-l3: tint($blue,60%);
+$blue-l4: tint($blue,80%);
+$blue-l5: tint($blue,90%);
+$blue-d1: shade($blue,20%);
+$blue-d2: shade($blue,40%);
+$blue-d3: shade($blue,60%);
+$blue-d4: shade($blue,80%);
+$blue-s1: saturate($blue,15%);
+$blue-s2: saturate($blue,30%);
+$blue-s3: saturate($blue,45%);
+$blue-u1: desaturate($blue,15%);
+$blue-u2: desaturate($blue,30%);
+$blue-u3: desaturate($blue,45%);
+
 
 $homepage-bg-image: url('/static/harvard/images/banner.jpg');
-$link-color: $green;
-$link-color-d1: $green-d1;
-$link-hover: $green-l1;
+$link-color: $crimson;
+$link-color-d1: $crimson-d1;
+$link-hover: $crimson-l1;
 
 // action - primary
-$action-primary-bg: $orange;
+$action-primary-bg: $crimson;
 $action-primary-fg: $white;
-$action-primary-shadow: $orange-d4;
-$action-primary-focused-bg: $orange-d1;
+$action-primary-shadow: $crimson-d4;
+$action-primary-focused-bg: $crimson-d1;
 $action-primary-focused-fg: $white;
-$action-primary-active-bg: $orange;
-$action-primary-active-fg: $orange-d3;
-$action-primary-active-shadow: $orange-d2;
-$action-primary-active-focused-fg: $orange-d4;
-$action-primary-active-focused-shadow: $orange-d3;
+$action-primary-active-bg: $crimson;
+$action-primary-active-fg: $crimson-d3;
+$action-primary-active-shadow: $crimson-d2;
+$action-primary-active-focused-fg: $crimson-d4;
+$action-primary-active-focused-shadow: $crimson-d3;
 $action-primary-disabled-bg: $gray-d3;
 $action-prmary-disabled-fg: $white;
 
 // action - secondary
-$action-secondary-bg: $green;
+$action-secondary-bg: $blue;
 $action-secondary-fg: $white;
-$action-secondary-shadow: $green-d2;
-$action-secondary-focused-bg: $green-l3;
+$action-secondary-shadow: $blue-d2;
+$action-secondary-focused-bg: $blue-l3;
 $action-secondary-focused-fg: $white;
-$action-secondary-active-bg: $green-l2;
-$action-secondary-active-fg: $green-d1;
-$action-secondary-active-shadow: $green-d1;
-$action-secondary-active-focused-fg: $green-d3;
-$action-secondary-active-focused-shadow: $green-d2;
+$action-secondary-active-bg: $blue-l2;
+$action-secondary-active-fg: $blue-d1;
+$action-secondary-active-shadow: $blue-d1;
+$action-secondary-active-focused-fg: $blue-d3;
+$action-secondary-active-focused-shadow: $blue-d2;
 $action-secondary-disabled-bg: $gray-d3;
 $action-secondary-disabled-fg: $white;
 
 // misc other buttons and borders
-$m-blue-d1: $action-secondary-active-bg;
-$m-blue-d2: $action-secondary-focused-bg;
-$m-blue-d3: $action-secondary-bg;
-$uxpl-blue-base: $action-secondary-bg;
-$uxpl-blue-hover-active: $action-secondary-active-bg;
-$button-color: $action-secondary-bg;
-$button-archive-color: $action-secondary-bg;
+$m-blue-d1: $blue-d1;
+$m-blue-d2: $blue-d3;
+$m-blue-d3: $blue-d3;
+$m-blue-d4: $blue-d4;
+$uxpl-blue-base: $blue;
+$uxpl-blue-hover-active: $blue-d1;
+$button-color: $action-primary-bg;
+$button-archive-color: $action-primary-bg;
 $lms-active-color: $action-secondary-bg;
 $lms-border-color: $action-secondary-bg;
 $lms-label-color: $action-secondary-bg;
-$button-bg-hover-color: $action-secondary-bg;
+$outer-border-color: $gold;
+$button-bg-hover-color: $action-primary-bg;
 $forum-color-active-thread: $action-secondary-bg;

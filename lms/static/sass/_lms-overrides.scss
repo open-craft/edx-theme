@@ -1,6 +1,6 @@
 /* header */
 .header-global {
-    border-bottom: 2px solid $green;
+    border-bottom: 2px solid $gold;
 	.logo {
 		img {
 			height: 74px;
@@ -14,7 +14,7 @@
     }
 }
 .header-global.slim {
-    border-bottom: 2px solid $green;
+    border-bottom: 2px solid $gold;
     .wrapper-header {
         margin-left: 57px;
         .logo {
@@ -32,7 +32,7 @@
 
 /* footer */
 .wrapper-footer {
-    border-top: 2px solid $green;
+    border-top: 2px solid $gold;
 }
 
 /* Home page banner */
