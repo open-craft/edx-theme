@@ -1,7 +1,7 @@
 Overview
 ========
 
-This is a custom Open edX LMS theme (comprehensive theme) used by [CLIX India](https://tissx.tiss.edu).
+This is a custom Open edX LMS theme (comprehensive theme) used by [Harvard Continuing Education](http://www.extension.harvard.edu/academics/online-campus-courses).
 It is compatible with the Ficus release of Open edX and newer.
 
 Screenshots
