@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+html {
+  color: $base-font-color;
+}
+
 .header-global {
   height: 112px !important;
   border-bottom: none !important;
-  background-color: #333e48;
+  background-color: $dark-gray;
 
   &.slim {
     h1.logo::before {
@@ -72,7 +76,7 @@
         button.dropdown {
           border-radius: 0;
           padding: 5px 10px;
-          background-color: #333e48;
+          background-color: $dark-gray;
           color: white;
         }
       }
@@ -389,13 +393,27 @@
 .course-info {
   header.course-profile {
     .heading-group {
-      button {
-        display: none;
+      h1 {
+        color: $dark-gray;
+        button {
+          display: none;
+        }
+      }
+    }
+    .main-cta {
+      .register {
+        background: $brilliant-blue !important;
       }
     }
   }
   .important-dates {
     display: none;
+  }
+  .details {
+    section h2 {
+      text-transform: none;
+      color: $brilliant-blue;
+    }
   }
 }
 
