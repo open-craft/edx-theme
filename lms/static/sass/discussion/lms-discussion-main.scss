@@ -26,4 +26,13 @@
     ul, ol {
         margin: 0;
     }
+
+    a {
+        &, &:visited {
+            color: $link-color;
+        }
+        &:hover, &:active {
+            color: $link-hover;
+        }
+    }
 }
