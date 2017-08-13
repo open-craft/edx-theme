@@ -12,8 +12,13 @@
 
 .tabs .tab a {
     &, &:visited {
+        color: $gray-d1;
         border-bottom-color: transparent;
 
+        &:hover, &:focus, &:active, &.active {
+            color: $gold;
+            border-bottom-color: $gold;
+        }
     }
 }
 

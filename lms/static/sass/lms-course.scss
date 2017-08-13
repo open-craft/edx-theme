@@ -3,11 +3,13 @@
 
 .wrapper-course-material {
   .course-tabs {
-    li {
-      a,
-      a:visited {
+    li a {
+      &, &:visited {
+        color: $gray-d1;
+
         &:hover,
         &:focus,
+        &:active,
         &.active {
           color: $gold;
           border-bottom-color: $gold;
