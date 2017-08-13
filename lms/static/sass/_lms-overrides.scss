@@ -40,6 +40,23 @@
 	opacity: 0.9;
 }
 
+/* Home page search */
+.home>header .title .course-search {
+  .search-button,
+  .search-button:hover {
+    background: $blue;
+  }
+}
+
+/* Home page: learn more */
+.courses-container .courses {
+  &.course:hover, &.course:focus {
+    cover-image .learn-more {
+      background: $blue;
+    }
+  }
+}
+
 /* static pages */
 .container.about {
   h2, h3 {
