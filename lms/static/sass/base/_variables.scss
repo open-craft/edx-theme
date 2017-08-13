@@ -15,6 +15,7 @@ $royal-blue: rgb(0, 120, 217);
 $gray-blue: rgb(151, 210, 230);
 $sunrise-yellow: rgb(255, 214, 100);
 $accent-red: rgb(230, 70, 48);
+$dark-gray: #333e48;
 
 // Colors
 $action-primary-bg: $midnight-blue;
@@ -22,13 +23,17 @@ $action-primary-shadow: $midnight-blue;
 $action-primary-focused-bg: $midnight-blue;
 $action-primary-active-bg: $midnight-blue;
 $action-primary-active-shadow: $midnight-blue;
-$link-color: $midnight-blue;
-$link-color-d1: $midnight-blue;
+$link-color: $brilliant-blue;
+$link-color-d1: $brilliant-blue;
 $link-hover: $brilliant-blue;
 $button-color: $midnight-blue;
+$base-font-color: $dark-gray;
 
 // Body
 $homepage-bg-image: url('#{$static-path}/images/banner.jpg');
 
+// Header
+$header-bg: $dark-gray;
+
 // Footer
-$footer-bg: $brilliant-blue;
+$footer-bg: $dark-gray;
