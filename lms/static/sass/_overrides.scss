@@ -4,7 +4,7 @@ html {
   color: $base-font-color;
 }
 
-.header-global {
+#global-navigation {
   height: 112px !important;
   border-bottom: none !important;
   background-color: $dark-gray;
@@ -17,6 +17,8 @@ html {
     .course-header {
       width: auto !important;
       margin-top: 13px !important;
+      text-shadow: none;
+      color: white;
     }
   }
 
@@ -271,6 +273,13 @@ html {
 
 .content-wrapper {
   padding-bottom: 48px;
+
+  a:link, a:visited {
+    color: $brilliant-blue;
+  }
+  a:link:hover, a:visited:hover {
+    color: $brilliant-blue-light;
+  }
 }
 
 .cloudera-footer {
@@ -278,7 +287,7 @@ html {
   background-color: $footer-bg;
   color: rgba(255, 255, 255, 0.5);
 
-  a {
+  a, a:visited {
     color: #fff;
     font-style: normal;
     font-weight: 400;
@@ -434,8 +443,23 @@ html {
 
 .view-dashboard {
   #my-courses {
-    .details .course-info .info-date-block {
-      display: none;
+    .course {
+      .details {
+        .course-info {
+          color: $dark-gray;
+          .info-date-block {
+            display: none;
+          }
+        }
+        .enter-course {
+          background-color: white;
+          color: $dark-gray;
+        }
+        .enter-course:hover {
+          background-color: $dark-gray;
+          color: white;
+        }
+      }
     }
   }
 }
@@ -444,6 +468,32 @@ html {
   .updates-article {
     .date {
       display: none;
+    }
+  }
+  .container, .home .page-header-main .page-title {
+    color: $dark-gray;
+  }
+  div.info-wrapper {
+    section.handouts {
+      ol li {
+        a:link, a:visited {
+          color: $brilliant-blue;
+        }
+        a:link:hover, a:visited:hover {
+          color: $brilliant-blue-light;
+        }
+      }
+    }
+  }
+}
+
+.wrapper-course-material .course-material {
+  .course-tabs {
+    li.tab {
+      a.active, a:hover, a:focus {
+        color: $brilliant-blue;
+        border-bottom-color: $brilliant-blue;
+      }
     }
   }
 }
