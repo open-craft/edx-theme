@@ -10,6 +10,7 @@ $f-serif: $sans-serif;
 // Palette
 $midnight-blue: rgb(0, 77, 111);
 $brilliant-blue: rgb(41, 167, 222);
+$brilliant-blue-light: lighten($brilliant-blue, 20%);
 $aqua-blue: rgb(130, 220, 216);
 $royal-blue: rgb(0, 120, 217);
 $gray-blue: rgb(151, 210, 230);
