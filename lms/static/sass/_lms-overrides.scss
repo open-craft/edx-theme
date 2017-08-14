@@ -41,10 +41,13 @@
 }
 
 /* Home page search */
-.home>header .title .course-search {
-  .search-button,
-  .search-button:hover {
-    background: $blue;
+.home>header .title .course-search .search-button,
+.find-courses .discovery-submit {
+  border-color: $blue;
+  background: $blue;
+  &:focus, &:active, &:hover {
+    border-color: $blue-d1;
+    background: $blue-d1;
   }
 }
 
@@ -69,6 +72,6 @@
     h4 {
       display: inline-block;
       margin-right: 0.5em;
-    } 
+    }
   }
 }
