@@ -200,6 +200,9 @@ html {
         .cloudera-custom-content {
           max-width: 720px;
           margin: 0 auto;
+          h2 {
+            color: $dark-gray;
+          }
         }
       }
     }
@@ -227,7 +230,7 @@ html {
           font-weight: 300;
           font-size: 36px;
           margin: 16px 0 30px;
-          color: $brilliant-blue;
+          color: $dark-gray;
           text-transform: none;
         }
 
@@ -238,14 +241,14 @@ html {
 
         .cloudera-custom-button {
           background-color: transparent;
-          border: 1px solid $midnight-blue;
+          border: 1px solid $dark-gray;
           text-transform: uppercase;
           display: inline-block;
           padding: 15px 25px;
           margin: 30px 0 0 0;
           font-size: 16px;
           font-weight: 400;
-          color: $midnight-blue;
+          color: $dark-gray;
           border-radius: 5px;
           position: relative;
         }
@@ -433,9 +436,14 @@ html {
     }
   }
   .register {
-    aside .btn-login {
-      h3, a {
-        color: white;
+    aside {
+      .btn-login {
+        background-color: $brilliant-blue;
+        border: none;
+        h3, a {
+          background-color: $brilliant-blue;
+          color: white;
+        }
       }
     }
   }
@@ -493,6 +501,34 @@ html {
       a.active, a:hover, a:focus {
         color: $brilliant-blue;
         border-bottom-color: $brilliant-blue;
+      }
+    }
+  }
+}
+
+.login, .register {
+  .form-actions button[type="submit"] {
+    background-color: $brilliant-blue;
+  }
+}
+
+.courses-container {
+  .courses {
+    .courses-listing {
+      .courses-listing-item {
+        .course {
+          border-bottom-color: $brilliant-blue;
+          .course-info {
+            .course-name {
+              .course-organization, .course-code {
+                color: $dark-gray;
+              }
+            }
+            .course-date {
+              color: $dark-gray;
+            }
+          }
+        }
       }
     }
   }
