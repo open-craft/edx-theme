@@ -1,0 +1,60 @@
+<%!
+  import json
+  from django.utils.translation import ugettext as _
+  from openedx.core.djangolib.js_utils import dump_js_escaped_json
+%>
+<%inherit file="../main.html" />
+<%
+  course_discovery_enabled = settings.FEATURES.get('ENABLE_COURSE_DISCOVERY')
+%>
+
+<%namespace name='static' file='../static_content.html'/>
+
+% if course_discovery_enabled:
+<%block name="header_extras">
+  % for template_name in ["course_card", "filter_bar", "filter", "facet", "facet_option"]:
+  <script type="text/template" id="${template_name}-tpl">
+      <%static:include path="discovery/${template_name}.underscore" />
+  </script>
+  % endfor
+  <%static:require_module module_name="js/discovery/discovery_factory" class_name="DiscoveryFactory">
+    DiscoveryFactory(
+      ${course_discovery_meanings | n, dump_js_escaped_json},
+      getParameterByName('search_query'),
+      "${user_language}",
+      "${user_timezone}"
+    );
+  </%static:require_module>
+</%block>
+% endif
+
+<%block name="pagetitle">${_("Programs")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="find-courses">
+      <section class="courses-container">
+        <%include file="../pearson_banner.html" />
+        <div class="programs-page-overview">
+          <h2>The PearsonX Difference: Global Education and Network</h2>
+          <p>
+            With PearsonX, you are providing yourself with an education that is not only recognized globally, but also one that connects you to a global network. We have worked with educators to design a Learner Journey that is centered on the student’s success from start to finish. This is our Engage.Network.Progress model which provides meaningful engagement through online and blended curriculum to your peers and instructors. Students are coached to build strong connections with each other, their instructors, industry thought leaders, as well as PearsonX alumni.
+          </p>
+          <p>
+            Our programs offer either online or in-person learning opportunities that not only give you a sense of community, but also the confidence that both your instructors and peers will support you throughout the program.  Additionally, we provide a Career Progression Series that is blended with outstanding content from edX’s top university partner programs to give you the competencies most in demand by employers.
+          </p>
+          <p>
+            Upon completion of the PearsonX program, you will earn a digital badge that can be shared on LinkedIn™, through email or a variety of other prominent social media platforms. 
+          </p>
+        </div>
+        <div class="courses${'' if course_discovery_enabled else ' no-course-discovery'}" role="region" aria-label="${_('List of Courses')}">
+          <ul class="courses-listing">
+            %for course in courses:
+            <li class="courses-listing-item">
+              <%include file="../course.html" args="course=course" />
+            </li>
+            %endfor
+          </ul>
+        </div>
+      </section>
+    </section>
+</main>
