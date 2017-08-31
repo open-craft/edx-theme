@@ -7,6 +7,7 @@ from django.conf import settings
 from edxmako.shortcuts import marketing_link
 from openedx.core.lib.courses import course_image_url
 from xmodule.contentstore.content import StaticContent
+from six import string_types
 %>
 
 <%inherit file="../main.html" />
@@ -194,9 +195,11 @@ from xmodule.contentstore.content import StaticContent
               href_class = "register"
           %>
           <div class="inquire-wrapper">
+            % if not course.advertised_start:
             <a href="${reg_href}" class="${href_class}">
               ${_("Enroll Now")}
             </a>
+            % endif
             <a href="/contact#00N61000002EYUJ=${course.display_name_with_default_escaped}" class="inquire">
               ${_("Inquire Now")}
             </a>
@@ -209,12 +212,12 @@ from xmodule.contentstore.content import StaticContent
             <li class="important-dates-item"><span class="icon fa fa-info-circle" aria-hidden="true"></span><p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default | h}</span></li>
             % if not course.start_date_is_still_default:
                 <%
-                    course_start_date = course.start
+                    course_start_date = course.advertised_start or course.start
                 %>
               <li class="important-dates-item">
                 <span class="icon fa fa-calendar" aria-hidden="true"></span>
                 <p class="important-dates-item-title">${_("Classes Start")}</p>
-                % if isinstance(course_start_date, str):
+                % if isinstance(course_start_date, string_types):
                     <span class="important-dates-item-text start-date">${course_start_date}</span>
                 % else:
                     <%
