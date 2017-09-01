@@ -231,6 +231,13 @@ h2 {
           background: #1790c7;
         }
       }
+      #error-message{
+        display: none;
+        background-color: $error-color;
+        color: $white;
+        margin-bottom: (0.5 * $baseline);
+        padding: (0.25 * $baseline);
+      }
     }
   }
 }
@@ -456,6 +463,168 @@ section.course-info {
           }
         }
       }
+    }
+  }
+}
+
+/*
+The below section is backported from Ginkgo to apply theming to the
+banner indicating that the inquiry form was submitted successfully.
+It should be removed when upgrading the theme to Ginkgo; test to make
+sure that the inquiry success banner still appears correctly.
+*/
+
+.wrapper-msg {
+  display: block;
+  background: $notify-banner-bg-1;
+  padding: $baseline ($baseline*1.5);
+
+  // basic object
+  .msg {
+    @include clearfix();
+    max-width: grid-width(12);
+    min-width: 760px;
+    width: flex-grid(12);
+    margin: 0 auto;
+  }
+
+  .msg-content,
+  .msg-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .msg-content {
+
+    .title {
+      @extend %t-title5;
+      @extend %t-weight4;
+      margin-bottom: ($baseline/4);
+      color: inherit;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .copy {
+      @extend %t-copy-sub1;
+      color: inherit;
+
+      p { // nasty reset
+        @extend %t-copy-sub1;
+        color: inherit;
+      }
+    }
+  }
+
+  .has-actions {
+
+    .msg-content {
+      width: flex-grid(10,12);
+    }
+
+    .nav-actions,
+    .msg-actions {
+      width: flex-grid(2,12);
+      display: inline-block;
+      vertical-align: middle;
+      text-align: right;
+
+      .action-primary {
+        @extend %btn-primary-green;
+      }
+    }
+  }
+
+  .is-dismissable {
+
+    .msg-content {
+      width: flex-grid(11,12);
+    }
+
+    .action-dismiss {
+      width: flex-grid(1,12);
+      display: inline-block;
+      vertical-align: top;
+      text-align: right;
+
+      .button-dismiss {  //ugly reset on button element
+        @extend %t-icon4;
+        background: none;
+        box-shadow: none;
+        border: none;
+        text-shadow: none;
+        color: inherit;
+
+        &:hover, &:focus {
+          color: $action-primary-bg;
+        }
+      }
+    }
+  }
+
+  // object variations
+  &.urgency-high {
+    background: $notify-banner-bg-1;
+
+    .msg {
+      color: $white;
+    }
+  }
+
+  &.urgency-mid {
+    background: $notify-banner-bg-2;
+
+    .msg {
+      color: $white;
+    }
+  }
+
+  &.urgency-low {
+    background: $notify-banner-bg-3;
+    box-shadow: 0 1px 2px $shadow;
+
+    .msg {
+      color: $black;
+    }
+  }
+
+  &.urgency-info {
+    background: $msg-bg;
+    .msg {
+      color: $white;
+    }
+    .msg-icon {
+      font-size: 2.5em;
+      padding: 20px;
+    }
+    .msg-content {
+      max-width: 80%;
+    }
+  }
+
+  &.alert {
+    border-top: 3px solid $alert-color;
+  }
+
+  &.error {
+    border-top: 3px solid $error-color;
+  }
+
+  &.warning {
+    border-top: 3px solid $warning-color;
+  }
+
+  &.success {
+    border-top: 3px solid $success-color;
+  }
+
+
+  &.is-incontext {
+    margin: $baseline;
+
+    .msg {
+      max-width: unset;
+      min-width: auto;
     }
   }
 }

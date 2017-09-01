@@ -13,10 +13,10 @@
         </div>
         <div class="contact-form-container">
 
-            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" id="contact-form">
 
             <input type=hidden name="oid" value="00D61000000H03y">
-            <input type=hidden name="retURL" value="${request.build_absolute_uri('/')}">
+            <input type=hidden id="retURL" name="retURL" value="${request.build_absolute_uri('/')}">
 
             <label class="hidden-label" for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" placeholder="First Name" /><br>
 
@@ -25,6 +25,7 @@
             <label class="hidden-label" for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" placeholder="Email" /><br>
 
             <label for="00N5800000DJ2eh">Phone - Country Code</label><select id="00N5800000DJ2eh" name="00N5800000DJ2eh" title="Country Code">
+                  <option value="" selected="selected">--Select--</option>
                   <option value="93">Afghanistan (+93)</option>
                   <option value="+358-18">Aland Islands (+358-18)</option>
                   <option value="355">Albania (+355)</option>
@@ -257,7 +258,7 @@
                   <option value="380">Ukraine (+380)</option>
                   <option value="971">United Arab Emirates (+971)</option>
                   <option value="44">United Kingdom (+44)</option>
-                  <option value="1" selected="selected">United States (+1)</option>
+                  <option value="1">United States (+1)</option>
                   <option value="1">United States Minor Outlying Islands (+1)</option>
                   <option value="598">Uruguay (+598)</option>
                   <option value="998">Uzbekistan (+998)</option>
@@ -277,7 +278,7 @@
 
             <label class="hidden-label" for="00N58000008J32f">City</label><input  id="00N58000008J32f" maxlength="55" name="00N58000008J32f" size="20" placeholder="City" /><br>
 
-            <label for="00N5800000BOaSs">Country of Residence:</label><select  id="00N5800000BOaSs" name="00N5800000BOaSs" title="Country of Residence"><option value="">--None--</option><option value="Afghanistan">Afghanistan</option>
+            <label for="00N5800000BOaSs">Country of Residence:</label><select  id="00N5800000BOaSs" name="00N5800000BOaSs" title="Country of Residence"><option value="" selected="selected">--Select--</option><option value="Afghanistan">Afghanistan</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
             <option value="Andorra">Andorra</option>
@@ -542,6 +543,9 @@
                   <option value="Blank">Blank</option>
                 </select><br>
             </div>
+            <div id="error-message">
+                All fields are required in order to submit this form.
+            </div>
             <button class="contact-submit-button" type="submit" name="submit">Request information</button>
 
             </form>
@@ -553,6 +557,16 @@
                 var p = hashParams[i].split('=');
                 $("#" + p[0]).val(decodeURIComponent(p[1]));
             }
+            $("form#contact-form").submit(function (event){
+                $('form#contact-form').children("input, select").each(function(i, el){
+                    if(!el.value){
+                        $("#error-message").show()
+                        event.preventDefault();
+                        return false;
+                    }
+                    return true;
+                });
+            });
         })
         </script>
     </section>
