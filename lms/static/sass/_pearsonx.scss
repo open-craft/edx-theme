@@ -467,6 +467,10 @@ section.course-info {
   }
 }
 
+#contacted-message {
+  display: none;
+}
+
 /*
 The below section is backported from Ginkgo to apply theming to the
 banner indicating that the inquiry form was submitted successfully.

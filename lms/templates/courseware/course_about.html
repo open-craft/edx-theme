@@ -102,6 +102,11 @@ from six.moves.urllib.parse import quote
 
     %endif
 
+    var hashParams = window.location.hash;
+    if (hashParams.includes("contacted")) {
+      $("#contacted-message").show();
+    }
+
   })(this)
   </script>
 
@@ -111,23 +116,21 @@ from six.moves.urllib.parse import quote
 <%block name="pagetitle">${course.display_name_with_default_escaped}</%block>
 
 <section class="course-info">
-  %if 'contacted' in request.GET:
-    <div class="wrapper-msg urgency-info">
-      <div class="msg">
-        <span class="msg-icon fa fa-info-circle" aria-hidden="true"></span>
-        <div class="msg-content">
-          <h2 class="title">
-            Thank you for your inquiry into PearsonX and our program offerings. One of our Program Advisors will be contacting you shortly.
-          </h2>
-          <div class="copy">
-            <p>
-              We are committed to helping individuals advance in their careers and take the next step in their education goals. PearsonX provides you with globally recognized, relevant programs of study, as well as the opportunity to network with peers and progress your career.
-            </p>
-          </div>
+  <div class="wrapper-msg urgency-info" id="contacted-message">
+    <div class="msg">
+      <span class="msg-icon fa fa-info-circle" aria-hidden="true"></span>
+      <div class="msg-content">
+        <h2 class="title">
+          Thank you for your inquiry into PearsonX and our program offerings. One of our Program Advisors will be contacting you shortly.
+        </h2>
+        <div class="copy">
+          <p>
+            We are committed to helping individuals advance in their careers and take the next step in their education goals. PearsonX provides you with globally recognized, relevant programs of study, as well as the opportunity to network with peers and progress your career.
+          </p>
         </div>
       </div>
     </div>
-  %endif
+  </div>
   <header class="course-profile" style="background-image: url('${course_image_url(course, 'banner_image')}')">
     <div class="intro-inner-wrapper">
       <section class="intro">
@@ -218,7 +221,7 @@ from six.moves.urllib.parse import quote
               ${_("Enroll Now")}
             </a>
             % endif
-            <a href="/contact#00N61000002EYUJ=${course.display_name_with_default_escaped}&retURL=${quote(request.build_absolute_uri(request.path) + '?contacted')}" class="inquire">
+            <a href="/contact#00N61000002EYUJ=${course.display_name_with_default_escaped}&retURL=${quote(request.build_absolute_uri(request.path) + '#contacted')}" class="inquire">
               ${_("Inquire Now")}
             </a>
           </div>
