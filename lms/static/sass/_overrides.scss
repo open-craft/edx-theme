@@ -173,19 +173,6 @@ html {
     }
   }
 
-  .courses-container {
-    .courses {
-      width: calc(100% - 30px);
-      padding: 45px 15px 0;
-      .course-date {
-        display: none;
-      }
-    }
-    .courses-more .courses-more-cta {
-      font-size: 1.5em;
-    }
-  }
-
   .cloudera-custom {
     padding: 80px 0 0 0;
     line-height: 150%;
@@ -510,10 +497,15 @@ html {
   .form-actions button[type="submit"] {
     background-color: $brilliant-blue;
   }
+  .deco-divider {
+    display: none;
+  }
 }
 
 .courses-container {
   .courses {
+    width: calc(100% - 30px);
+    padding: 45px 15px 0;
     .courses-listing {
       .courses-listing-item {
         .course {
@@ -525,11 +517,14 @@ html {
               }
             }
             .course-date {
-              color: $dark-gray;
+              display: none;
             }
           }
         }
       }
     }
+  }
+  .courses-more .courses-more-cta {
+    font-size: 1.5em;
   }
 }
