@@ -425,11 +425,16 @@ html {
   .register {
     aside {
       .btn-login {
-        background-color: $brilliant-blue;
+        background-color: $dark-gray;
         border: none;
         h3, a {
-          background-color: $brilliant-blue;
+          background-color: $dark-gray;
           color: white;
+          text-transform: none;
+        }
+        a:hover {
+          background-color: $dark-gray;
+          border: 1px solid white;
         }
       }
     }
