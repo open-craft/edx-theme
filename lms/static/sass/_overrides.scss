@@ -495,7 +495,11 @@ html {
 
 .login, .register {
   .form-actions button[type="submit"] {
-    background-color: $brilliant-blue;
+    background-color: $dark-gray;
+    box-shadow: none;
+    &:hover {
+      background-color: $dark-gray;
+    }
   }
   .deco-divider {
     display: none;
