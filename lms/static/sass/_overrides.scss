@@ -1,6 +1,28 @@
-.header-global h1.logo a img {
-  height: 50px;
+.header-global,
+.header-global.slim {
+    border-bottom: 1px solid #919191;
 }
-.header-global.slim h2 {
-  width: 60% !important;
+
+.header-global .logo a img {
+    height: 50px;
+}
+
+.header-global.slim  {
+
+    // Hackish way to hide the "Explore Courses" link on courseware pages.
+    // GSE courses typically have long names so there is not enough space for the link.
+    .item a[href="/courses"] {
+        display: none;
+    }
+
+    .course-header {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 60% !important;
+
+        .course-name {
+            white-space: nowrap;
+        }
+    }
 }
