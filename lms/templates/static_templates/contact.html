@@ -507,9 +507,7 @@
             </select><br>
             <div class="hidden-form-fields">
                 Type (Hidden):<select  id="00N58000005kuvF" name="00N58000005kuvF" title="Type (Hidden)">
-                  <option value="">--None--</option>
-                  <option value="OPM">OPM</option>
-                  <option value="TNE">TNE</option>
+                  <option value="TNE" selected="selected">TNE</option>
                 </select><br>
 
                 Institution (Hidden):<select  id="00N58000005kuvE" name="00N58000005kuvE" title="Institution (Hidden)">
@@ -543,11 +541,21 @@
                   <option value="Blank">Blank</option>
                 </select><br>
             </div>
-            <div id="error-message">
+            <div id="required-fields-error-message" class="error-message">
                 All fields are required in order to submit this form.
             </div>
-            <button class="contact-submit-button" type="submit" name="submit">Request information</button>
-
+            <div id="invalid-email-error-message" class="error-message">
+                Please enter a valid email address.
+            </div>
+            <div class="affirm-submission-wrapper">
+                <label>
+                    <input type="checkbox" id="affirm-submission"/>
+                    I agree to be contacted via phone, text or email.
+                </label>
+            </div>
+            <button id="contact-submit-button" class="contact-submit-button" type="submit" name="submit" disabled>
+                Request information
+            </button>
             </form>
         </div>
         <script type="text/javascript">
@@ -557,15 +565,26 @@
                 var p = hashParams[i].split('=');
                 $("#" + p[0]).val(decodeURIComponent(p[1]));
             }
+            $("#affirm-submission").change(function (e) {
+                el = $("#contact-submit-button");
+                el.prop("disabled", !el.prop("disabled"));
+            });
             $("form#contact-form").submit(function (event){
                 $('form#contact-form').children("input, select").each(function(i, el){
                     if(!el.value){
-                        $("#error-message").show()
+                        $("#required-fields-error-message").show();
                         event.preventDefault();
-                        return false;
+                    }else{
+                        $("#required-fields-error-message").hide();
                     }
-                    return true;
                 });
+                emailVal = $("#email").val();
+                if(!(emailVal.split("@").length == 2)){
+                    $("#invalid-email-error-message").show();
+                    event.preventDefault();
+                }else{
+                    $("#invalid-email-error-message").hide();
+                }
             });
         })
         </script>
