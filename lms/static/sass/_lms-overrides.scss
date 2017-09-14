@@ -28,6 +28,13 @@
             }
         }
     }
+
+
+    // Hide the "Explore Courses" link on courseware pages.
+    .item a[href="/courses"] {
+        display: none;
+    }
+
 }
 
 /* footer */
