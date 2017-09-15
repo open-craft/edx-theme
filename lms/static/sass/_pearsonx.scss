@@ -210,6 +210,14 @@ h2 {
       .hidden-form-fields {
         display: none;
       }
+      .affirm-submission-wrapper{
+        margin-bottom: 0.5 * $baseline;
+        #affirm-submission {
+          height: auto;
+          width: auto;
+          display: inline-block;
+        }
+      }
       .contact-submit-button {
         display: block;
         flex-basis: 45%;
@@ -231,7 +239,7 @@ h2 {
           background: #1790c7;
         }
       }
-      #error-message{
+      div.error-message {
         display: none;
         background-color: $error-color;
         color: $white;
