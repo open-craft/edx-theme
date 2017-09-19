@@ -9,4 +9,4 @@ http://${ site }/activate/${ key }
 
 If you are not officially enrolled in this course and would like to explore professional education offerings through the Harvard Graduate School of Education, please visit https://www.gse.harvard.edu/ppe.
 
-For assistance with accessing the course or any related materials, please reply to this email or contact Kathleen McGreal at 617-384-7478.
+For assistance with accessing the course or any related materials, please reply to this email or contact Amanda Nagim-Williams at 617-495-3791.
