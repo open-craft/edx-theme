@@ -1,18 +1,2 @@
-// LMS - CSS application architecture
-// Version 1 styling (pre-Pattern Library)
-// ====================
-
-// libs and resets *do not edit*
-@import 'bourbon/bourbon'; // lib - bourbon
-@import 'vendor/bi-app/bi-app-ltr'; // set the layout for left to right languages
-
-// base - utilities
-@import 'base/reset';
-@import 'base/variables';
-@import 'base/mixins';
-
-// shared app style assets/rendering
-@import 'build-lms-v1';
-
-// Load overrides
-@import "overrides";
+@import 'lms/static/sass/lms-main-v1';
+@import 'overrides';

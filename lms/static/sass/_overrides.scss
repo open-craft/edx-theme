@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import 'base/variables';
 
 html {
   color: $base-font-color;
@@ -44,6 +45,7 @@ html {
       text-transform: none !important;
       font-weight: 300 !important;
       font-size: 1rem;
+      line-height: normal;
 
       &:hover, &:focus, &:active {
         background: none;
@@ -53,29 +55,38 @@ html {
     }
 
     // User dropdown for logged-in user
-    ol.user {
+    ol.user,
+    .dropdown-menu-container {  // used on the course outline page
       margin: 8px 15px 0;
       border: white 1px solid;
-      .user-link {
+      height: 40px;
+      box-sizing: content-box;
+
+      .user-link,
+      .menu-title {
         margin: 0 !important;
         border: none !important;
         padding: 0 !important;
         text-shadow: none;
+        box-shadow: none;
         color: white;
         font-size: 1rem;
         font-weight: 300;
-        &:hover {
+        line-height: normal;
+        &:hover, &:active, &:focus {
           background: none;
         }
         .label-username {
           margin: 10px;
         }
-        .user-image-frame {
+        .user-image-frame,
+        .menu-image {
           border-radius: 0;
+          height: 40px;
         }
       }
       .user-menu {
-        button.dropdown {
+        button {
           border-radius: 0;
           padding: 5px 10px;
           background-color: $dark-gray;
@@ -91,6 +102,10 @@ html {
     .nav-global {
       margin-top: 0 !important;
       float: right !important;
+
+      li a {
+        display: inline-block;
+      }
     }
   }
 }
@@ -264,11 +279,27 @@ html {
 .content-wrapper {
   padding-bottom: 48px;
 
-  a:link, a:visited {
-    color: $brilliant-blue;
+  a {
+    &, &:link, &:visited {
+      color: $brilliant-blue;
+
+       &:hover, &:active, &:focus {
+         color: $brilliant-blue-light;
+       }
+    }
   }
-  a:link:hover, a:visited:hover {
-    color: $brilliant-blue-light;
+}
+
+.empty-dashboard-message a {
+  &, &:link, &:visited {
+    color: white;
+    background-color: $brilliant-blue;
+    border-color: $brilliant-blue;
+  }
+  &:hover, &:focus, &:active {
+    color: $brilliant-blue;
+    background-color: white;
+    border-color: $brilliant-blue;
   }
 }
 
@@ -535,5 +566,21 @@ html {
   }
   .courses-more .courses-more-cta {
     font-size: 1.5em;
+  }
+}
+
+.course-view.container {
+  .search-button,
+  .action-resume-course {
+    &, &:link, &:visited {
+      color: $white;
+      background-color: $brilliant-blue;
+      border-color: $brilliant-blue;
+    }
+    &:hover, &:active {
+      color: $brilliant-blue;
+      background-color: $white;
+      border-color: $brilliant-blue;
+    }
   }
 }
