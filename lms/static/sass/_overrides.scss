@@ -16,8 +16,8 @@ html {
     }
 
     .course-header {
-      width: auto !important;
-      margin-top: 13px !important;
+      width: 35% !important;
+      margin-top: 0 !important;
       text-shadow: none;
       color: white;
     }
@@ -40,7 +40,7 @@ html {
       padding: 10px 20px !important;
       box-shadow: none !important;
       border: white 1px solid !important;
-      background: none !important;
+      background: $dark-gray none !important;
       color: white !important;
       text-transform: none !important;
       font-weight: 300 !important;
@@ -70,6 +70,7 @@ html {
         text-shadow: none;
         box-shadow: none;
         color: white;
+        background: $dark-gray none !important;
         font-size: 1rem;
         font-weight: 300;
         line-height: normal;
@@ -77,7 +78,7 @@ html {
           background: none;
         }
         .label-username {
-          margin: 10px;
+          margin: 9px;
         }
         .user-image-frame,
         .menu-image {
