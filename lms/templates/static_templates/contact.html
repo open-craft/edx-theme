@@ -518,28 +518,15 @@
 
                 <label for="company">Company</label><input value="TNE" id="company" maxlength="40" name="company" size="20" type="text" /><br>
 
-                <label for="lead_source">Lead Source</label><select  id="lead_source" name="lead_source">
-                  <option value="">--None--</option><option value="Facebook">Facebook</option>
-                  <option value="LinkedIn">LinkedIn</option>
-                  <option value="Search engine">Search engine</option>
-                  <option value="Display">Display</option>
-                  <option value="Social Media">Social Media</option>
-                  <option value="Other">Other</option>
-                  <option value="google">google</option>
-                  <option value="bing">bing</option>
-                  <option value="twitter">twitter</option>
-                  <option value="Unknown" selected="selected">Unknown</option>
-                </select><br>
+                <label for="lead_source">Lead Source</label>
+                <input id="LeadSource" name="lead_source"></input>
+                <br>
 
-                Secondary Source:<select  id="00N58000001IVkS" name="00N58000001IVkS" title="Secondary Source">
-                  <option value="">--None--</option>
-                  <option value="Blank">Blank</option>
-                </select><br>
+                Secondary Source:<input id="Secondary_Source_c" name="00N58000001IVkS" title="Secondary Source">
+                </input><br>
 
-                Tertiary Source:<select  id="00N5800000CM12L" name="00N5800000CM12L" title="Tertiary Source">
-                  <option value="">--None--</option>
-                  <option value="Blank">Blank</option>
-                </select><br>
+                Tertiary Source:<input  id="Tertiary_Source_c" name="00N5800000CM12L" title="Tertiary Source">
+                </input><br>
             </div>
             <div id="required-fields-error-message" class="error-message">
                 All fields are required in order to submit this form.
@@ -565,6 +552,16 @@
                 var p = hashParams[i].split('=');
                 $("#" + p[0]).val(decodeURIComponent(p[1]));
             }
+            $.each(
+                  JSON.parse(
+                        decodeURIComponent($.cookie('MARKETING_FORM_FIELDS')) || "{}"
+                  ),
+                  function (key, val){
+                        if(val){
+                              $("#"+key).val(val);
+                        }
+                  }
+            );
             $("#affirm-submission").change(function (e) {
                 el = $("#contact-submit-button");
                 el.prop("disabled", !el.prop("disabled"));
