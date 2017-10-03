@@ -1,0 +1,10 @@
+body,
+.view-login,
+.view-register,
+.view-passwordreset {
+    background-color: $color-background;
+
+    @import 'header.scss';
+    @import 'modal.scss';
+    @import 'footer.scss';
+}
