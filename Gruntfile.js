@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 
     var config = {
         src: 'src',
-        dest: 'static',
+        dest: 'lms/static',
         bower: 'bower_components'
     };
 
@@ -51,13 +51,14 @@ module.exports = function (grunt) {
 
         // ## //
 
-        less: {
+        sass: {
             theme: {
                 options: {
-                    paths: ['<%= c.bower %>']
+                    loadPath: ['<%= c.bower %>']
                 },
                 files: {
-                    '<%= c.dest %>/css/bundle.css': '<%= c.src %>/less/main.less'
+                    '<%= c.dest %>/css/bundle.css': '<%= c.src %>/sass_from_less/main.scss',
+                    '<%= c.dest %>/css/rue89.css': '<%= c.src %>/sass/upian.scss'
                 }
             }
         },
@@ -144,7 +145,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', [
-        'less',
+        'sass',
         'autoprefixer',
         'cssmin',
         'bless',

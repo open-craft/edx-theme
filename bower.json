@@ -1,11 +1,11 @@
 {
   "name": "edx-theme",
   "private": true,
-  "homepage": "https://github.com/IONISx/edx-theme",
-  "description": "Open edX theme for IONISx",
+  "homepage": "https://github.com/rue89/edx-theme",
+  "description": "Open edX theme for Rue89",
   "license": "AGPL",
   "dependencies": {
-    "bootstrap": "~3.3.0",
+    "bootstrap-sass": "~3.3.7",
     "font-awesome": "~4.3.0"
   }
 }
