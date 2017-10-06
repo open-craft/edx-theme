@@ -299,15 +299,15 @@ from six.moves.urllib.parse import quote
 
             ## Pull course run info from course discovery
             <%
-              course_run_details = get_course_run_details(course.id.to_deprecated_string(), ['weeks_to_complete'])
+              discovery_course_run_details = get_course_run_details(course.id.to_deprecated_string(), ['weeks_to_complete'])
             %>
 
             ## Duration
-            % if course_run_details:
+            % if discovery_course_run_details['weeks_to_complete']:
               <li class="important-dates-item">
                 <span class="icon fa fa-clock-o" aria-hidden="true"></span>
                 <p class="important-dates-item-title">${_("Duration")}</p>
-                <span class="important-dates-item-text duration">${_("{} Weeks").format(course_run_details['weeks_to_complete'])}</span>
+                <span class="important-dates-item-text duration">${_("{} Weeks").format(discovery_course_run_details['weeks_to_complete'])}</span>
               </li>
             % endif
 
