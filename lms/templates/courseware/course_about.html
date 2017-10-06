@@ -1,11 +1,12 @@
 <%namespace name='static' file='../static_content.html'/>
 <%!
-from django.utils.translation import ugettext as _
+from django.utils.translation import get_language_info, ugettext as _
 from django.core.urlresolvers import reverse
 from courseware.courses import get_course_about_section
 from django.conf import settings
 from edxmako.shortcuts import marketing_link
 from openedx.core.lib.courses import course_image_url
+from openedx.core.djangoapps.catalog.utils import get_course_run_details
 from xmodule.contentstore.content import StaticContent
 from six import string_types
 from six.moves.urllib.parse import quote
@@ -205,7 +206,7 @@ from six.moves.urllib.parse import quote
           </a>
           <div id="register_error"></div>
         %else:
-          <% 
+          <%
             if ecommerce_checkout:
               reg_href = ecommerce_checkout_link
             else:
@@ -269,12 +270,48 @@ from six.moves.urllib.parse import quote
               </li>
               % endif
 
+            ## Effort
             % if get_course_about_section(request, course, "effort"):
-              <li class="important-dates-item"><span class="icon fa fa-pencil" aria-hidden="true"></span><p class="important-dates-item-title">${_("Estimated Effort")}</p><span class="important-dates-item-text effort">${get_course_about_section(request, course, "effort")}</span></li>
+              <li class="important-dates-item">
+                <span class="icon fa fa-pencil" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Estimated Effort")}</p>
+                <span class="important-dates-item-text effort">${get_course_about_section(request, course, "effort")}</span>
+              </li>
             % endif
 
-            ##<li class="important-dates-item"><span class="icon fa fa-clock-o" aria-hidden="true"></span><p class="important-dates-item-title">${_('Course Length')}</p><span class="important-dates-item-text course-length">${_('{number} weeks').format(number=15)}</span></li>
+            ## Organization / Institute
+            % if course.display_org_with_default:
+              <li class="important-dates-item">
+                <span class="icon fa fa-university" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Institution")}</p>
+                <span class="important-dates-item-text institution">${course.display_org_with_default}</span>
+              </li>
+            % endif
 
+            ## Language
+            % if course_details.language:
+              <li class="important-dates-item">
+                <span class="icon fa fa-language" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Language")}</p>
+                <span class="important-dates-item-text language">${get_language_info(course_details.language)['name_local']}</span>
+              </li>
+            % endif
+
+            ## Pull course run info from course discovery
+            <%
+              discovery_course_run_details = get_course_run_details(course.id.to_deprecated_string(), ['weeks_to_complete'])
+            %>
+
+            ## Duration
+            % if discovery_course_run_details['weeks_to_complete']:
+              <li class="important-dates-item">
+                <span class="icon fa fa-clock-o" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Duration")}</p>
+                <span class="important-dates-item-text duration">${_("{} Weeks").format(discovery_course_run_details['weeks_to_complete'])}</span>
+              </li>
+            % endif
+
+            ## Price
             %if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
               <li class="important-dates-item">
                 <span class="icon fa fa-money" aria-hidden="true"></span>
@@ -283,6 +320,7 @@ from six.moves.urllib.parse import quote
               </li>
             %endif
 
+            ## Prerequisites
             % if pre_requisite_courses:
             <% prc_target = reverse('about_course', args=[unicode(pre_requisite_courses[0]['key'])]) %>
             <li class="prerequisite-course important-dates-item">
@@ -299,11 +337,18 @@ from six.moves.urllib.parse import quote
               </p>
             </li>
             % endif
+
+            ## Requirements
             % if get_course_about_section(request, course, "prerequisites"):
-              <li class="important-dates-item"><span class="icon fa fa-book" aria-hidden="true"></span><p class="important-dates-item-title">${_("Requirements")}</p><span class="important-dates-item-text prerequisites">${get_course_about_section(request, course, "prerequisites")}</span></li>
+              <li class="important-dates-item">
+                <span class="icon fa fa-book" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Requirements")}</p>
+                <span class="important-dates-item-text prerequisites">${get_course_about_section(request, course, "prerequisites")}</span>
+              </li>
             % endif
           </ol>
         </div>
+
         % if get_course_about_section(request, course, "video"):
         <a href="#video-modal" class="media" rel="leanModal">
           <div class="hero">
