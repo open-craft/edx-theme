@@ -1,4 +1,4 @@
-.ionisx-input {
+@mixin ionisx-input {
     -webkit-font-smoothing: auto;
     -webkit-appearance: none;
     background: none;
@@ -48,4 +48,9 @@
             color: $color-primary;
         }
     }
+}
+
+.ionisx-input {
+    // FIXME test
+    @include ionisx-input;
 }

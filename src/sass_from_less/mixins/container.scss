@@ -1,6 +1,6 @@
 .ionisx-container {
     @include square(auto);
-    @include container();
+    @include container-fixed(); // FIXME test
 
     min-width: 0;
     max-width: none;

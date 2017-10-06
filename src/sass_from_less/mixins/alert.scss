@@ -1,4 +1,16 @@
-.ionisx-alert {
+@mixin alert-error {
+    // FIXME
+}
+@mixin alert-warning {
+    // FIXME
+}
+@mixin alert-info {
+    // FIXME
+}
+@mixin alert-success {
+    // FIXME
+}
+@mixin ionisx-alert {
     outline: none;
     box-shadow: none;
     border: 0 none;

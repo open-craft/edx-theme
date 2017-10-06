@@ -1,3 +1,8 @@
+@mixin modal {
+    // FIXME
+}
+@mixin ionisx-container {
+}
 .ionisx-modal {
     @include modal();
 

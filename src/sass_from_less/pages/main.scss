@@ -1,14 +1,16 @@
+// FIXME
+@mixin container {}
 body,
 .view-login,
 .view-register,
 .view-passwordreset {
     .content-wrapper {
-        @mixin square(auto),
+        @includ square(auto);
 
-        margin: 0,
-        padding: 0,
-        background: none,
-        padding-bottom: $layout-bottom-spacing,
+        margin: 0;
+        padding: 0;
+        background: none;
+        padding-bottom: $layout-bottom-spacing;
 
         @media (min-width: $screen-xs-max) {
             min-height: 100vh;

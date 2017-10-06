@@ -1,3 +1,6 @@
+@mixin btn {
+    // FIXME
+}
 @mixin ionisx-btn($fg-color, $bg-color) {
     @include square(auto);
 
@@ -26,13 +29,14 @@
         border-color: $fg-color;
     }
 
-    & when ($fg-color = $white) {
-        border-color: $bg-color;
-    }
-
-    & when ($fg-color = $black) {
-        border-color: $bg-color;
-    }
+    // FIXME port to SASS
+    // & when ($fg-color = $white) {
+    //     border-color: $bg-color;
+    // }
+    // 
+    // & when ($fg-color = $black) {
+    //     border-color: $bg-color;
+    // }
 
     &:focus, &:active {
         @include ionisx-btn-hover($fg-color, $bg-color);
@@ -53,13 +57,14 @@
     border-color: $bg-color;
     box-shadow: none;
 
-    & when ($bg-color = $white) {
-        border-color: $fg-color;
-    }
-
-    & when ($bg-color = $black) {
-        border-color: $fg-color;
-    }
+    // FIXME port to SASS
+    // & when ($bg-color = $white) {
+    //     border-color: $fg-color;
+    // }
+    // 
+    // & when ($bg-color = $black) {
+    //     border-color: $fg-color;
+    // }
 }
 
 @mixin ionisx-btn-disabled($fg-color: $color-disabled) {

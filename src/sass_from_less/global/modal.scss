@@ -1,14 +1,18 @@
+// FIXME
+@mixin ionisx-modal {}
+@mixin ionisx-container-modal {}
+@mixin ionisx-video-modal {}
 #lean_overlay {
     background: none;
     background-color: fadeout($black, 40%);
 }
 
 .modal, .leanModal_box {
-    @mixin ionisx-modal(),
+    @include ionisx-modal();
 
     &.video-modal {
-        .ionisx-container-modal(),
-        .ionisx-video-modal(),
+        @include ionisx-container-modal();
+        @include ionisx-video-modal();
     }
 
     button.dismiss:not(.close-modal) {

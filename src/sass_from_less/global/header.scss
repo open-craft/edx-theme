@@ -1,3 +1,8 @@
+// FIXME
+@mixin navbar {
+}
+@mixin navbar-default {
+}
 header.global, header.global-new, header.global.slim {
     @include square(auto);
     @include navbar();
@@ -32,12 +37,12 @@ header.global, header.global-new, header.global.slim {
 
             span {
                 @include size($logo-img-width, 36px);
-                @mixin text-hide(),
+                @include text-hide();
 
-                background-image: url($logo-img-path),
-                background-size: contain,
-                background-repeat: no-repeat,
-                display: block,
+                background-image: url($logo-img-path);
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: block;
 
                 @media (max-width: $screen-xs-max) {
                     @include size($logo-sm-img-width, 36px);
@@ -48,14 +53,14 @@ header.global, header.global-new, header.global.slim {
         }
 
         h2 {
-            @mixin square(auto),
+            @include square(auto);
 
-            font: inherit,
-            font-size: 0.9em,
-            margin: 0.9em 0 0 0,
-            padding: 0,
-            text-shadow: none,
-            color: $color-background,
+            font: inherit;
+            font-size: 0.9em;
+            margin: 0.9em 0 0 0;
+            padding: 0;
+            text-shadow: none;
+            color: $color-background;
 
             @media (max-width: $screen-sm-max) {
                 display: none;
