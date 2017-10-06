@@ -303,7 +303,7 @@ from six.moves.urllib.parse import quote
             %>
 
             ## Duration
-            % if discovery_course_run_details['weeks_to_complete']:
+            % if discovery_course_run_details.get('weeks_to_complete'):
               <li class="important-dates-item">
                 <span class="icon fa fa-clock-o" aria-hidden="true"></span>
                 <p class="important-dates-item-title">${_("Duration")}</p>
