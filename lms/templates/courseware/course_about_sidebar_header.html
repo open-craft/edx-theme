@@ -42,12 +42,17 @@ from django.conf import settings
                 )
             )
         ).replace(u" ", u"%20")
+
+        linkedin_url = "https://www.linkedin.com/company/18238258/"
       %>
       <a href="${tweet_action}" class="share">
         <span class="icon fa fa-twitter" aria-hidden="true"></span><span class="sr">${_("Tweet that you've enrolled in this course")}</span>
       </a>
       <a href="${facebook_link}" class="share">
         <span class="icon fa fa-thumbs-up" aria-hidden="true"></span><span class="sr">${_("Post a Facebook message to say you've enrolled in this course")}</span>
+      </a>
+      <a href="${linkedin_url}" class="share">
+        <span class="icon fa fa-linkedin-square" aria-hidden="true"></span><span class="sr">${_("Connect with PearsonX on LinkedIn")}</span>
       </a>
       <a href="${email_subject}" class="share">
         <span class="icon fa fa-envelope" aria-hidden="true"></span><span class="sr">${_("Email someone to say you've enrolled in this course")}</span>
