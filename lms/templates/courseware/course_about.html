@@ -18,25 +18,6 @@ from six.moves.urllib.parse import quote
   ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
   <meta property="og:title" content="${course.display_name_with_default_escaped}" />
   <meta property="og:description" content="${get_course_about_section(request, course, 'short_description')}" />
-
-  <!-- Google Code for Lead Conversion Page -->
-  <script type="text/javascript">
-  /* <![CDATA[ */
-  var google_conversion_id = 838419445;
-  var google_conversion_language = "en";
-  var google_conversion_format = "3";
-  var google_conversion_color = "ffffff";
-  var google_conversion_label = "0WzCCOuDrnUQ9YfljwM";
-  var google_remarketing_only = false;
-  /* ]]> */
-  </script>
-  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-  </script>
-  <noscript>
-  <div style="display:inline;">
-  <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/838419445/?label=0WzCCOuDrnUQ9YfljwM&amp;guid=ON&amp;script=0"/>
-  </div>
-  </noscript>
 </%block>
 
 <%block name="js_extra">
@@ -241,7 +222,14 @@ from six.moves.urllib.parse import quote
               ${_("Enroll Now")}
             </a>
             % endif
-            <a href="/contact#00N61000002EYUJ=${course.display_name_with_default_escaped}&retURL=${quote(request.build_absolute_uri(request.path) + '#contacted')}" class="inquire">
+            <%
+              inquire_url = '/contact'
+              inquire_url += '#00N61000002EYUJ={}'.format(quote(course.display_name_with_default_escaped))
+              inquire_url += '&retURL={}'.format(quote(request.build_absolute_uri(request.path) + '#contacted'))
+              if not course.start_date_is_still_default:
+                inquire_url += '&00N61000002L8on={}'.format(quote(course.start.strftime('%B %Y')))
+            %>
+            <a href="${inquire_url}" class="inquire">
               ${_("Inquire Now")}
             </a>
           </div>
