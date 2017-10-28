@@ -277,7 +277,6 @@ from six.moves.urllib.parse import quote
               </li>
               % endif
 
-            ## Effort
             % if get_course_about_section(request, course, "effort"):
               <li class="important-dates-item">
                 <span class="icon fa fa-pencil" aria-hidden="true"></span>
@@ -286,39 +285,6 @@ from six.moves.urllib.parse import quote
               </li>
             % endif
 
-            ## Organization / Institute
-            % if course.display_org_with_default:
-              <li class="important-dates-item">
-                <span class="icon fa fa-university" aria-hidden="true"></span>
-                <p class="important-dates-item-title">${_("Institution")}</p>
-                <span class="important-dates-item-text institution">${course.display_org_with_default}</span>
-              </li>
-            % endif
-
-            ## Language
-            % if course_details.language:
-              <li class="important-dates-item">
-                <span class="icon fa fa-language" aria-hidden="true"></span>
-                <p class="important-dates-item-title">${_("Language")}</p>
-                <span class="important-dates-item-text language">${get_language_info(course_details.language)['name_local']}</span>
-              </li>
-            % endif
-
-            ## Pull course run info from course discovery
-            <%
-              discovery_course_run_details = get_course_run_details(course.id.to_deprecated_string(), ['weeks_to_complete'])
-            %>
-
-            ## Duration
-            % if discovery_course_run_details.get('weeks_to_complete'):
-              <li class="important-dates-item">
-                <span class="icon fa fa-clock-o" aria-hidden="true"></span>
-                <p class="important-dates-item-title">${_("Duration")}</p>
-                <span class="important-dates-item-text duration">${_("{} Weeks").format(discovery_course_run_details['weeks_to_complete'])}</span>
-              </li>
-            % endif
-
-            ## Price
             %if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
               <li class="important-dates-item">
                 <span class="icon fa fa-money" aria-hidden="true"></span>
@@ -327,7 +293,6 @@ from six.moves.urllib.parse import quote
               </li>
             %endif
 
-            ## Prerequisites
             % if pre_requisite_courses:
             <% prc_target = reverse('about_course', args=[unicode(pre_requisite_courses[0]['key'])]) %>
             <li class="prerequisite-course important-dates-item">
@@ -345,7 +310,6 @@ from six.moves.urllib.parse import quote
             </li>
             % endif
 
-            ## Requirements
             % if get_course_about_section(request, course, "prerequisites"):
               <li class="important-dates-item">
                 <span class="icon fa fa-book" aria-hidden="true"></span>
@@ -353,6 +317,39 @@ from six.moves.urllib.parse import quote
                 <span class="important-dates-item-text prerequisites">${get_course_about_section(request, course, "prerequisites")}</span>
               </li>
             % endif
+
+            <%block>
+              ## Organization / Institute
+              % if course.display_org_with_default:
+                <li class="important-dates-item">
+                  <span class="icon fa fa-university" aria-hidden="true"></span>
+                  <p class="important-dates-item-title">${_("Institution")}</p>
+                  <span class="important-dates-item-text institution">${course.display_org_with_default}</span>
+                </li>
+              % endif
+
+              ## Language
+              % if course_details.language:
+                <li class="important-dates-item">
+                  <span class="icon fa fa-language" aria-hidden="true"></span>
+                  <p class="important-dates-item-title">${_("Language")}</p>
+                  <span class="important-dates-item-text language">${get_language_info(course_details.language)['name_local']}</span>
+                </li>
+              % endif
+
+              ## Pull course run info from course discovery
+              <%
+                discovery_course_run_details = get_course_run_details(course.id.to_deprecated_string(), ['weeks_to_complete'])
+              %>
+
+              % if discovery_course_run_details.get('weeks_to_complete'):
+                <li class="important-dates-item">
+                  <span class="icon fa fa-clock-o" aria-hidden="true"></span>
+                  <p class="important-dates-item-title">${_("Duration")}</p>
+                  <span class="important-dates-item-text duration">${_("{} Weeks").format(discovery_course_run_details['weeks_to_complete'])}</span>
+                </li>
+              % endif
+            </%block>
           </ol>
         </div>
 
