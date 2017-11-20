@@ -304,10 +304,25 @@ section.course-info {
       }
     }
   }
+
+  .details {
+    // this @media rule can be deleted after https://github.com/edx/edx-platform/pull/16640/ is merged
+    @media screen and (max-width: 760px) {
+      float: none;
+      width: auto;
+    }
+  }
+
   .course-sidebar {
 
     header {
       margin-bottom: ($baseline * 0.5);
+    }
+
+    // this @media rule can be deleted after https://github.com/edx/edx-platform/pull/16640/ is merged
+    @media screen and (max-width: 760px) {
+      float: none;
+      width: auto;
     }
 
     .course-summary {
@@ -478,6 +493,22 @@ section.course-info {
 #contacted-message {
   display: none;
 }
+
+// this @media rule can be deleted after https://github.com/edx/edx-platform/pull/16640/ is merged
+@media screen and (max-width: 760px) {
+  .course-info {
+    header.course-profile {
+      .intro-inner-wrapper {
+        min-width: auto;
+      }
+    }
+    .container {
+      min-width: auto;
+      padding: 20px;
+    }
+  }
+}
+
 
 /*
 The below section is backported from Ginkgo to apply theming to the
