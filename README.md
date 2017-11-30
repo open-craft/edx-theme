@@ -19,6 +19,47 @@ To customize your theme:
 - Edit the lms.envs.json file in edx-platform and set 'USE_CUSTOM_THEME' to true, and 'THEME_NAME' to your theme's name.
 
 
+Custom templates
+----------------
+
+We try to minimise template customizations, because it makes upgrades difficult.  But to make upgrades easier, we record
+the base template in a separate branch, for use when rebasing the theme.
+
+The example below shows how to handle adding an example template to this repo:
+```bash
+git checkout pearsonx-upstream-templates
+git -C path/to/edx-platform show open-release/zebrawood.1:lms/templates/example.html > lms/templates/example.html
+git commit -am "Add upstream version of example.html."
+```
+
+Next, merge this branch into the `pearsonx` branch:
+```bash
+git checkout pearsonx
+git merge pearsonx-upstream-templates
+```
+
+Then, we can customize the template as needed in the `pearsonx` branch.
+
+Theme Upgrades
+==============
+
+When a new Open edX version is released, we need to update all templates in the upstream branch, so we can rebase the
+customized themes on that branch.
+
+Check out the new release in edx-platform and rsync any modified templates
+```bash
+git checkout pearsonx-upstream-templates
+git -C path/to/edx-platform checkout open-release/zebrawood.1
+rsync --links --existing --delete --recursive path/to/edx-platform/lms/templates lms/
+git commit -am "Update upstream templates to the Zebrawood release."
+```
+
+To port the customisations to the latest release, we just need to merge:
+```bash
+git checkout pearsonx
+git merge pearsonx-upstream-templates
+```
+
 License
 =======
 
