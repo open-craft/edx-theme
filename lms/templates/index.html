@@ -1,16 +1,14 @@
-<%page expression_filter="h"/>
-<%inherit file="main.html" />
-<%namespace name='static' file='static_content.html'/>
+<%inherit file="index.html" />
 <%!
-from django.utils.translation import ugettext as _
-from django.core.urlresolvers import reverse
-
-from openedx.core.djangolib.markup import HTML, Text
+    from openedx.core.djangolib.markup import HTML
 %>
-<main id="main" aria-label="Content" tabindex="-1">
-  <section class="home">
-    <%include file="pearson_banner.html" />
-    <header>
+<%block name="welcome_overlay"></%block>
+
+<%block name="top_banner">
+<%include file="pearson_banner.html" />
+</%block>
+
+<%block name="before_main_header_text">
       <div class='hero-container'>
         <div class='hero-image'></div>
         <div class='hero-text'>
@@ -28,7 +26,17 @@ from openedx.core.djangolib.markup import HTML, Text
           <p><a href="/about">Learn More</a></p>
         </div>
       </div>
-    </header>
+</%block>
+
+<%block name="after_main_header_text">
+  <div class="offered-by-box">
+    <h2>
+      Offered by Pearson and edX in conjunction with University of Pennsylvania’s Wharton School, Columbia, Thunderbird, and TU Delft
+    </h2>
+  </div>
+</%block>
+
+<%block name="courses_list">
 
 <!-- Indefinitely hide the featured programs container
 
@@ -46,29 +54,6 @@ from openedx.core.djangolib.markup import HTML, Text
     </div>
 
 -->
-
-  <div class="offered-by-box">
-    <h2>
-      Offered by Pearson and edX in conjunction with University of Pennsylvania’s Wharton School, Columbia, Thunderbird, and TU Delft
-    </h2>
-  </div>
-  </section>
-</main>
-
-<%block name="js_extra">
-   <script type="text/javascript">
-      $(window).load(function() {
-         if(getParameterByName('next')) {
-              $('#login').trigger("click");
-         }
-      })
-   </script>
 </%block>
 
-% if show_signup_immediately is not UNDEFINED:
-  ## NOTE: This won't work in production, because anonymous views are cached, so it will
-  ## show either with or without this extra js for 3 minutes at a time.
-<script type="text/javascript">
-  $(window).load(function() {$('#signup_action').trigger("click");});
-</script>
-% endif
+${HTML(parent.body())} 
