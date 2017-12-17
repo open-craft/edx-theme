@@ -1,38 +1,14 @@
+<%inherit file="courses.html" />
 <%!
-  import json
-  from django.utils.translation import ugettext as _
-  from openedx.core.djangolib.js_utils import dump_js_escaped_json
+    from django.utils.translation import ugettext as _
+    from openedx.core.djangolib.markup import HTML
 %>
-<%inherit file="../main.html" />
-<%
-  course_discovery_enabled = settings.FEATURES.get('ENABLE_COURSE_DISCOVERY')
-%>
-
-<%namespace name='static' file='../static_content.html'/>
-
-% if course_discovery_enabled:
-<%block name="header_extras">
-  % for template_name in ["course_card", "filter_bar", "filter", "facet", "facet_option"]:
-  <script type="text/template" id="${template_name}-tpl">
-      <%static:include path="discovery/${template_name}.underscore" />
-  </script>
-  % endfor
-  <%static:require_module module_name="js/discovery/discovery_factory" class_name="DiscoveryFactory">
-    DiscoveryFactory(
-      ${course_discovery_meanings | n, dump_js_escaped_json},
-      getParameterByName('search_query'),
-      "${user_language}",
-      "${user_timezone}"
-    );
-  </%static:require_module>
-</%block>
-% endif
 
 <%block name="pagetitle">${_("Programs")}</%block>
 
-<main id="main" aria-label="Content" tabindex="-1">
-    <section class="find-courses">
-      <section class="courses-container">
+<%block name="course_discovery_search">
+## The discovery form is removed and this overview is shown instead
+
         <%include file="../pearson_banner.html" />
         <div class="programs-page-overview">
           <h2>The PearsonX Difference: Global Education and Network</h2>
@@ -46,15 +22,8 @@
             Upon completion of the PearsonX program, you will earn a digital badge that can be shared on LinkedIn™, through email or a variety of other prominent social media platforms. 
           </p>
         </div>
-        <div class="courses${'' if course_discovery_enabled else ' no-course-discovery'}" role="region" aria-label="${_('List of Courses')}">
-          <ul class="courses-listing">
-            %for course in courses:
-            <li class="courses-listing-item">
-              <%include file="../course.html" args="course=course" />
-            </li>
-            %endfor
-          </ul>
-        </div>
-      </section>
-    </section>
-</main>
+</%block>
+
+<%block name="course_discovery_refine_search"></%block>
+
+${HTML(parent.body())}
