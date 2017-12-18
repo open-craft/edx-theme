@@ -17,7 +17,7 @@ from six.moves.urllib.parse import quote
 
 <%block name="js_extra">
   ## CourseTalk widget js script
-  % if 142857 or show_coursetalk_widget:
+  % if show_coursetalk_widget:
       <script src="//d3q6qq2zt8nhwv.cloudfront.net/s/js/widgets/coursetalk-read-reviews.js"></script>
   % endif
 
@@ -35,321 +35,251 @@ from six.moves.urllib.parse import quote
 </%block>
 
 
-<!-- FIXME before block important_dates -->
-<%block name="important_dates">
-<!-- FIXME before prerequisites -->
-${HTML(parent.prerequisites())}
-<!-- FIXME after prerequisites -->
+
+<%block name="course_reviews_tool">
+
+      ## CourseTalk widget
+      % if show_coursetalk_widget:
+      <div class="coursetalk-read-reviews">
+          <div id="ct-custom-read-review-widget" data-provider="${platform_key}" data-course="${course_review_key}"></div>
+      </div>
+      % endif
+
 </%block>
-<!-- FIXME after block important_dates -->
 
-## FIXME delete (works)
-## <%block name="pagetitle">xxxxxxxxxxxx ${course.display_name_with_default_escaped}</%block>
+  <%block name="header">
+  <header class="course-profile" style="background-image: url('${course_image_url(course, 'banner_image')}')">
+    <div class="intro-inner-wrapper">
+      <section class="intro">
+        <div class="heading-group">
+          <h1>
+            ${course.display_name_with_default_escaped}
+          </h1>
+          <br/>
+          <h2>
+            edX in Collaboration with ${course.display_org_with_default | h}
+          </h2>
+        </div>
+      </section>
+    </div>
+  </header>
+  </%block>
+
+<%block name="important_dates">
+          <ol class="important-dates">
+            <li class="important-dates-item"><span class="icon fa fa-info-circle" aria-hidden="true"></span><p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default | h}</span></li>
+            % if not course.start_date_is_still_default:
+                <%
+                    course_start_date = course.advertised_start or course.start
+                %>
+              <li class="important-dates-item">
+                <span class="icon fa fa-calendar" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Classes Start")}</p>
+                % if isinstance(course_start_date, string_types):
+                    <span class="important-dates-item-text start-date">${course_start_date}</span>
+                % else:
+                    <%
+                       course_date_string = course_start_date.strftime('%Y-%m-%dT%H:%M:%S%z')
+                    %>
+                    <span class="important-dates-item-text start-date localized_datetime" data-format="shortDate" data-datetime="${course_date_string}"></span>
+                % endif
+              </li>
+            % endif
+              ## We plan to ditch end_date (which is not stored in course metadata),
+              ## but for backwards compatibility, show about/end_date blob if it exists.
+              % if get_course_about_section(request, course, "end_date") or course.end:
+                  <%
+                      course_end_date = course.end
+                  %>
+
+              <li class="important-dates-item">
+                  <span class="icon fa fa-calendar" aria-hidden="true"></span>
+                  <p class="important-dates-item-title">${_("Classes End")}</p>
+                    % if isinstance(course_end_date, str):
+                        <span class="important-dates-item-text final-date">${course_end_date}</span>
+                    % else:
+                      <%
+                          course_date_string = course_end_date.strftime('%Y-%m-%dT%H:%M:%S%z')
+                      %>
+                      <span class="important-dates-item-text final-date localized_datetime" data-format="shortDate" data-datetime="${course_date_string}"></span>
+                    % endif
+              </li>
+              % endif
+
+            ## Effort
+            % if get_course_about_section(request, course, "effort"):
+              <li class="important-dates-item">
+                <span class="icon fa fa-pencil" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Estimated Effort")}</p>
+                <span class="important-dates-item-text effort">${get_course_about_section(request, course, "effort")}</span>
+              </li>
+            % endif
+
+            ## Organization / Institute
+            % if course.display_org_with_default:
+              <li class="important-dates-item">
+                <span class="icon fa fa-university" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Institution")}</p>
+                <span class="important-dates-item-text institution">${course.display_org_with_default}</span>
+              </li>
+            % endif
+
+            ## Language
+            % if course_details.language:
+              <li class="important-dates-item">
+                <span class="icon fa fa-language" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Language")}</p>
+                <span class="important-dates-item-text language">${get_language_info(course_details.language)['name_local']}</span>
+              </li>
+            % endif
+
+            ## Pull course run info from course discovery
+            <%
+              discovery_course_run_details = get_course_run_details(course.id.to_deprecated_string(), ['weeks_to_complete'])
+            %>
+
+            ## Duration
+            % if discovery_course_run_details.get('weeks_to_complete'):
+              <li class="important-dates-item">
+                <span class="icon fa fa-clock-o" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Duration")}</p>
+                <span class="important-dates-item-text duration">${_("{} Weeks").format(discovery_course_run_details['weeks_to_complete'])}</span>
+              </li>
+            % endif
+
+            ## Price
+            %if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
+              <li class="important-dates-item">
+                <span class="icon fa fa-money" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Price")}</p>
+                <span class="important-dates-item-text">${course_price}</span>
+              </li>
+            %endif
+
+            ## Prerequisites
+            % if pre_requisite_courses:
+            <% prc_target = reverse('about_course', args=[unicode(pre_requisite_courses[0]['key'])]) %>
+            <li class="prerequisite-course important-dates-item">
+              <span class="icon fa fa-list-ul" aria-hidden="true"></span>
+              <p class="important-dates-item-title">${_("Prerequisites")}</p>
+              ## Multiple pre-requisite courses are not supported on frontend that's why we are pulling first element
+              <span class="important-dates-item-text pre-requisite"><a href="${prc_target}">${pre_requisite_courses[0]['display']}</a></span>
+              <p class="tip">
+              ${_("You must successfully complete {link_start}{prc_display}{link_end} before you begin this course.").format(
+                link_start='<a href="{}">'.format(prc_target),
+                link_end='</a>',
+                prc_display=pre_requisite_courses[0]['display'],
+              )}
+              </p>
+            </li>
+            % endif
+
+            ## Requirements
+            % if get_course_about_section(request, course, "prerequisites"):
+              <li class="important-dates-item">
+                <span class="icon fa fa-book" aria-hidden="true"></span>
+                <p class="important-dates-item-title">${_("Requirements")}</p>
+                <span class="important-dates-item-text prerequisites">${get_course_about_section(request, course, "prerequisites")}</span>
+              </li>
+            % endif
+          </ol>
+</%block>
 
 
+  <%block name="course_info_before_header">
+  <div class="wrapper-msg urgency-info" id="contacted-message">
+    <div class="msg">
+      <span class="msg-icon fa fa-info-circle" aria-hidden="true"></span>
+      <div class="msg-content">
+        <h2 class="title">
+          Thank you for your inquiry into PearsonX and our program offerings. One of our Program Advisors will be contacting you shortly.
+        </h2>
+        <div class="copy">
+          <p>
+            We are committed to helping individuals advance in their careers and take the next step in their education goals. PearsonX provides you with globally recognized, relevant programs of study, as well as the opportunity to network with peers and progress your career.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </%block>
 
-## MIGRATING:## FIXME migrate from here onwards
-## MIGRATING:##
-## MIGRATING:##<section class="course-info">
-## MIGRATING:##  <div class="wrapper-msg urgency-info" id="contacted-message">
-## MIGRATING:##    <div class="msg">
-## MIGRATING:##      <span class="msg-icon fa fa-info-circle" aria-hidden="true"></span>
-## MIGRATING:##      <div class="msg-content">
-## MIGRATING:##        <h2 class="title">
-## MIGRATING:##          Thank you for your inquiry into PearsonX and our program offerings. One of our Program Advisors will be contacting you shortly.
-## MIGRATING:##        </h2>
-## MIGRATING:##        <div class="copy">
-## MIGRATING:##          <p>
-## MIGRATING:##            We are committed to helping individuals advance in their careers and take the next step in their education goals. PearsonX provides you with globally recognized, relevant programs of study, as well as the opportunity to network with peers and progress your career.
-## MIGRATING:##          </p>
-## MIGRATING:##        </div>
-## MIGRATING:##      </div>
-## MIGRATING:##    </div>
-## MIGRATING:##  </div>
-## MIGRATING:##  <header class="course-profile" style="background-image: url('${course_image_url(course, 'banner_image')}')">
-## MIGRATING:##    <div class="intro-inner-wrapper">
-## MIGRATING:##      <section class="intro">
-## MIGRATING:##        <div class="heading-group">
-## MIGRATING:##          <h1>
-## MIGRATING:##            ${course.display_name_with_default_escaped}
-## MIGRATING:##          </h1>
-## MIGRATING:##          <br/>
-## MIGRATING:##          <h2>
-## MIGRATING:##            edX in Collaboration with ${course.display_org_with_default | h}
-## MIGRATING:##          </h2>
-## MIGRATING:##        </div>
-## MIGRATING:##      </section>
-## MIGRATING:##    </div>
-## MIGRATING:##  </header>
-## MIGRATING:##
-## MIGRATING:##  <div class="container">
-## MIGRATING:##    <div class="details">
-## MIGRATING:##      % if staff_access and studio_url is not None:
-## MIGRATING:##        <div class="wrap-instructor-info studio-view">
-## MIGRATING:##          <a class="instructor-info-action" href="${studio_url}">${_("View About Page in studio")}</a>
-## MIGRATING:##        </div>
-## MIGRATING:##      % endif
-## MIGRATING:##
-## MIGRATING:##      <div class="inner-wrapper">
-## MIGRATING:##        ${get_course_about_section(request, course, "overview")}
-## MIGRATING:##      </div>
-## MIGRATING:##  </div>
-## MIGRATING:##
-## MIGRATING:##    <div class="course-sidebar">
-## MIGRATING:##      <div class="course-summary">
-## MIGRATING:##        <%include file="course_about_sidebar_header.html" />
-## MIGRATING:##        <div class="main-cta">
-## MIGRATING:##        %if user.is_authenticated() and registered:
-## MIGRATING:##          %if show_courseware_link:
-## MIGRATING:##            <a href="${course_target}">
-## MIGRATING:##            <strong>${_("View Course")}</strong>
-## MIGRATING:##            </a>
-## MIGRATING:##          %endif
-## MIGRATING:##
-## MIGRATING:##        %elif in_cart:
-## MIGRATING:##          <span class="add-to-cart">
-## MIGRATING:##            ${_('This course is in your <a href="{cart_link}">cart</a>.').format(cart_link=cart_link)}
-## MIGRATING:##          </span>
-## MIGRATING:##        % elif is_course_full:
-## MIGRATING:##          <span class="register disabled">
-## MIGRATING:##            ${_("Course is full")}
-## MIGRATING:##          </span>
-## MIGRATING:##        % elif invitation_only and not can_enroll:
-## MIGRATING:##          <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
-## MIGRATING:##        ## Shib courses need the enrollment button to be displayed even when can_enroll is False,
-## MIGRATING:##        ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
-## MIGRATING:##        ## so that they can register and become a real user that can enroll.
-## MIGRATING:##        % elif not is_shib_course and not can_enroll:
-## MIGRATING:##          <span class="register disabled">${_("Enrollment is Closed")}</span>
-## MIGRATING:##        %elif can_add_course_to_cart:
-## MIGRATING:##          <%
-## MIGRATING:##          if user.is_authenticated():
-## MIGRATING:##            reg_href = "#"
-## MIGRATING:##            reg_element_id = "add_to_cart_post"
-## MIGRATING:##          else:
-## MIGRATING:##            reg_href = reg_then_add_to_cart_link
-## MIGRATING:##            reg_element_id = "reg_then_add_to_cart"
-## MIGRATING:##          %>
-## MIGRATING:##          <% if ecommerce_checkout:
-## MIGRATING:##              reg_href = ecommerce_checkout_link
-## MIGRATING:##              reg_element_id = ""
-## MIGRATING:##          %>
-## MIGRATING:##          <a href="${reg_href}" class="add-to-cart" id="${reg_element_id}">
-## MIGRATING:##            ${_("Add {course_name} to Cart <span>({price} USD)</span>")\
-## MIGRATING:##              .format(course_name=course.display_number_with_default, price=course_price)}
-## MIGRATING:##          </a>
-## MIGRATING:##          <div id="register_error"></div>
-## MIGRATING:##        %else:
-## MIGRATING:##          <%
-## MIGRATING:##            if ecommerce_checkout:
-## MIGRATING:##              reg_href = ecommerce_checkout_link
-## MIGRATING:##            else:
-## MIGRATING:##              reg_href="#"
-## MIGRATING:##            if professional_mode:
-## MIGRATING:##              href_class = "add-to-cart"
-## MIGRATING:##            else:
-## MIGRATING:##              href_class = "register"
-## MIGRATING:##          %>
-## MIGRATING:##          <div class="inquire-wrapper">
-## MIGRATING:##            % if not course.advertised_start:
-## MIGRATING:##            <a href="${reg_href}" class="${href_class}">
-## MIGRATING:##              ${_("Enroll Now")}
-## MIGRATING:##            </a>
-## MIGRATING:##            % endif
-## MIGRATING:##            <%
-## MIGRATING:##              inquire_url = '/contact'
-## MIGRATING:##              inquire_url += '#00N61000002EYUJ={}'.format(quote(course.display_name_with_default_escaped))
-## MIGRATING:##              inquire_url += '&retURL={}'.format(quote(request.build_absolute_uri(request.path) + '#contacted'))
-## MIGRATING:##              if not course.start_date_is_still_default:
-## MIGRATING:##                inquire_url += '&00N61000002L8on={}'.format(quote(course.start.strftime('%B %Y')))
-## MIGRATING:##            %>
-## MIGRATING:##            <a href="${inquire_url}" class="inquire">
-## MIGRATING:##              ${_("Inquire Now")}
-## MIGRATING:##            </a>
-## MIGRATING:##          </div>
-## MIGRATING:##          <div id="register_error"></div>
-## MIGRATING:##        %endif
-## MIGRATING:##        </div>
-## MIGRATING:##        <div>
-## MIGRATING:##          <ol class="important-dates">
-## MIGRATING:##            <li class="important-dates-item"><span class="icon fa fa-info-circle" aria-hidden="true"></span><p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default | h}</span></li>
-## MIGRATING:##            % if not course.start_date_is_still_default:
-## MIGRATING:##                <%
-## MIGRATING:##                    course_start_date = course.advertised_start or course.start
-## MIGRATING:##                %>
-## MIGRATING:##              <li class="important-dates-item">
-## MIGRATING:##                <span class="icon fa fa-calendar" aria-hidden="true"></span>
-## MIGRATING:##                <p class="important-dates-item-title">${_("Classes Start")}</p>
-## MIGRATING:##                % if isinstance(course_start_date, string_types):
-## MIGRATING:##                    <span class="important-dates-item-text start-date">${course_start_date}</span>
-## MIGRATING:##                % else:
-## MIGRATING:##                    <%
-## MIGRATING:##                       course_date_string = course_start_date.strftime('%Y-%m-%dT%H:%M:%S%z')
-## MIGRATING:##                    %>
-## MIGRATING:##                    <span class="important-dates-item-text start-date localized_datetime" data-format="shortDate" data-datetime="${course_date_string}"></span>
-## MIGRATING:##                % endif
-## MIGRATING:##              </li>
-## MIGRATING:##            % endif
-## MIGRATING:##              ## We plan to ditch end_date (which is not stored in course metadata),
-## MIGRATING:##              ## but for backwards compatibility, show about/end_date blob if it exists.
-## MIGRATING:##              % if get_course_about_section(request, course, "end_date") or course.end:
-## MIGRATING:##                  <%
-## MIGRATING:##                      course_end_date = course.end
-## MIGRATING:##                  %>
-## MIGRATING:##
-## MIGRATING:##              <li class="important-dates-item">
-## MIGRATING:##                  <span class="icon fa fa-calendar" aria-hidden="true"></span>
-## MIGRATING:##                  <p class="important-dates-item-title">${_("Classes End")}</p>
-## MIGRATING:##                    % if isinstance(course_end_date, str):
-## MIGRATING:##                        <span class="important-dates-item-text final-date">${course_end_date}</span>
-## MIGRATING:##                    % else:
-## MIGRATING:##                      <%
-## MIGRATING:##                          course_date_string = course_end_date.strftime('%Y-%m-%dT%H:%M:%S%z')
-## MIGRATING:##                      %>
-## MIGRATING:##                      <span class="important-dates-item-text final-date localized_datetime" data-format="shortDate" data-datetime="${course_date_string}"></span>
-## MIGRATING:##                    % endif
-## MIGRATING:##              </li>
-## MIGRATING:##              % endif
-## MIGRATING:##
-## MIGRATING:##            ## Effort
-## MIGRATING:##            % if get_course_about_section(request, course, "effort"):
-## MIGRATING:##              <li class="important-dates-item">
-## MIGRATING:##                <span class="icon fa fa-pencil" aria-hidden="true"></span>
-## MIGRATING:##                <p class="important-dates-item-title">${_("Estimated Effort")}</p>
-## MIGRATING:##                <span class="important-dates-item-text effort">${get_course_about_section(request, course, "effort")}</span>
-## MIGRATING:##              </li>
-## MIGRATING:##            % endif
-## MIGRATING:##
-## MIGRATING:##            ## Organization / Institute
-## MIGRATING:##            % if course.display_org_with_default:
-## MIGRATING:##              <li class="important-dates-item">
-## MIGRATING:##                <span class="icon fa fa-university" aria-hidden="true"></span>
-## MIGRATING:##                <p class="important-dates-item-title">${_("Institution")}</p>
-## MIGRATING:##                <span class="important-dates-item-text institution">${course.display_org_with_default}</span>
-## MIGRATING:##              </li>
-## MIGRATING:##            % endif
-## MIGRATING:##
-## MIGRATING:##            ## Language
-## MIGRATING:##            % if course_details.language:
-## MIGRATING:##              <li class="important-dates-item">
-## MIGRATING:##                <span class="icon fa fa-language" aria-hidden="true"></span>
-## MIGRATING:##                <p class="important-dates-item-title">${_("Language")}</p>
-## MIGRATING:##                <span class="important-dates-item-text language">${get_language_info(course_details.language)['name_local']}</span>
-## MIGRATING:##              </li>
-## MIGRATING:##            % endif
-## MIGRATING:##
-## MIGRATING:##            ## Pull course run info from course discovery
-## MIGRATING:##            <%
-## MIGRATING:##              discovery_course_run_details = get_course_run_details(course.id.to_deprecated_string(), ['weeks_to_complete'])
-## MIGRATING:##            %>
-## MIGRATING:##
-## MIGRATING:##            ## Duration
-## MIGRATING:##            % if discovery_course_run_details.get('weeks_to_complete'):
-## MIGRATING:##              <li class="important-dates-item">
-## MIGRATING:##                <span class="icon fa fa-clock-o" aria-hidden="true"></span>
-## MIGRATING:##                <p class="important-dates-item-title">${_("Duration")}</p>
-## MIGRATING:##                <span class="important-dates-item-text duration">${_("{} Weeks").format(discovery_course_run_details['weeks_to_complete'])}</span>
-## MIGRATING:##              </li>
-## MIGRATING:##            % endif
-## MIGRATING:##
-## MIGRATING:##            ## Price
-## MIGRATING:##            %if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
-## MIGRATING:##              <li class="important-dates-item">
-## MIGRATING:##                <span class="icon fa fa-money" aria-hidden="true"></span>
-## MIGRATING:##                <p class="important-dates-item-title">${_("Price")}</p>
-## MIGRATING:##                <span class="important-dates-item-text">${course_price}</span>
-## MIGRATING:##              </li>
-## MIGRATING:##            %endif
-## MIGRATING:##
-## MIGRATING:##            ## Prerequisites
-## MIGRATING:##            % if pre_requisite_courses:
-## MIGRATING:##            <% prc_target = reverse('about_course', args=[unicode(pre_requisite_courses[0]['key'])]) %>
-## MIGRATING:##            <li class="prerequisite-course important-dates-item">
-## MIGRATING:##              <span class="icon fa fa-list-ul" aria-hidden="true"></span>
-## MIGRATING:##              <p class="important-dates-item-title">${_("Prerequisites")}</p>
-## MIGRATING:##              ## Multiple pre-requisite courses are not supported on frontend that's why we are pulling first element
-## MIGRATING:##              <span class="important-dates-item-text pre-requisite"><a href="${prc_target}">${pre_requisite_courses[0]['display']}</a></span>
-## MIGRATING:##              <p class="tip">
-## MIGRATING:##              ${_("You must successfully complete {link_start}{prc_display}{link_end} before you begin this course.").format(
-## MIGRATING:##                link_start='<a href="{}">'.format(prc_target),
-## MIGRATING:##                link_end='</a>',
-## MIGRATING:##                prc_display=pre_requisite_courses[0]['display'],
-## MIGRATING:##              )}
-## MIGRATING:##              </p>
-## MIGRATING:##            </li>
-## MIGRATING:##            % endif
-## MIGRATING:##
-## MIGRATING:##            ## Requirements
-## MIGRATING:##            % if get_course_about_section(request, course, "prerequisites"):
-## MIGRATING:##              <li class="important-dates-item">
-## MIGRATING:##                <span class="icon fa fa-book" aria-hidden="true"></span>
-## MIGRATING:##                <p class="important-dates-item-title">${_("Requirements")}</p>
-## MIGRATING:##                <span class="important-dates-item-text prerequisites">${get_course_about_section(request, course, "prerequisites")}</span>
-## MIGRATING:##              </li>
-## MIGRATING:##            % endif
-## MIGRATING:##          </ol>
-## MIGRATING:##        </div>
-## MIGRATING:##
-## MIGRATING:##        % if get_course_about_section(request, course, "video"):
-## MIGRATING:##        <a href="#video-modal" class="media" rel="leanModal">
-## MIGRATING:##          <div class="hero">
-## MIGRATING:##            <img src="${course_image_urls['large']}" alt="" />
-## MIGRATING:##            <div class="play-intro"></div>
-## MIGRATING:##          </div>
-## MIGRATING:##        </a>
-## MIGRATING:##        % endif
-## MIGRATING:##    </div>
-## MIGRATING:##
-## MIGRATING:##      ## CourseTalk widget
-## MIGRATING:##      % if show_coursetalk_widget:
-## MIGRATING:##      <div class="coursetalk-read-reviews">
-## MIGRATING:##          <div id="ct-custom-read-review-widget" data-provider="${platform_key}" data-course="${course_review_key}"></div>
-## MIGRATING:##      </div>
-## MIGRATING:##      % endif
-## MIGRATING:##
-## MIGRATING:##      ## For now, ocw links are the only thing that goes in additional resources
-## MIGRATING:##      % if get_course_about_section(request, course, "ocw_links"):
-## MIGRATING:##      <div class="additional-resources">
-## MIGRATING:##        <header>
-## MIGRATING:##          <h1>${_("Additional Resources")}</h1>
-## MIGRATING:##      </div>
-## MIGRATING:##
-## MIGRATING:##        <div>
-## MIGRATING:##          ## "MITOpenCourseware" should *not* be translated
-## MIGRATING:##          <h2 class="opencourseware">MITOpenCourseware</h2>
-## MIGRATING:##             ${get_course_about_section(request, course, "ocw_links")}
-## MIGRATING:##        </div>
-## MIGRATING:##    </div>
-## MIGRATING:##      %endif
-## MIGRATING:##
-## MIGRATING:##  </div>
-## MIGRATING:##
-## MIGRATING:##  </div>
-## MIGRATING:##</div>
-## MIGRATING:##
-## MIGRATING:#### Need to put this hidden form on the page so that the registration button works.
-## MIGRATING:#### Since it's no harm to display a hidden form, we display it with the most permissive conditional
-## MIGRATING:#### which is when the student is not registered.
-## MIGRATING:##%if active_reg_button or is_shib_course:
-## MIGRATING:##  <div style="display: none;">
-## MIGRATING:##    <form id="class_enroll_form" method="post" data-remote="true" action="${reverse('change_enrollment')}">
-## MIGRATING:##      <fieldset class="enroll_fieldset">
-## MIGRATING:##        <legend class="sr">${_("Enroll")}</legend>
-## MIGRATING:##        <input name="course_id" type="hidden" value="${course.id | h}">
-## MIGRATING:##        <input name="enrollment_action" type="hidden" value="enroll">
-## MIGRATING:##      </fieldset>
-## MIGRATING:##      <div class="submit">
-## MIGRATING:##        <input name="submit" type="submit" value="${_('enroll')}">
-## MIGRATING:##      </div>
-## MIGRATING:##    </form>
-## MIGRATING:##  </div>
-## MIGRATING:##%endif
-## MIGRATING:##
-## MIGRATING:##<%include file="../video_modal.html" />
-## MIGRATING:##
-## MIGRATING:##<%static:require_module_async module_name="js/dateutil_factory" class_name="DateUtilFactory">
-## MIGRATING:##    DateUtilFactory.transform(iterationKey=".localized_datetime");
-## MIGRATING:##</%static:require_module_async>
-## MIGRATING:##
-## MIGRATING:##<%/doc>
-## MIGRATING:##
+<%block name="main_cta">
+        <div class="main-cta">
+        %if user.is_authenticated() and registered:
+          %if show_courseware_link:
+            <a href="${course_target}">
+            <strong>${_("View Course")}</strong>
+            </a>
+          %endif
+
+        %elif in_cart:
+          <span class="add-to-cart">
+            ${_('This course is in your <a href="{cart_link}">cart</a>.').format(cart_link=cart_link)}
+          </span>
+        % elif is_course_full:
+          <span class="register disabled">
+            ${_("Course is full")}
+          </span>
+        % elif invitation_only and not can_enroll:
+          <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
+        ## Shib courses need the enrollment button to be displayed even when can_enroll is False,
+        ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
+        ## so that they can register and become a real user that can enroll.
+        % elif not is_shib_course and not can_enroll:
+          <span class="register disabled">${_("Enrollment is Closed")}</span>
+        %elif can_add_course_to_cart:
+          <%
+          if user.is_authenticated():
+            reg_href = "#"
+            reg_element_id = "add_to_cart_post"
+          else:
+            reg_href = reg_then_add_to_cart_link
+            reg_element_id = "reg_then_add_to_cart"
+          %>
+          <% if ecommerce_checkout:
+              reg_href = ecommerce_checkout_link
+              reg_element_id = ""
+          %>
+          <a href="${reg_href}" class="add-to-cart" id="${reg_element_id}">
+            ${_("Add {course_name} to Cart <span>({price} USD)</span>")\
+              .format(course_name=course.display_number_with_default, price=course_price)}
+          </a>
+          <div id="register_error"></div>
+        %else:
+          <%
+            if ecommerce_checkout:
+              reg_href = ecommerce_checkout_link
+            else:
+              reg_href="#"
+            if professional_mode:
+              href_class = "add-to-cart"
+            else:
+              href_class = "register"
+          %>
+          <div class="inquire-wrapper">
+            % if not course.advertised_start:
+            <a href="${reg_href}" class="${href_class}">
+              ${_("Enroll Now")}
+            </a>
+            % endif
+            <%
+              inquire_url = '/contact'
+              inquire_url += '#00N61000002EYUJ={}'.format(quote(course.display_name_with_default_escaped))
+              inquire_url += '&retURL={}'.format(quote(request.build_absolute_uri(request.path) + '#contacted'))
+              if not course.start_date_is_still_default:
+                inquire_url += '&00N61000002L8on={}'.format(quote(course.start.strftime('%B %Y')))
+            %>
+            <a href="${inquire_url}" class="inquire">
+              ${_("Inquire Now")}
+            </a>
+          </div>
+          <div id="register_error"></div>
+        %endif
+        </div>
+
+</%block>
+
+
+${HTML(parent.body())}
+
