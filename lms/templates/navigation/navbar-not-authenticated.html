@@ -1,7 +1,4 @@
-## mako
-
-<%page expression_filter="h" args="online_help_token"/>
-
+<%inherit file="navbar-not-authenticated.html" />
 <%namespace name='static' file='../static_content.html'/>
 <%namespace file='../main.html' import="login_query"/>
 <%!
@@ -9,7 +6,6 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 %>
 
-<ol class="left list-inline nav-global">
   <%block name="navigation_global_links">
     % if static.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
       <li class="item nav-global-01">
@@ -45,9 +41,7 @@ from django.utils.translation import ugettext as _
       <a class="btn" href="/about">About Pearson<sup>X</sup></a>
     </li>
   </%block>
-</ol>
 
-<ol class="right nav-courseware list-inline">
   <%block name="navigation_sign_in">
     <li class="item nav-courseware-01">
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON'] and not combined_login_and_register:
@@ -59,4 +53,3 @@ from django.utils.translation import ugettext as _
       % endif
     </li>
   </%block>
-</ol>
