@@ -12,6 +12,42 @@ from xmodule.contentstore.content import StaticContent
 from six import string_types
 from six.moves.urllib.parse import quote
 %>
+##
+## What changed in relation to the upstream template
+## -------------------------------------------------      As of December 2017
+##
+## - Added Coursetalk widget JS
+## - Removed div.table (only tag, not content) in div.intro-inner-wrapper
+## - Added JS to show #contacted-message
+## - Text "edX in collaboration with" changed from <button> to <h2>
+## - Add "Thank you for your inquiry" before header.course-profile
+## - Add style="..." to header.course-profile
+## - "Enroll" button can be "Enroll" or "Inquire"
+## - Course video moved downwards in the file. From: after the Enroll button. To: after "Requirements"
+## - New date format for course_start_date
+## - Indented code for blocks about course effort and others
+## - Removed "course reviews tool"
+## - Added Coursetalk widget
+##
+## ##### ol.important-dates: #####
+## - In upstream, the shown blocks were: course number, classes start, classes end, estimated effort, course length, course price, prerequisites, requirements
+## - In ours, the shown blocks are: course number, classes start, classes end, estimated effort, institution, language, duration, course price, prerequisites, requirements
+##
+## ##### div.course-summary: #####
+## - Our div.course-summary contains: course_about_sidebar_header.html, div.main-cta, div>ol.important-dates, a>div.hero
+## - Upstream div.course-summary contains: course_about_sidebar_header.html, ol.important-dates
+##
+## ##### div.main-cta: #####
+## - Our div.main-cta contains: View course / Course is in your cart / Course is full / By invitation only / Closed / Add to cart / Enroll now / Inquire now
+## - Upstream div.main-cta contains: You are enrolled in this course / View course / Course is in your cart / Course is full / By invitation only / Closed / Add to cart / Enroll in course
+##
+## ##### section.course-info: #####
+## - Upstream's contains:  header, div.container>div.details, div.course-sidebar>div.course-summary
+## - Ours contains: div#contacted-message, header, div.container>div.details, div.course-sidebar>div.course-summary
+
+## ##### Some things that didn't change despite appearing in different positions #####
+## - "View about page in studio" is, in both templates, after closing <header>, and it's inside div.container>div.details
+
 
 <%inherit file="course_about.html" />
 
