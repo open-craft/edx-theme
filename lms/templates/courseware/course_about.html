@@ -121,7 +121,10 @@ from six.moves.urllib.parse import quote
   </%block>
 
 <%block name="course_about_important_dates">
-## In this block we include not only ol.important-dates, but also the main-cta block which was moved from   .course-profile > .intro-inner-wrapper > .intro > .main-cta   to here   (.course-info > .course-sidebar > .course-summary > .main-cta)
+## In this block we include not only ol.important-dates, but these other components:
+## - first, the main-cta block which was moved from   .course-profile > .intro-inner-wrapper > .intro > .main-cta   to here   (.course-info > .course-sidebar > .course-summary > .main-cta)
+## - then, the ol.important-date itself
+## - then, a#video-modal
 
         <div class="main-cta">
         %if user.is_authenticated() and registered:
@@ -314,6 +317,16 @@ from six.moves.urllib.parse import quote
               </li>
             % endif
           </ol>
+
+          % if get_course_about_section(request, course, "video"):
+          <a href="#video-modal" class="media" rel="leanModal">
+            <div class="hero">
+              <img src="${course_image_urls['large']}" alt="" />
+              <div class="play-intro"></div>
+            </div>
+          </a>
+          % endif
+
 </%block>
 
 
