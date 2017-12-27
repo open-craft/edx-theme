@@ -114,10 +114,89 @@ from six.moves.urllib.parse import quote
         </div>
       </section>
     </div>
+
+    ## Note: div.main_cta was removed from here and moved into div.course-summary
+
   </header>
   </%block>
 
 <%block name="course_about_important_dates">
+## In this block we include not only ol.important-dates, but also the main-cta block which was moved from   .course-profile > .intro-inner-wrapper > .intro > .main-cta   to here   (.course-info > .course-sidebar > .course-summary > .main-cta)
+
+        <div class="main-cta">
+        %if user.is_authenticated() and registered:
+          %if show_courseware_link:
+            <a href="${course_target}">
+            <strong>${_("View Course")}</strong>
+            </a>
+          %endif
+
+        %elif in_cart:
+          <span class="add-to-cart">
+            ${_('This course is in your <a href="{cart_link}">cart</a>.').format(cart_link=cart_link)}
+          </span>
+        % elif is_course_full:
+          <span class="register disabled">
+            ${_("Course is full")}
+          </span>
+        % elif invitation_only and not can_enroll:
+          <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
+        ## Shib courses need the enrollment button to be displayed even when can_enroll is False,
+        ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
+        ## so that they can register and become a real user that can enroll.
+        % elif not is_shib_course and not can_enroll:
+          <span class="register disabled">${_("Enrollment is Closed")}</span>
+        %elif can_add_course_to_cart:
+          <%
+          if user.is_authenticated():
+            reg_href = "#"
+            reg_element_id = "add_to_cart_post"
+          else:
+            reg_href = reg_then_add_to_cart_link
+            reg_element_id = "reg_then_add_to_cart"
+          %>
+          <% if ecommerce_checkout:
+              reg_href = ecommerce_checkout_link
+              reg_element_id = ""
+          %>
+          <a href="${reg_href}" class="add-to-cart" id="${reg_element_id}">
+            ${_("Add {course_name} to Cart <span>({price} USD)</span>")\
+              .format(course_name=course.display_number_with_default, price=course_price)}
+          </a>
+          <div id="register_error"></div>
+        %else:
+          <%
+            if ecommerce_checkout:
+              reg_href = ecommerce_checkout_link
+            else:
+              reg_href="#"
+            if professional_mode:
+              href_class = "add-to-cart"
+            else:
+              href_class = "register"
+          %>
+          <div class="inquire-wrapper">
+            % if not course.advertised_start:
+            <a href="${reg_href}" class="${href_class}">
+              ${_("Enroll Now")}
+            </a>
+            % endif
+            <%
+              inquire_url = '/contact'
+              inquire_url += '#00N61000002EYUJ={}'.format(quote(course.display_name_with_default_escaped))
+              inquire_url += '&retURL={}'.format(quote(request.build_absolute_uri(request.path) + '#contacted'))
+              if not course.start_date_is_still_default:
+                inquire_url += '&00N61000002L8on={}'.format(quote(course.start.strftime('%B %Y')))
+            %>
+            <a href="${inquire_url}" class="inquire">
+              ${_("Inquire Now")}
+            </a>
+          </div>
+          <div id="register_error"></div>
+        %endif
+        </div>
+
+
           <ol class="important-dates">
             <li class="important-dates-item"><span class="icon fa fa-info-circle" aria-hidden="true"></span><p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default | h}</span></li>
             % if not course.start_date_is_still_default:
@@ -235,83 +314,6 @@ from six.moves.urllib.parse import quote
               </li>
             % endif
           </ol>
-</%block>
-
-
-<%block name="course_about_main_cta">
-        <div class="main-cta">
-        %if user.is_authenticated() and registered:
-          %if show_courseware_link:
-            <a href="${course_target}">
-            <strong>${_("View Course")}</strong>
-            </a>
-          %endif
-
-        %elif in_cart:
-          <span class="add-to-cart">
-            ${_('This course is in your <a href="{cart_link}">cart</a>.').format(cart_link=cart_link)}
-          </span>
-        % elif is_course_full:
-          <span class="register disabled">
-            ${_("Course is full")}
-          </span>
-        % elif invitation_only and not can_enroll:
-          <span class="register disabled">${_("Enrollment in this course is by invitation only")}</span>
-        ## Shib courses need the enrollment button to be displayed even when can_enroll is False,
-        ## because AnonymousUsers cause can_enroll for shib courses to be False, but we need them to be able to click
-        ## so that they can register and become a real user that can enroll.
-        % elif not is_shib_course and not can_enroll:
-          <span class="register disabled">${_("Enrollment is Closed")}</span>
-        %elif can_add_course_to_cart:
-          <%
-          if user.is_authenticated():
-            reg_href = "#"
-            reg_element_id = "add_to_cart_post"
-          else:
-            reg_href = reg_then_add_to_cart_link
-            reg_element_id = "reg_then_add_to_cart"
-          %>
-          <% if ecommerce_checkout:
-              reg_href = ecommerce_checkout_link
-              reg_element_id = ""
-          %>
-          <a href="${reg_href}" class="add-to-cart" id="${reg_element_id}">
-            ${_("Add {course_name} to Cart <span>({price} USD)</span>")\
-              .format(course_name=course.display_number_with_default, price=course_price)}
-          </a>
-          <div id="register_error"></div>
-        %else:
-          <%
-            if ecommerce_checkout:
-              reg_href = ecommerce_checkout_link
-            else:
-              reg_href="#"
-            if professional_mode:
-              href_class = "add-to-cart"
-            else:
-              href_class = "register"
-          %>
-          <div class="inquire-wrapper">
-            % if not course.advertised_start:
-            <a href="${reg_href}" class="${href_class}">
-              ${_("Enroll Now")}
-            </a>
-            % endif
-            <%
-              inquire_url = '/contact'
-              inquire_url += '#00N61000002EYUJ={}'.format(quote(course.display_name_with_default_escaped))
-              inquire_url += '&retURL={}'.format(quote(request.build_absolute_uri(request.path) + '#contacted'))
-              if not course.start_date_is_still_default:
-                inquire_url += '&00N61000002L8on={}'.format(quote(course.start.strftime('%B %Y')))
-            %>
-            <a href="${inquire_url}" class="inquire">
-              ${_("Inquire Now")}
-            </a>
-          </div>
-          <div id="register_error"></div>
-        %endif
-        </div>
-
 </%block>
 
 
