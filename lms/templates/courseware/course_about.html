@@ -191,8 +191,9 @@ from six.moves.urllib.parse import quote
               if not course.start_date_is_still_default:
                 inquire_url += '&00N61000002L8on={}'.format(quote(course.start.strftime('%B %Y')))
             %>
+            ## The preferred spelling is Enquire. PEAR-48
             <a href="${inquire_url}" class="inquire">
-              ${_("Inquire Now")}
+              ${_("Enquire Now")}
             </a>
           </div>
           <div id="register_error"></div>
