@@ -238,6 +238,9 @@ h2 {
         &:hover {
           background: #1790c7;
         }
+        .icon.fa.fa-spinner {
+          display: none;
+        }
       }
       div.error-message {
         display: none;

@@ -551,6 +551,7 @@
                 </label>
             </div>
             <button id="contact-submit-button" class="contact-submit-button" type="submit" name="submit" disabled>
+                <span class="icon fa fa-spinner fa-spin" aria-hidden="true"></span>
                 Request information
             </button>
             </form>
@@ -573,13 +574,16 @@
                   }
             );
             $("#affirm-submission").change(function (e) {
+                var affirms = $("#affirm-submission").is(':checked');
                 el = $("#contact-submit-button");
-                el.prop("disabled", !el.prop("disabled"));
+                el.prop("disabled", !affirms);
             });
             $("form#contact-form").submit(function (event){
+                var errors = false;
                 $('form#contact-form').children("input, select").each(function(i, el){
                     if(!el.value){
                         $("#required-fields-error-message").show();
+                        errors = true;
                         event.preventDefault();
                     }else{
                         $("#required-fields-error-message").hide();
@@ -588,10 +592,28 @@
                 emailVal = $("#email").val();
                 if(!(emailVal.split("@").length == 2)){
                     $("#invalid-email-error-message").show();
+                    errors = true;
                     event.preventDefault();
                 }else{
                     $("#invalid-email-error-message").hide();
                 }
+
+                if(!errors) {
+                    // Form being submitted
+
+                    // Disable clicking the submit button again, to avoid double form submissions
+                    el = $("#contact-submit-button");
+                    el.prop("disabled", true);
+
+                    // Also disable checkbox, to avoid making the button clickable again
+                    el = $("#affirm-submission");
+                    el.prop("disabled", true);
+
+                    // Show spinner
+                    el = $("#contact-submit-button .icon.fa.fa-spinner");
+                    el.css("display", "inline-block");
+                }
+
             });
         })
         </script>
