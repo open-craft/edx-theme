@@ -342,6 +342,9 @@ section.course-info {
           justify-content: space-around;
           width: 100%;
           a.register, a.inquire, a.add-to-cart {
+            @include box-sizing(border-box);
+            border-radius: 3px;
+            font: normal 1.2rem/1.6rem $sans-serif;
             display: block;
             flex-basis: 45%;
             align-items: baseline;
@@ -360,20 +363,6 @@ section.course-info {
             &:hover {
               background: #1790c7;
             }
-          }
-        }
-
-        a.register, a.add-to-cart, a.inquire {
-          @include box-sizing(border-box);
-          border-radius: 3px;
-          display: block;
-          font: normal 1.2rem/1.6rem $sans-serif;
-          letter-spacing: 1px;
-          padding: ($baseline/2) 0;
-          text-align: center;
-
-          span {
-            display: inline-block;
           }
         }
 
