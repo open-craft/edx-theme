@@ -51,6 +51,17 @@ from six.moves.urllib.parse import quote
 
 <%inherit file="course_about.html" />
 
+<%def name="get_inquire_url(course)">\
+<%
+  inquire_url = '/contact'
+  inquire_url += '#00N61000002EYUJ={}'.format(quote(course.display_name_with_default_escaped))
+  inquire_url += '&retURL={}'.format(quote(request.build_absolute_uri(request.path) + '#contacted'))
+  if not course.start_date_is_still_default:
+    inquire_url += '&00N61000002L8on={}'.format(quote(course.start.strftime('%B %Y')))
+%>\
+${inquire_url}\
+</%def>
+
 <%block name="js_extra">
   ## CourseTalk widget js script
   % if show_coursetalk_widget:
@@ -184,15 +195,9 @@ from six.moves.urllib.parse import quote
               ${_("Enroll Now")}
             </a>
             % endif
-            <%
-              inquire_url = '/contact'
-              inquire_url += '#00N61000002EYUJ={}'.format(quote(course.display_name_with_default_escaped))
-              inquire_url += '&retURL={}'.format(quote(request.build_absolute_uri(request.path) + '#contacted'))
-              if not course.start_date_is_still_default:
-                inquire_url += '&00N61000002L8on={}'.format(quote(course.start.strftime('%B %Y')))
-            %>
+
             ## The preferred spelling is Enquire. PEAR-48
-            <a href="${inquire_url}" class="inquire">
+            <a href="${get_inquire_url(course)}" class="inquire">
               ${_("Enquire Now")}
             </a>
           </div>
