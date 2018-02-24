@@ -363,7 +363,7 @@ section.course-info {
           }
         }
 
-        > a.find-courses, a.register, a.add-to-cart, a.inquire {
+        a.register, a.add-to-cart, a.inquire {
           @include box-sizing(border-box);
           border-radius: 3px;
           display: block;
