@@ -14,7 +14,7 @@ from six.moves.urllib.parse import quote
 %>
 ##
 ## What changed in relation to the upstream template
-## -------------------------------------------------      As of December 2017
+## -------------------------------------------------      As of February 2018
 ##
 ## - Added Coursetalk widget JS
 ## - Removed div.table (only tag, not content) in div.intro-inner-wrapper
@@ -28,6 +28,7 @@ from six.moves.urllib.parse import quote
 ## - Indented code for blocks about course effort and others
 ## - Removed "course reviews tool"
 ## - Added Coursetalk widget
+## - div.details expanded to add an extra "Enquire now" button before the course description (only on small screen)
 ##
 ## ##### ol.important-dates: #####
 ## - In upstream, the shown blocks were: course number, classes start, classes end, estimated effort, course length, course price, prerequisites, requirements
@@ -44,9 +45,10 @@ from six.moves.urllib.parse import quote
 ## ##### section.course-info: #####
 ## - Upstream's contains:  header, div.container>div.details, div.course-sidebar>div.course-summary
 ## - Ours contains: div#contacted-message, header, div.container>div.details, div.course-sidebar>div.course-summary
-
-## ##### Some things that didn't change despite appearing in different positions #####
-## - "View about page in studio" is, in both templates, after closing <header>, and it's inside div.container>div.details
+##
+## ##### div.details: #####
+## - Upstream's contains: .studio-view, .inner-wrapper (with "overview")
+## - Ours contains: .studio-view, a.inquire, .inner-wrapper (with "overview")
 
 
 <%inherit file="course_about.html" />
@@ -333,6 +335,42 @@ ${inquire_url}\
         </a>
         % endif
 
+</%block>
+
+<%block name="course_about_details">
+  <div class="details">
+    % if staff_access and studio_url is not None:
+    <div class="wrap-instructor-info studio-view">
+      <a class="instructor-info-action" href="${studio_url}">${_("View About Page in studio")}</a>
+    </div>
+    % endif
+
+    ## Second "Enquire now" button above the course description (only visible in small screen)
+    ## These conditionals follow the same logic as the main "Enquire now" button (show only to anonymous, etc.)
+    ## It's better to keep it identical to that logic, and minimize optimizations. Refactoring it (e.g. grouping conditions with not(…) and not(…) …) makes it more complex and needs to be compressed in one line.
+    ## mako doesn't seem to support an empty body, therefore an HTML comment is placed in the conditions where we don't show the button.
+    % if user.is_authenticated() and registered:
+      <!-- Enquire now -->
+    % elif in_cart:
+      <!-- Enquire now -->
+    % elif is_course_full:
+      <!-- Enquire now -->
+    % elif invitation_only and not can_enroll:
+      <!-- Enquire now -->
+    % elif not is_shib_course and not can_enroll:
+      <!-- Enquire now -->
+    % elif can_add_course_to_cart:
+      <!-- Enquire now -->
+    % else:
+       <a href="${get_inquire_url(course)}" class="inquire">
+         ${_("Enquire Now")}
+       </a>
+    % endif
+
+    <div class="inner-wrapper">
+      ${get_course_about_section(request, course, "overview")}
+    </div>
+  </div>
 </%block>
 
 ${HTML(parent.body())}
