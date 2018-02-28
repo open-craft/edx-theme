@@ -213,6 +213,10 @@ h2 {
         width: 100%;
         height: auto;
       }
+      // OC-4050: Hide the picture for small screens to make sure viewport centers on contact form.
+      @media screen and (max-width: 760px) {
+        display: none;
+      }
     }
     .contact-form-container {
       flex-basis: 40%;
