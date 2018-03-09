@@ -56,10 +56,19 @@ from six.moves.urllib.parse import quote
 <%def name="get_inquire_url(course)">\
 <%
   inquire_url = '/contact'
-  inquire_url += '#00N61000002EYUJ={}'.format(quote(course.display_name_with_default_escaped))
-  inquire_url += '&retURL={}'.format(quote(request.build_absolute_uri(request.path) + '#contacted'))
+  inquire_url += '#retURL={}'.format(quote(request.build_absolute_uri(request.path) + '#contacted'))
+
   if not course.start_date_is_still_default:
     inquire_url += '&00N61000002L8on={}'.format(quote(course.start.strftime('%B %Y')))
+
+  if course.program_code:
+    inquire_url += '&00N61000002EYUJ={}'.format(quote(course.program_code.encode('utf-8')))
+  else:
+    inquire_url += '&00N61000002EYUJ={}'.format(quote(course.display_name_with_default_escaped))
+
+  if course.institution_hidden:
+    inquire_url += '&00N58000005kuvE={}'.format(quote(course.institution_hidden.encode('utf-8')))
+
 %>\
 ${inquire_url}\
 </%def>
