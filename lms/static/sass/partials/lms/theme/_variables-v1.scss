@@ -1,4 +1,4 @@
-@import 'lms/static/sass/partials/base/variables';
+@import 'lms/static/sass/partials/lms/theme/variables-v1';
 
 $pearsonx-main-color: #007fa3;
 $custom-color: $pearsonx-main-color;
@@ -6,3 +6,5 @@ $custom-color: $pearsonx-main-color;
 $homepage-bg-image: url('../images/clipboard.jpg');
 
 $pearson-banner-image: url('../images/steps.jpg');
+
+$sans-serif: 'Open Sans', $verdana, sans-serif !default;
