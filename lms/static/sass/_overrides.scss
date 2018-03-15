@@ -4,7 +4,7 @@ html {
   color: $base-font-color;
 }
 
-#global-navigation {
+.global-header {
   height: 112px !important;
   border-bottom: none !important;
   background-color: $dark-gray;
@@ -22,11 +22,11 @@ html {
     }
   }
 
-  .wrapper-header {
+  .main-header {
     padding: 32px 15px !important;
     height: auto !important;
 
-    .logo {
+    .header-logo {
       img {
         width: 166px !important;
         height: 32px !important;
@@ -34,7 +34,7 @@ html {
     }
 
     // header buttons
-    ol.nav-global li a, ol.nav-courseware li a, a.doc-link {
+    .register-btn, .sign-in-btn, a.help-link{
       margin: 8px 15px 0 !important;
       padding: 10px 20px !important;
       box-shadow: none !important;
@@ -53,8 +53,12 @@ html {
       }
     }
 
+    a.help-link {
+      @extend %header-button;
+    }
+
     // User dropdown for logged-in user
-    ol.user,
+    ol.username,
     .dropdown-menu-container {  // used on the course outline page
       margin: 8px 15px 0;
       border: white 1px solid;
