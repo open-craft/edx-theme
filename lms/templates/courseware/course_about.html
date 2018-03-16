@@ -20,7 +20,7 @@ from openedx.core.lib.courses import course_image_url
 <%block name="js_extra">
   <script type="text/javascript">
   (function() {
-    $(".register").click(function(event) {
+    $(".register[href='#']").click(function(event) {
       $("#class_enroll_form").submit();
       event.preventDefault();
     });
