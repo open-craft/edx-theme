@@ -1,4 +1,5 @@
 @import 'bourbon/bourbon';
+@import 'edx-bootstrap/sass/open-edx/theme';
 
 // Fonts
 $sans-serif: 'Calibre', 'Roboto', 'Lato', 'Open Sans', sans-serif;
@@ -41,7 +42,6 @@ $theme-colors: (
   "inverse": white,
   "secondary": white,
 );
-
 // This import needs to be moved below header-bg and footer-bg definitions,
 // otherwise it'd mess up these overrides.
 @import 'lms/static/sass/partials/lms/theme/variables-v1';
