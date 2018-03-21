@@ -5,7 +5,8 @@ html {
 }
 
 .global-header {
-  height: 112px !important;
+  height: auto !important;
+  min-height: 112px;
   border-bottom: none !important;
   background-color: $dark-gray;
 
@@ -15,7 +16,6 @@ html {
     }
 
     .course-header {
-      width: 35% !important;
       margin-top: 0 !important;
       text-shadow: none;
       color: white;
@@ -109,6 +109,28 @@ html {
 
       li a {
         display: inline-block;
+      }
+    }
+    .nav-links {
+      .main .nav-tab a {
+        .btn {
+          color: #fff;
+          padding: 7px 25px 19px;
+          font-weight: 400;
+          display: inline-block;
+          margin-bottom: -10px;
+          border-bottom: 4px hidden $white;
+          cursor: pointer;
+          background-color: transparent;
+          border-style: hidden;
+        }
+        &.active {
+          border-bottom: 4px hidden $white;
+          border-bottom-style: solid;
+        }
+      }
+      .secondary .nav-item a {
+        color: $white;
       }
     }
   }
@@ -281,8 +303,9 @@ html {
 }
 
 .content-wrapper {
-  padding-bottom: 48px;
-
+  max-width: none;
+  padding: 0 0 48px 0;
+  margin: 0;
   a {
     &, &:link, &:visited {
       color: $brilliant-blue;
@@ -291,6 +314,16 @@ html {
          color: $brilliant-blue-light;
        }
     }
+  }
+  .course-tabs .nav-item, .wrapper-course-material .course-material .course-tabs li.tab{
+      .nav-link, a {
+          border-bottom-color: transparent;
+          color: $gray-700;
+      }
+      &.active .nav-link, &:hover .nav-link, &:active .nav-link, a.active, a:hover, a:focus {
+          border-bottom-color: #29a7de;
+          color: #29a7de;
+      }
   }
 }
 
@@ -587,4 +620,17 @@ html {
       border-color: $brilliant-blue;
     }
   }
+}
+
+// Footer
+.wrapper-footer {
+    padding: 0;
+    border-top-width: 0px;
+}
+
+body.view-in-course {
+    .content-wrapper {
+        max-width: 1180px;
+        margin: 0 auto;
+    }
 }

@@ -1,6 +1,6 @@
 @import 'base/variables-ltr';
-@import 'lms/static/sass/lms-main-v2';
-@import 'overrides';
+@import 'lms/static/sass/bootstrap/lms-main';
+@import '../overrides';
 
 .content-wrapper {
     max-width: 1180px;
