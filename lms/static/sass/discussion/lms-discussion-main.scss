@@ -4,6 +4,11 @@
 @import '../partials/lms/theme/variables-v1';
 @import '../overrides';
 
+.content-wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
 .wrapper-user-menu {
   .menu-title {
     font-family: Lato, sans-serif !important;
