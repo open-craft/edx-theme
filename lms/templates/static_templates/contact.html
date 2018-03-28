@@ -577,26 +577,30 @@
                 el.prop("disabled", !affirms);
             });
             $("form#contact-form").submit(function (event){
-                var errors = false;
+                // Validate required
+                var required_fields_ok = true;
                 $('form#contact-form').children("input, select").each(function(i, el){
                     if(!el.value){
-                        $("#required-fields-error-message").show();
-                        errors = true;
-                        event.preventDefault();
-                    }else{
-                        $("#required-fields-error-message").hide();
+                        required_fields_ok = false;
                     }
                 });
-                emailVal = $("#email").val();
+                if(!required_fields_ok) {
+                    $("#required-fields-error-message").show();
+                }else{
+                    $("#required-fields-error-message").hide();
+                }
+
+                // Validate values
+                var field_values_ok = true;
+                var emailVal = $("#email").val();
                 if(!(emailVal.split("@").length == 2)){
                     $("#invalid-email-error-message").show();
-                    errors = true;
-                    event.preventDefault();
+                    field_values_ok = false;
                 }else{
                     $("#invalid-email-error-message").hide();
                 }
 
-                if(!errors) {
+                if(required_fields_ok && field_values_ok) {
                     // Form being submitted
 
                     // Disable clicking the submit button again, to avoid double form submissions
@@ -610,6 +614,8 @@
                     // Show spinner
                     el = $("#contact-submit-button .icon.fa.fa-spinner");
                     el.css("display", "inline-block");
+                } else {
+                    event.preventDefault();
                 }
 
             });
