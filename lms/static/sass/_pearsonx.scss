@@ -37,12 +37,12 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     background: $white;
-
+  
     .hero-container {
       display: flex;
       flex-wrap: wrap;
     }
-
+    
     .hero-image {
       background-image: $homepage-bg-image;
       background-position: left 50% bottom 33%;
@@ -691,12 +691,3 @@ sure that the inquiry success banner still appears correctly.
   }
 }
 
-/*
-Below is a quick fix of Sign-up button
-which appeared on the main page
-likely due to some Facebook Pixel/Google Tag manager
-issue.
-*/
-body > #contact-submit-button {
- display: none;
-}
