@@ -535,6 +535,10 @@
  
                 Term (Keyword):<input  id="00N5800000DLC7x" maxlength="255" name="00N5800000DLC7x" size="20" type="text" /><br>
 
+                ## This field was enabled in April 2018 to debug double submissions and it is set to a timestamp. Pearson doesn't use the "profession" field in Salesforce and they are fine with receiving numbers here.
+                <!-- actually used to store a timestamp -->
+                Profession: <input id="00N58000003di7f" maxlength="50" name="00N58000003di7f" size="20" type="text" /><br>
+
                 ## Uncomment this to redirect to a SalesForce page which shows the submitted variables. Note that the form will still be sent (if you want to disable sending it, change the "oid" parameter above)
                 ## <input type="hidden" name="debug" value="1">
  
@@ -580,6 +584,10 @@
                 el.prop("disabled", !affirms);
             });
             $("form#contact-form").submit(function (event){
+
+                // Store a random number and a timestamp, to help detect duplicate submissions. We use the Profession field
+                $("#00N58000003di7f").val( Date.now() + "-" + Math.floor((Math.random() * 100000) + 1) );
+
                 // Validate required
                 var required_fields_ok = true;
                 $('form#contact-form').children("input, select").each(function(i, el){
