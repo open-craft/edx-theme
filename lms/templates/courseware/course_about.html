@@ -211,10 +211,14 @@ ${inquire_url}\
             </a>
             % endif
 
+            ## The "Enquire now" button is shown only if the course is listed in the catalog (therefore 'both') but not if it's hidden ('about'/'none')
+            % if course.catalog_visibility == 'both':
             ## The preferred spelling is Enquire. PEAR-48
             <a href="${get_inquire_url(course)}" class="inquire">
               ${_("Enquire Now")}
             </a>
+            % endif
+
           </div>
           <div id="register_error"></div>
         %endif
