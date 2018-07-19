@@ -1,0 +1,14 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+<%block name="pagetitle">${_("Contact")}</%block>
+<main id="main" aria-label="Content" tabindex="-1">
+<section class="container about">
+<h1>${_('Contact Us')}</h1>
+<a href="http://meristem.anu.edu.au/index.php/about">About MeriSTEM</a>
+<p>&nbsp;</p>
+<p>${_("If you are experiencing technical issues, please email either")}</p>
+<p>${_("ethan.barden@anu.edu.au or joseph.hope@anu.edu.au for assistance.")}</p>
+<p>&nbsp;</p>
+</section>
+</main>
