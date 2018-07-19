@@ -1,0 +1,92 @@
+@import 'bourbon/bourbon';
+@import 'edx-bootstrap/sass/open-edx/theme';
+
+/* green */
+$anu-green: #14410d;
+$green: $anu-green;
+$green-l1: tint($green,20%);
+$green-l2: tint($green,40%);
+$green-l3: tint($green,60%);
+$green-l4: tint($green,80%);
+$green-l5: tint($green,90%);
+$green-d1: shade($green,20%);
+$green-d2: shade($green,40%);
+$green-d3: shade($green,60%);
+$green-d4: shade($green,80%);
+$green-s1: saturate($green,15%);
+$green-s2: saturate($green,30%);
+$green-s3: saturate($green,45%);
+$green-u1: desaturate($green,15%);
+$green-u2: desaturate($green,30%);
+$green-u3: desaturate($green,45%);
+
+/* orange */
+$anu-orange: #f7691f;
+$orange: $anu-orange;
+$orange-l1: tint($orange,20%);
+$orange-l2: tint($orange,40%);
+$orange-l3: tint($orange,60%);
+$orange-l4: tint($orange,80%);
+$orange-l5: tint($orange,90%);
+$orange-d1: shade($orange,20%);
+$orange-d2: shade($orange,40%);
+$orange-d3: shade($orange,60%);
+$orange-d4: shade($orange,80%);
+$orange-s1: saturate($orange,15%);
+$orange-s2: saturate($orange,30%);
+$orange-s3: saturate($orange,45%);
+$orange-u1: desaturate($orange,15%);
+$orange-u2: desaturate($orange,30%);
+$orange-u3: desaturate($orange,45%);
+
+/* gray */
+$gray: #666;
+
+$homepage-bg-image: url('/static/anu/images/sunrise.jpg');
+$link-color: $green;
+$link-color-d1: $green-d1;
+$link-hover: $green-l1;
+
+// action - primary
+$action-primary-bg: $orange;
+$action-primary-fg: $white;
+$action-primary-shadow: $orange-d4;
+$action-primary-focused-bg: $orange-d1;
+$action-primary-focused-fg: $white;
+$action-primary-active-bg: $orange;
+$action-primary-active-fg: $orange-d3;
+$action-primary-active-shadow: $orange-d2;
+$action-primary-active-focused-fg: $orange-d4;
+$action-primary-active-focused-shadow: $orange-d3;
+$action-primary-disabled-bg: $gray;
+$action-primary-disabled-fg: $white;
+
+// action - secondary
+$action-secondary-bg: $green;
+$action-secondary-fg: $white;
+$action-secondary-shadow: $green-d2;
+$action-secondary-focused-bg: $green-l3;
+$action-secondary-focused-fg: $white;
+$action-secondary-active-bg: $green-l2;
+$action-secondary-active-fg: $green-d1;
+$action-secondary-active-shadow: $green-d1;
+$action-secondary-active-focused-fg: $green-d3;
+$action-secondary-active-focused-shadow: $green-d2;
+$action-secondary-disabled-bg: $gray;
+$action-secondary-disabled-fg: $white;
+
+// misc other buttons and borders
+$m-blue-d1: $action-secondary-active-bg;
+$m-blue-d2: $action-secondary-focused-bg;
+$m-blue-d3: $action-secondary-bg;
+$uxpl-blue-base: $action-secondary-bg;
+$uxpl-blue-hover-active: $action-secondary-active-bg;
+$button-color: $action-secondary-bg;
+$button-archive-color: $action-secondary-bg;
+$lms-active-color: $action-secondary-bg;
+$lms-border-color: $action-secondary-bg;
+$lms-label-color: $gray;
+$button-bg-hover-color: $action-secondary-bg;
+$forum-color-active-thread: $action-secondary-bg;
+
+@import 'lms/static/sass/partials/lms/theme/variables-v1';
