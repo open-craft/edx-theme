@@ -1,3 +1,6 @@
+@import 'bourbon/bourbon';
+@import 'edx-bootstrap/sass/open-edx/theme';
+
 $homepage-bg-image: url('/static/anu/images/sunrise.jpg');
 
 @import 'lms/static/sass/partials/lms/theme/variables-v1';
