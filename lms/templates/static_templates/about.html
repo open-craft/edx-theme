@@ -1,0 +1,98 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+<%block name="pagetitle">${_("Contact")}</%block>
+<main id="main" aria-label="Content" tabindex="-1">
+<section class="container about">
+  <nav id="about-menu">
+    <a href="#about" class="about active">About</a>
+    <a href="#contact" class="contact">Contact</a>
+  </nav>
+
+  <section class="vision">
+
+    <section class="message left" id="about">
+      <div class="photo">
+        <!--
+            Photo License: CC0 Public Domain (Free for commercial use / No attribution required)
+            https://pixabay.com/en/book-books-circle-curly-education-2869/
+        -->
+        <img src="/static/anu/images/logo.png" alt="" />
+      </div>
+      <article>
+        <h2>About</h2>
+
+          <a href="http://meristem.anu.edu.au/index.php/about">About MeriSTEM</a>
+
+        <p>&nbsp;</p>
+      </article>
+      <hr class="fade-right-hr-divider">
+    </section>
+
+    <section class="message left" id="careers">
+      <div class="photo">
+        <!--
+            Photo License: CC0 Public Domain (Free for commercial use / No attribution required)
+            https://pixabay.com/en/man-corporate-businessman-suit-tie-871960/
+        -->
+        <img src="/static/anu/images/logo.png" alt="" />
+      </div>
+      <article>
+        <h2>Careers</h2>
+        
+        <p>Your job postings go here!</p>
+
+        <p>&nbsp;</p>
+      </article>
+      <hr class="fade-right-hr-divider">
+    </section>
+
+    <section class="message left" id="contact">
+      <div class="photo">
+        <!--
+            Photo License: CC0 Public Domain (Free for commercial use / No attribution required)
+            https://pixabay.com/en/network-cobweb-dewdrop-586177/
+        -->
+        <img src="/static/anu/images/logo.png" alt="" />
+      </div>
+      <article id="stanford-OpenEdX-contact">
+        <h2>Contact Us</h2>
+
+        <p>If you are experiencing technical issues, please email either</p>
+        <p>
+				<a href="mailto:ethan.barden@anu.edu.au">ethan.barden@anu.edu.au</a>
+				or
+				<a href="joseph.hope@anu.edu.au">joseph.hope@anu.edu.au</a>
+			  for assistance.</p>
+        <p>&nbsp;</p>
+      </article>
+    </section>
+  </section>
+	<script type="text/javascript">
+			$(function() {
+				$('section.message').hide();
+				$('#about-menu a').removeClass('active');
+				window.scrollTo(0,0);
+				var hash = window.location.hash
+
+				if (hash) {
+					$('section' + hash).show();
+					$('#about-menu a.' + hash.substring(1)).addClass('active');
+				} else {
+					$('section#about').show();
+					$('#about-menu a.about').addClass('active');
+				}
+
+				$('#about-menu a').click(function(event) {
+					event.preventDefault();
+					$('#about-menu a').removeClass('active');
+					$(this).addClass('active');
+					var clickId = "section" + $(this).attr('href');
+					$('section.message').hide();
+					$(clickId).show();
+				});
+			});
+	</script>
+</section>
+</main>
+
