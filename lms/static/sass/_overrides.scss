@@ -347,16 +347,30 @@ html {
   padding: 0 0 48px 0;
 }
 
-.empty-dashboard-message a {
-  &, &:link, &:visited {
-    color: white;
-    background-color: $brilliant-blue;
-    border-color: $brilliant-blue;
+.empty-dashboard-message {
+  a {
+    &, &:link, &:visited {
+      color: white;
+      background-color: $brilliant-blue;
+      border-color: $brilliant-blue;
+    }
+    &:hover, &:focus, &:active {
+      color: $brilliant-blue;
+      background-color: white;
+      border-color: $brilliant-blue;
+    }
   }
-  &:hover, &:focus, &:active {
-    color: $brilliant-blue;
-    background-color: white;
-    border-color: $brilliant-blue;
+  .custom-message a {
+    &, &:link, &:visited {
+      color: $brilliant-blue;
+      background-color: transparent;
+      border-color: transparent;
+    }
+    &:hover, &:focus, &:active {
+      color: $brilliant-blue;
+      background-color: transparent;
+      border-color: $brilliant-blue;
+    }
   }
 }
 
