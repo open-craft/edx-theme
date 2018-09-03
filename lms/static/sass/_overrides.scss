@@ -660,6 +660,14 @@ html {
   }
 }
 
+.search-bar {
+  .search-button {
+    color: $white;
+    background-color: $brilliant-blue;
+    border-color: $brilliant-blue;
+  }
+}
+
 .course-outline .block-tree .section ol.outline-item .subsection.current {
     border: 1px solid #0075b4;
     border-radius: 3px;
