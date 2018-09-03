@@ -1,5 +1,5 @@
 @import 'bourbon/bourbon';
-@import 'lms/static/sass/partials/base/variables';
+@import 'edx-bootstrap/sass/open-edx/theme';
 
 // Fonts
 $sans-serif: 'Calibre', 'Roboto', 'Lato', 'Open Sans', sans-serif;
@@ -31,11 +31,20 @@ $link-hover: $brilliant-blue;
 $button-color: $midnight-blue;
 $base-font-color: $dark-gray;
 
-// Body
-$homepage-bg-image: url('#{$static-path}/images/banner.jpg');
-
 // Header
 $header-bg: $dark-gray;
 
 // Footer
 $footer-bg: $dark-gray;
+
+$theme-colors: (
+  "primary": white,
+  "inverse": white,
+  "secondary": white,
+);
+// This import needs to be moved below header-bg and footer-bg definitions,
+// otherwise it'd mess up these overrides.
+@import 'lms/static/sass/partials/lms/theme/variables-v1';
+
+// Body
+$homepage-bg-image: url('#{$static-path}/images/banner.jpg');

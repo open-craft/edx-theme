@@ -1,8 +1,13 @@
 @import 'lms/static/sass/discussion/lms-discussion-main';
 @import 'lms/static/sass/base/extends';
 @import 'lms/static/sass/course/layout/courseware_header';
-@import '../base/variables';
+@import '../partials/lms/theme/variables-v1';
 @import '../overrides';
+
+.content-wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+}
 
 .wrapper-user-menu {
   .menu-title {
