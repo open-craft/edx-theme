@@ -37,11 +37,6 @@ $header-bg: $dark-gray;
 // Footer
 $footer-bg: $dark-gray;
 
-$theme-colors: (
-  "primary": white,
-  "inverse": white,
-  "secondary": white,
-);
 // This import needs to be moved below header-bg and footer-bg definitions,
 // otherwise it'd mess up these overrides.
 @import 'lms/static/sass/partials/lms/theme/variables-v1';
