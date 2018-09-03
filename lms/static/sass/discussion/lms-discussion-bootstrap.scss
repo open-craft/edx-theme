@@ -8,6 +8,11 @@
     max-width: 1180px;
     margin: 0 auto;
     .course-tabs {
+        margin: 1rem 0 0 0;
+        .navbar-nav {
+            paddin: 0;
+            margin: 0;
+        }
         .nav-item .nav-link {
             color: #414141;
         }

@@ -328,14 +328,17 @@ html {
        }
     }
   }
-  .course-tabs .nav-item, .wrapper-course-material .course-material .course-tabs li.tab{
-      .nav-link, a {
-          border-bottom-color: transparent;
-          color: $gray-700;
-      }
-      &.active .nav-link, &:hover .nav-link, &:active .nav-link, a.active, a:hover, a:focus {
-          border-bottom-color: $brilliant-blue;
-          color: $brilliant-blue;
+  .course-tabs {
+      margin: 0 0 1.25rem 0;
+      .nav-item, .wrapper-course-material .course-material .course-tabs li.tab{
+          .nav-link, a {
+              border-bottom-color: transparent;
+              color: $gray-700;
+          }
+          &.active .nav-link, &:hover .nav-link, &:active .nav-link, a.active, a:hover, a:focus {
+              border-bottom-color: $brilliant-blue;
+              color: $brilliant-blue;
+          }
       }
   }
 }
