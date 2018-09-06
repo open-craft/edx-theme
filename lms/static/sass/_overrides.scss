@@ -4,8 +4,9 @@ html {
   color: $base-font-color;
 }
 
-#global-navigation {
-  height: 112px !important;
+.global-header {
+  height: auto !important;
+  min-height: 112px;
   border-bottom: none !important;
   background-color: $dark-gray;
 
@@ -15,18 +16,17 @@ html {
     }
 
     .course-header {
-      width: 35% !important;
-      margin-top: 0 !important;
+      margin-top: 10px;
       text-shadow: none;
       color: white;
     }
   }
 
-  .wrapper-header {
+  .main-header {
     padding: 32px 15px !important;
     height: auto !important;
 
-    .logo {
+    .header-logo {
       img {
         width: 166px !important;
         height: 32px !important;
@@ -34,7 +34,7 @@ html {
     }
 
     // header buttons
-    ol.nav-global li a, ol.nav-courseware li a, a.doc-link {
+    .register-btn, .sign-in-btn, a.help-link{
       margin: 8px 15px 0 !important;
       padding: 10px 20px !important;
       box-shadow: none !important;
@@ -52,9 +52,49 @@ html {
         color: white;
       }
     }
+    .nav-links {
+      .main .nav-tab a {
+        color: white;
+        .btn {
+          color: white;
+          padding: 7px 25px 19px;
+          font-weight: 400;
+          display: inline-block;
+          margin-bottom: -10px;
+          border-bottom: 4px hidden white;
+          cursor: pointer;
+          background-color: transparent;
+          border-style: hidden;
+        }
+        &.active {
+          border-bottom: 4px white;
+          border-bottom-style: solid;
+        }
+      }
+      .secondary {
+        .nav-item {
+          a, span {
+            color: white;
+            font-weight: 300;
+          }
+        }
+        .dropdown-user-menu {
+          border-radius: 4px;
+          box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+          border: 1px solid $border-color;
+          .dropdown-nav-item a {
+            color: black;
+          }
+        }
+      }
+    }
+
+    a.help-link {
+      @extend %header-button;
+    }
 
     // User dropdown for logged-in user
-    ol.user,
+    ol.username,
     .dropdown-menu-container {  // used on the course outline page
       margin: 8px 15px 0;
       border: white 1px solid;
@@ -277,8 +317,9 @@ html {
 }
 
 .content-wrapper {
-  padding-bottom: 48px;
-
+  max-width: none;
+  padding: 0 0 48px 0;
+  margin: 0;
   a {
     &, &:link, &:visited {
       color: $brilliant-blue;
@@ -288,18 +329,49 @@ html {
        }
     }
   }
+  .course-tabs {
+      margin: 0 0 1.25rem 0;
+      .nav-item, .wrapper-course-material .course-material .course-tabs li.tab{
+          .nav-link, a {
+              border-bottom-color: transparent;
+              color: $gray-700;
+          }
+          &.active .nav-link, &:hover .nav-link, &:active .nav-link, a.active, a:hover, a:focus {
+              border-bottom-color: $brilliant-blue;
+              color: $brilliant-blue;
+          }
+      }
+  }
 }
 
-.empty-dashboard-message a {
-  &, &:link, &:visited {
-    color: white;
-    background-color: $brilliant-blue;
-    border-color: $brilliant-blue;
+.view-profile .content-wrapper {
+  padding: 0 0 48px 0;
+}
+
+.empty-dashboard-message {
+  a {
+    &, &:link, &:visited {
+      color: white;
+      background-color: $brilliant-blue;
+      border-color: $brilliant-blue;
+    }
+    &:hover, &:focus, &:active {
+      color: $brilliant-blue;
+      background-color: white;
+      border-color: $brilliant-blue;
+    }
   }
-  &:hover, &:focus, &:active {
-    color: $brilliant-blue;
-    background-color: white;
-    border-color: $brilliant-blue;
+  .custom-message a {
+    &, &:link, &:visited {
+      color: $brilliant-blue;
+      background-color: transparent;
+      border-color: transparent;
+    }
+    &:hover, &:focus, &:active {
+      color: $brilliant-blue;
+      background-color: transparent;
+      border-color: $brilliant-blue;
+    }
   }
 }
 
@@ -560,6 +632,10 @@ html {
               display: none;
             }
           }
+          .course-image .cover-image .learn-more {
+            background: rgb(0, 117, 180);
+            border-color: rgb(0, 117, 180);
+          }
         }
       }
     }
@@ -569,7 +645,7 @@ html {
   }
 }
 
-.course-view.container {
+.course-view.page-content-container {
   .search-button,
   .action-resume-course {
     &, &:link, &:visited {
@@ -583,4 +659,35 @@ html {
       border-color: $brilliant-blue;
     }
   }
+}
+
+.search-bar {
+  .search-button {
+    color: $white;
+    background-color: $brilliant-blue;
+    border-color: $brilliant-blue;
+  }
+}
+
+.wrapper-preview-menu {
+    background-color: blue;
+}
+
+// Footer
+.wrapper-footer {
+    padding: 0;
+    border-top-width: 0px;
+}
+
+body.view-in-course {
+    .content-wrapper {
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+    .wrapper-footer {
+      padding: 0;
+    }
+    .wrapper-course-material{
+      padding: 10px 0 0 0;
+    }
 }

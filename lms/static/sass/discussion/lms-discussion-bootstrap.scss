@@ -1,8 +1,27 @@
 @import 'lms/static/sass/discussion/lms-discussion-main';
 @import 'lms/static/sass/base/extends';
 @import 'lms/static/sass/course/layout/courseware_header';
-@import '../base/variables';
+@import '../partials/lms/theme/variables-v1';
 @import '../overrides';
+
+.content-wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+    .course-tabs {
+        margin: 1rem 0 0 0;
+        .navbar-nav {
+            paddin: 0;
+            margin: 0;
+        }
+        .nav-item .nav-link {
+            color: #414141;
+        }
+        .nav-item.active .nav-link {
+            border-bottom-color: #29a7de;
+            color: #29a7de;
+        }
+    }
+}
 
 .wrapper-user-menu {
   .menu-title {
