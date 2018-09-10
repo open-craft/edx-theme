@@ -1,10 +1,10 @@
 /* header */
-.header-global {
-    border-bottom: 2px solid $gold;
-	.logo {
-		img {
+.global-header {
+    border-bottom: 2px solid $gold !important;
+	.header-logo {
+		img.logo {
 			height: 74px;
-            margin-top: -14px;
+      margin-top: -14px;
 		}
 	}
     .primary > a {
@@ -12,8 +12,33 @@
             background: transparent;
         }
     }
+
+    /* header buttons */
+    .register-btn, .sign-in-btn, a.help-link{
+      margin: 8px 15px 0 !important;
+      padding: 10px 20px !important;
+      box-shadow: none !important;
+      border: white 1px solid !important;
+      background-color: $crimson !important;
+      color: white !important;
+      text-transform: none !important;
+      line-height: normal;
+
+       &:hover, &:focus, &:active {
+         background: none;
+         box-shadow: none;
+         color: white;
+       }
+      }
+
+    .nav-links .main .nav-tab {
+      a.active, a:hover {
+        border-bottom-color: $gold !important;
+      }
+    }
+
 }
-.header-global.slim {
+.global-header.slim {
     border-bottom: 2px solid $gold;
     .wrapper-header {
         margin-left: 57px;
