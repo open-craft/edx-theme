@@ -1,4 +1,5 @@
-@import 'lms/static/sass/partials/base/variables';
+@import 'lms/static/sass/partials/lms/theme/variables';
+@import 'edx-bootstrap/sass/open-edx/theme';
 
 /*
 Primary Colors
@@ -87,7 +88,7 @@ $action-primary-active-fg: $crimson-d3;
 $action-primary-active-shadow: $crimson-d2;
 $action-primary-active-focused-fg: $crimson-d4;
 $action-primary-active-focused-shadow: $crimson-d3;
-$action-primary-disabled-bg: $gray-d3;
+$action-primary-disabled-bg: gray;
 $action-prmary-disabled-fg: $white;
 
 // action - secondary
@@ -101,7 +102,7 @@ $action-secondary-active-fg: $blue-d1;
 $action-secondary-active-shadow: $blue-d1;
 $action-secondary-active-focused-fg: $blue-d3;
 $action-secondary-active-focused-shadow: $blue-d2;
-$action-secondary-disabled-bg: $gray-d3;
+$action-secondary-disabled-bg: gray;
 $action-secondary-disabled-fg: $white;
 
 // misc other buttons and borders
@@ -115,7 +116,7 @@ $button-color: $action-primary-bg;
 $button-archive-color: $action-primary-bg;
 $lms-active-color: $action-secondary-bg;
 $lms-border-color: $action-secondary-bg;
-$lms-label-color: $gray-d3;
+$lms-label-color: gray;
 $outer-border-color: $gold;
 $button-bg-hover-color: $action-primary-bg;
 $forum-color-active-thread: $action-secondary-bg;
