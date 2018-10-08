@@ -16,7 +16,7 @@ Your focused attention will pay off in the end!
 {% endblocktrans %}
 
 {% blocktrans trimmed %}
-To opt out of these emails, visit <a href="{% url 'bulk_email_opt_out' token=username course_id=course_ids.0 %}" >here</a>
+Unsubscribe from these emails: {% unsubscribe_url %}
 {% endblocktrans %}
 {% include "ace_common/edx_ace/common/upsell_cta.txt"%}
 {% endautoescape %}

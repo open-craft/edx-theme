@@ -32,7 +32,7 @@
 
             <p>
                 {% blocktrans trimmed %}
-                    To opt out of these emails, visit <a href="{% url 'bulk_email_opt_out' token=username course_id=course_ids.0 %}" >here</a>
+                    <a href="{% unsubscribe_url %}">Unsubscribe from these emails</a>
                 {% endblocktrans %}
             </p>
 
