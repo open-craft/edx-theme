@@ -14,5 +14,9 @@ We want to let you know what you can look forward to in week {{ week_num }}:
 With self-paced courses, you learn on your own schedule. We encourage you to spend time with the course each week.
 Your focused attention will pay off in the end!
 {% endblocktrans %}
+
+{% blocktrans trimmed %}
+To opt out of these emails, visit <a href="{% url 'bulk_email_opt_out' token=username course_id=course_ids.0 %}" >here</a>
+{% endblocktrans %}
 {% include "ace_common/edx_ace/common/upsell_cta.txt"%}
 {% endautoescape %}
