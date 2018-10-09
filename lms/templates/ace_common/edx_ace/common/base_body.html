@@ -175,6 +175,15 @@
                             {{ contact_mailing_address }}
                         </td>
                     </tr>
+                    {% if unsubscribe_url %}
+                        <tr>
+                            <td>
+                                {% blocktrans trimmed %}
+                                    Unsubscribe from these emails {{unsubscribe_url}}
+                                {% endblocktrans %}
+                            </td>
+                        </tr>
+                    {% endif %}
                 </table>
             </td>
         </tr>
