@@ -6,8 +6,8 @@ h2 {
   background-color: $white;
 }
 
-.global_header .nav-links .main .nav-item a {
-  vertical-align: -4px;
+.global-header .nav-links .main .nav-item a {
+  vertical-align: -5px;
 }
 
 .header-global {
@@ -146,6 +146,10 @@ h2 {
     }
     display: inline-block;
     margin: ($baseline/2) ($baseline/2)
+  }
+  .nav-colophon-01 {
+    vertical-align: bottom;
+    padding-bottom: 12px;
   }
 }
 
