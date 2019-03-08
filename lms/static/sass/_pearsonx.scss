@@ -6,6 +6,10 @@ h2 {
   background-color: $white;
 }
 
+.global-header .nav-links .main .nav-item a {
+  vertical-align: -5px;
+}
+
 .header-global {
   height: auto;
 }
@@ -143,6 +147,10 @@ h2 {
     display: inline-block;
     margin: ($baseline/2) ($baseline/2)
   }
+  .nav-colophon-01 {
+    vertical-align: bottom;
+    padding-bottom: 12px;
+  }
 }
 
 .wrapper-footer footer#footer-openedx .footer-about-openedx {
@@ -219,7 +227,7 @@ h2 {
       }
     }
     .contact-form-container {
-      flex-basis: 40%;
+      flex-basis: auto;
       margin-left: $baseline;
       .hidden-form-fields {
         display: none;
@@ -512,21 +520,6 @@ section.course-info {
 
 #contacted-message {
   display: none;
-}
-
-// this @media rule can be deleted after https://github.com/edx/edx-platform/pull/16640/ is merged
-@media screen and (max-width: 760px) {
-  .course-info {
-    header.course-profile {
-      .intro-inner-wrapper {
-        min-width: auto;
-      }
-    }
-    .container {
-      min-width: auto;
-      padding: 20px;
-    }
-  }
 }
 
 /*
