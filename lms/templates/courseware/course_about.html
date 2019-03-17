@@ -124,15 +124,10 @@ from six import string_types
 
         <div class="main-cta">
         %if user.is_authenticated and registered:
-          %if show_courseware_link:
-            <a class="register" href="${course_target}">
-          %endif
-
-          <span class="register disabled">${_("You are enrolled in this course")}</span>
+          <span>${_("You are enrolled in this course")}<br/><br/></span>
 
           %if show_courseware_link:
-            ${_("View Course")}
-            </a>
+            <a class="register" href="${course_target}">${_("View Course")}</a>
           %endif
 
         %elif in_cart:
