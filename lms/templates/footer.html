@@ -1,7 +1,7 @@
 ## mako
 <%page expression_filter="h"/>
 <%!
-  from django.core.urlresolvers import reverse
+  from django.urls import reverse
   from django.utils.translation import ugettext as _
   from branding.api import get_footer
   from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
@@ -74,7 +74,4 @@
   % for url in footer_css_urls:
     <link rel="stylesheet" type="text/css" href="${url}"></link>
   % endfor
-% endif
-% if settings.FEATURES.get('ENABLE_COOKIE_CONSENT', False):
-  <%include file="widgets/cookie-consent.html" />
 % endif

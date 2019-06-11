@@ -1,5 +1,0 @@
-{% autoescape off %}
-{% load i18n %}
-
-{% blocktrans %}Welcome to Section {{ week_num }} of {{course_name}}{% endblocktrans %}
-{% endautoescape %}
