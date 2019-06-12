@@ -26,13 +26,6 @@ html {
     padding: 32px 15px !important;
     height: auto !important;
 
-    .header-logo {
-      img {
-        width: 166px !important;
-        height: 32px !important;
-      }
-    }
-
     // header buttons
     .register-btn, .sign-in-btn, a.help-link{
       margin: 8px 15px 0 !important;
@@ -61,7 +54,7 @@ html {
           font-weight: 400;
           display: inline-block;
           margin-bottom: -10px;
-          border-bottom: 4px hidden white;
+          border-bottom: 4px hidden $white;
           cursor: pointer;
           background-color: transparent;
           border-style: hidden;
@@ -153,7 +146,7 @@ html {
 .home {
   >header {
     position: relative;
-    border-bottom: 12px solid $cloudera-blue;
+    border-bottom: 12px solid $cloudera-slate;
     background-position: center center;
 
     &::before {
@@ -197,7 +190,7 @@ html {
             font-size: 60px;
             line-height: 140%;
             margin: 0 0 20px;
-            color: $cloudera-blue;
+            color: $cloudera-slate;
             text-shadow: none;
             letter-spacing: 1px;
           }
@@ -633,9 +626,8 @@ html {
             }
           }
           .course-image .cover-image .learn-more {
-            // TODO variablize these
-            background: rgb(0, 117, 180);
-            border-color: rgb(0, 117, 180);
+            background: $cloudera-blue;
+            border-color: $cloudera-blue;
           }
         }
       }

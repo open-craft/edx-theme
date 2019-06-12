@@ -17,9 +17,8 @@
             color: $dark-grey;
         }
         .nav-item.active .nav-link {
-            // TODO: use variables
-            border-bottom-color: #29a7de;
-            color: #29a7de;
+            border-bottom-color: $cloudera-blue;
+            color: $cloudera-blue;
         }
     }
 }
@@ -39,7 +38,7 @@
     background: $white !important;
     border-radius: 4px !important;
     box-shadow: 0 2px 2px 0 rgba(0,0,0, 0.3) !important;
-    border: 1px solid $gray-l3 !important;
+    border: 1px solid $light-grey !important;
     margin-top: 0 !important;
     position: absolute !important;
     @include right(0px);
@@ -71,5 +70,11 @@
         }
       }
     }
+  }
+}
+
+.forum-nav {
+  .search-alert {
+    background-color: $dark-grey;
   }
 }
