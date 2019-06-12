@@ -14,9 +14,10 @@
             margin: 0;
         }
         .nav-item .nav-link {
-            color: #414141;
+            color: $dark-grey;
         }
         .nav-item.active .nav-link {
+            // TODO: use variables
             border-bottom-color: #29a7de;
             color: #29a7de;
         }

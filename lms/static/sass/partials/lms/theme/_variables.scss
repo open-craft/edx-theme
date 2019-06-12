@@ -9,33 +9,38 @@ $f-sans-serif: $sans-serif;
 $f-serif: $sans-serif;
 
 // Palette
-$midnight-blue: rgb(0, 77, 111);
-$brilliant-blue: rgb(41, 167, 222);
-$brilliant-blue-light: lighten($brilliant-blue, 20%);
-$aqua-blue: rgb(130, 220, 216);
-$royal-blue: rgb(0, 120, 217);
-$gray-blue: rgb(151, 210, 230);
-$sunrise-yellow: rgb(255, 214, 100);
-$accent-red: rgb(230, 70, 48);
-$dark-gray: #333e48;
+$cloudera-orange: rgb(255, 132, 0);
+$cloudera-slate: rgb(48, 88, 104);
+$white: rgb(255, 255, 255);
+$cloudera-mint: rgb(0, 163, 175);
+$cloudera-blue: rgb(0, 140, 255);
+$cloudera-dark-orange: rgb(249, 103, 2);
+$black: rgb(0, 0, 0);
+$dark-grey: rgb(60, 60, 60);
+$medium-grey: rgb(125, 125, 125);
+$grey: rgb(175, 175, 175);
+$light-grey: rgb(225, 225, 225);
+
+// shifted palette colours for eg. link hovering
+$cloudera-blue-light: scale-color($cloudera-blue, $lightness: 20%);
 
 // Colors
-$action-primary-bg: $midnight-blue;
-$action-primary-shadow: $midnight-blue;
-$action-primary-focused-bg: $midnight-blue;
-$action-primary-active-bg: $midnight-blue;
-$action-primary-active-shadow: $midnight-blue;
-$link-color: $brilliant-blue;
-$link-color-d1: $brilliant-blue;
-$link-hover: $brilliant-blue;
-$button-color: $midnight-blue;
-$base-font-color: $dark-gray;
+$action-primary-bg: $cloudera-slate;
+$action-primary-shadow: $cloudera-slate;
+$action-primary-focused-bg: $cloudera-slate;
+$action-primary-active-bg: $cloudera-slate;
+$action-primary-active-shadow: $cloudera-slate;
+$link-color: $cloudera-blue;
+$link-color-d1: $cloudera-blue;
+$link-hover: $cloudera-blue-light;
+$button-color: $cloudera-slate;
+$base-font-color: $dark-grey;
 
 // Header
-$header-bg: $dark-gray;
+$header-bg: $dark-grey;
 
 // Footer
-$footer-bg: $dark-gray;
+$footer-bg: $dark-grey;
 
 // This import needs to be moved below header-bg and footer-bg definitions,
 // otherwise it'd mess up these overrides.
